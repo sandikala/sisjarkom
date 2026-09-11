@@ -1,0 +1,1 @@
+{"name":"sjktrm-web","version":"1.0.0","private":true,"type":"module","description":"Static GitHub Pages learning workspace and Supabase research dashboard","scripts":{"test":"node --test tests/core.test.js"}}
