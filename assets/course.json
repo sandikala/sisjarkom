@@ -1,0 +1,3363 @@
+[
+  {
+    "id": 1,
+    "title": "Profil workstation multimedia",
+    "fullTitle": "Profil dan Kesiapan Workstation Multimedia",
+    "hook": "Mengapa workstation dengan spesifikasi tinggi belum tentu paling cepat melakukan rendering?",
+    "concepts": [
+      "CPU menjalankan instruksi encoding; GPU membantu jika aplikasi dan codec mendukung akselerasinya.",
+      "RAM menampung frame aktif; storage memasok dan menyimpan aset. Periksa keduanya bersama CPU.",
+      "Bottleneck ditentukan oleh pengukuran beban nyata, bukan satu angka spesifikasi."
+    ],
+    "tools": "Laptop · FFmpeg · VLC",
+    "strategy": "Think–Pair–Share",
+    "explorer": "capacity",
+    "checks": [
+      "Inventaris CPU, RAM, GPU, storage, dan OS lengkap.",
+      "Waktu encoding, ukuran keluaran, dan CPU tercatat.",
+      "Denah studio berlabel dan dapat dijelaskan."
+    ],
+    "quiz": [
+      {
+        "q": "CPU 100% saat encode, disk dan RAM ringan. Kandidat bottleneck pertama?",
+        "options": [
+          "CPU / proses encoding",
+          "Kabel LAN",
+          "Kapasitas monitor"
+        ],
+        "answer": 0,
+        "explanation": "Mulai dari indikator CPU, lalu periksa codec, preset, dan kondisi termal."
+      },
+      {
+        "q": "Apa yang perlu sama ketika membandingkan dua laptop?",
+        "options": [
+          "Wallpaper",
+          "Media, parameter encode, dan durasi",
+          "Merek tas laptop"
+        ],
+        "answer": 1,
+        "explanation": "Variabel uji harus dikontrol agar perbandingan bermakna."
+      },
+      {
+        "q": "RAM berperan utama sebagai…",
+        "options": [
+          "Penyimpan permanen",
+          "Pemberi alamat IP",
+          "Penampung data kerja aktif"
+        ],
+        "answer": 2,
+        "explanation": "RAM menyimpan data yang sedang dikerjakan aplikasi."
+      }
+    ],
+    "sections": [
+      {
+        "title": "I. Tujuan",
+        "text": "1. Mahasiswa mampu mengidentifikasi komponen utama sistem komputer pada \nperangkat yang benar-benar dipakainya.\n2. Mahasiswa mampu menghubungkan spesifikasi perangkat keras dengan kemampuan \nmenjalankan beban kerja multimedia.\n3. Mahasiswa mampu membuat denah/skema laboratorium multimedia sebagai dasar \nTugas Besar.",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Mahasiswa mampu mengidentifikasi komponen utama sistem komputer pada perangkat yang benar-benar dipakainya.",
+              "Mahasiswa mampu menghubungkan spesifikasi perangkat keras dengan kemampuan menjalankan beban kerja multimedia.",
+              "Mahasiswa mampu membuat denah/skema laboratorium multimedia sebagai dasar Tugas Besar."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "II. Tugas Pendahuluan",
+        "text": "1. Jelaskan perbedaan peran CPU, RAM, GPU, dan penyimpanan dalam proses rendering\nvideo.\n2. Sebutkan tiga aplikasi multimedia yang Anda gunakan dan tuliskan spesifikasi \nminimum resminya.\n3. Apa yang dimaksud bottleneck dalam sebuah sistem komputer? Berikan satu contoh \npada pekerjaan multimedia.\n4. Sebutkan dua perangkat lunak untuk membuat denah/skema jaringan komputer.",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Jelaskan perbedaan peran CPU, RAM, GPU, dan penyimpanan dalam proses *rendering* video.",
+              "Sebutkan tiga aplikasi multimedia yang Anda gunakan dan tuliskan spesifikasi minimum resminya.",
+              "Apa yang dimaksud *bottleneck* dalam sebuah sistem komputer? Berikan satu contoh pada pekerjaan multimedia.",
+              "Sebutkan dua perangkat lunak untuk membuat denah/skema jaringan komputer."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "III. Dasar Teori",
+        "text": "Sistem komputer adalah gabungan perangkat keras, perangkat lunak, dan pengguna yang \nbekerja untuk mengolah data. Pada pekerjaan multimedia, empat sumber daya paling \nmenentukan: CPU (menjalankan algoritma encoding, efek, simulasi), memori utama\n(menampung frame dan timeline yang sedang diolah), GPU (akselerasi rendering, efek, dan \ndecoding), dan penyimpanan (menyediakan aliran data mentah yang sangat besar).\nKarakter beban kerja multimedia berbeda dari aplikasi perkantoran: datanya besar, aliran \ndatanya terus-menerus, dan bebannya dapat dibatasi CPU, memori, atau I/O sesuai operasi. Karena itu, “komputer \ncepat” untuk multimedia berarti komputer yang seimbang — CPU cepat tidak berguna jika \npenyimpanan tidak mampu memasok data secepat CPU mengolahnya. Titik terlemah inilah \nyang disebut bottleneck, dan menemukannya adalah keterampilan dasar seorang teknolog \nmultimedia.",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Sistem komputer adalah gabungan perangkat keras, perangkat lunak, dan pengguna yang bekerja untuk mengolah data. Pada pekerjaan multimedia, empat sumber daya paling menentukan: **CPU** (menjalankan algoritma *encoding*, efek, simulasi), **memori utama** (menampung *frame* dan *timeline* yang sedang diolah), **GPU** (akselerasi *rendering*, efek, dan *decoding*), dan **penyimpanan** (menyediakan aliran data mentah yang sangat besar)."
+          },
+          {
+            "type": "paragraph",
+            "text": "Karakter beban kerja multimedia berbeda dari aplikasi perkantoran: datanya besar, aliran datanya terus-menerus, dan bebannya dapat dibatasi CPU, memori, atau I/O sesuai operasi. Karena itu, \"komputer cepat\" untuk multimedia berarti komputer yang seimbang — CPU cepat tidak berguna jika penyimpanan tidak mampu memasok data secepat CPU mengolahnya. Titik terlemah inilah yang disebut *bottleneck*, dan menemukannya adalah keterampilan dasar seorang teknolog multimedia."
+          }
+        ]
+      },
+      {
+        "title": "IV. Alat dan Bahan",
+        "text": "Laptop masing-masing mahasiswa, akses internet, FFmpeg, VLC, akun draw.io, lembar kerja \ninventaris.",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Laptop masing-masing mahasiswa, akses internet, FFmpeg, VLC, akun draw.io, lembar kerja inventaris."
+          }
+        ]
+      },
+      {
+        "title": "V. Langkah Praktikum",
+        "text": "Tahap 1 — Inventarisasi perangkat (45 menit)\nWindows (PowerShell):\nsysteminfo | Select-String \"OS Name\",\"Total Physical Memory\",\"System Model\"\nGet-CimInstance Win32_Processor | Select-Object Name,NumberOfCores,MaxClockSpeed\nGet-CimInstance Win32_VideoController | Select-Object Name,AdapterRAM\nGet-PhysicalDisk | Select-Object FriendlyName,MediaType,Size\nLinux / Raspberry Pi (macOS: gunakan system_profiler SPHardwareDataType):\nlscpu | head -20\nfree -h\nlsblk -o NAME,SIZE,ROTA,MODEL\nIsi tabel inventaris: model CPU, jumlah core/thread, kapasitas dan tipe RAM, GPU, jenis \npenyimpanan (HDD/SSD/NVMe), sistem operasi.\nCheckpoint 1: tabel inventaris terisi lengkap dan mahasiswa dapat menjelaskan arti setiap \nkolom.\nTahap 2 — Uji beban kerja nyata (60 menit)\nmkdir -p ~/praktikum/modul01 && cd ~/praktikum/modul01\n# unduh media uji sesuai tautan kelas, lalu:\nffprobe -hide_banner uji-1080p.mp4\ntime ffmpeg -y -i uji-1080p.mp4 -c:v libx264 -preset medium -crf 23 hasil.mp4\nCatat: durasi proses, fps rata-rata yang dilaporkan FFmpeg, ukuran berkas hasil, dan \npenggunaan CPU maksimum (Task Manager / htop) selama proses.\nCheckpoint 2: hasil encoding ada, catatan waktu dan pemakaian CPU tercatat.\nTahap 3 — Denah laboratorium multimedia (75 menit, kelompok)\nBuat denah lab dengan draw.io yang memuat: posisi meja workstation, ruang server, jalur \nkabel, titik access point, dan perangkat jaringan. Gunakan skenario Tugas Besar: 1 server aset, 1 \nkomputer render, 6 workstation editor, 1 komputer siaran, 1 titik tamu.\nCheckpoint 3: denah berlabel lengkap dan dapat dijelaskan alasan penempatannya.\nTahap 4 — Perbandingan kelas (30 menit)\nTabel hasil seluruh kelas dikumpulkan pada satu lembar bersama, lalu diurutkan berdasarkan \nwaktu encoding. Diskusikan: apakah laptop dengan CPU tertinggi selalu tercepat? Apa faktor \nlain yang berpengaruh?",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Tahap 1 — Inventarisasi perangkat (45 menit)"
+          },
+          {
+            "type": "paragraph",
+            "text": "Windows (PowerShell):"
+          },
+          {
+            "type": "code",
+            "language": "powershell",
+            "text": "systeminfo | Select-String \"OS Name\",\"Total Physical Memory\",\"System Model\"\nGet-CimInstance Win32_Processor | Select-Object Name,NumberOfCores,MaxClockSpeed\nGet-CimInstance Win32_VideoController | Select-Object Name,AdapterRAM\nGet-PhysicalDisk | Select-Object FriendlyName,MediaType,Size"
+          },
+          {
+            "type": "paragraph",
+            "text": "Linux / Raspberry Pi (macOS: gunakan System Information atau VM Linux):"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "text": "lscpu | head -20\nfree -h\nlsblk -o NAME,SIZE,ROTA,MODEL"
+          },
+          {
+            "type": "paragraph",
+            "text": "Isi tabel inventaris: model CPU, jumlah *core*/*thread*, kapasitas dan tipe RAM, GPU, jenis penyimpanan (HDD/SSD/NVMe), sistem operasi."
+          },
+          {
+            "type": "paragraph",
+            "text": "**Checkpoint 1:** tabel inventaris terisi lengkap dan mahasiswa dapat menjelaskan arti setiap kolom."
+          },
+          {
+            "type": "heading",
+            "text": "Tahap 2 — Uji beban kerja nyata (60 menit)"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "text": "mkdir -p ~/praktikum/modul01 && cd ~/praktikum/modul01\n# unduh media uji sesuai tautan kelas, lalu:\nffprobe -hide_banner ~/praktikum/media/uji-1080p.mp4\ntime ffmpeg -y -i ~/praktikum/media/uji-1080p.mp4 -c:v libx264 -preset medium -crf 23 hasil.mp4"
+          },
+          {
+            "type": "paragraph",
+            "text": "Catat: durasi proses, *fps* rata-rata yang dilaporkan FFmpeg, ukuran berkas hasil, dan penggunaan CPU maksimum (Task Manager / `htop`) selama proses."
+          },
+          {
+            "type": "paragraph",
+            "text": "**Checkpoint 2:** hasil *encoding* ada, catatan waktu dan pemakaian CPU tercatat."
+          },
+          {
+            "type": "heading",
+            "text": "Tahap 3 — Denah laboratorium multimedia (75 menit, kelompok)"
+          },
+          {
+            "type": "paragraph",
+            "text": "Buat denah lab dengan draw.io yang memuat: posisi meja *workstation*, ruang server, jalur kabel, titik *access point*, dan perangkat jaringan. Gunakan skenario Tugas Besar: 1 server aset, 1 komputer *render*, 6 *workstation* editor, 1 komputer siaran, 1 titik tamu."
+          },
+          {
+            "type": "paragraph",
+            "text": "**Checkpoint 3:** denah berlabel lengkap dan dapat dijelaskan alasan penempatannya."
+          },
+          {
+            "type": "heading",
+            "text": "Tahap 4 — Perbandingan kelas (30 menit)"
+          },
+          {
+            "type": "paragraph",
+            "text": "Tabel hasil seluruh kelas dikumpulkan pada satu lembar bersama, lalu diurutkan berdasarkan waktu *encoding*. Diskusikan: apakah laptop dengan CPU tertinggi selalu tercepat? Apa faktor lain yang berpengaruh?"
+          }
+        ]
+      },
+      {
+        "title": "VI. Tugas Praktikum dan Laporan",
+        "text": "1. Tabel inventaris perangkat pribadi.\n2. Grafik/tabel perbandingan waktu encoding minimal 5 laptop di kelas.\n3. Denah laboratorium (gambar) beserta penjelasan 1 paragraf.\n4. Analisis: berdasarkan data kelas, komponen apa yang paling berkorelasi dengan \nkecepatan encoding?",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Tabel inventaris perangkat pribadi.",
+              "Grafik/tabel perbandingan waktu *encoding* minimal 5 laptop di kelas.",
+              "Denah laboratorium (gambar) beserta penjelasan 1 paragraf.",
+              "Analisis: berdasarkan data kelas, komponen apa yang paling berkorelasi dengan kecepatan *encoding*?"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "VII. Pertanyaan Analisis",
+        "text": "1. Mengapa dua laptop dengan CPU sama bisa menghasilkan waktu encoding berbeda?\n2. Jika anggaran hanya cukup meng-upgrade satu komponen, mana yang Anda pilih \nuntuk pekerjaan editing 4K, dan mengapa?\n★ Tantangan: ulangi encoding saat laptop dalam mode hemat daya dan bandingkan hasilnya. \nJelaskan penyebab perbedaannya.",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Mengapa dua laptop dengan CPU sama bisa menghasilkan waktu *encoding* berbeda?",
+              "Jika anggaran hanya cukup meng-*upgrade* satu komponen, mana yang Anda pilih untuk pekerjaan *editing* 4K, dan mengapa?"
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "★ **Tantangan:** ulangi *encoding* saat laptop dalam mode hemat daya dan bandingkan hasilnya. Jelaskan penyebab perbedaannya."
+          }
+        ]
+      }
+    ],
+    "clo": "CLO 1",
+    "assessment": false
+  },
+  {
+    "id": 2,
+    "title": "CPU & beban encoding",
+    "fullTitle": "Anatomi Beban Kerja CPU pada Encoding Video",
+    "hook": "Seberapa jauh penambahan thread mempercepat encoding video?",
+    "concepts": [
+      "Siklus fetch–decode–execute mengubah instruksi program menjadi pengolahan data.",
+      "Core, thread, dan SIMD membantu paralelisme; ketergantungan pekerjaan membatasi percepatan.",
+      "Bandingkan preset x264 pada media, CRF, durasi, dan perangkat yang sama."
+    ],
+    "tools": "Laptop / Raspberry Pi · FFmpeg",
+    "strategy": "Predict–Observe–Explain",
+    "explorer": "amdahl",
+    "checks": [
+      "Empat preset dibandingkan pada input identik.",
+      "Grafik thread versus waktu dan monitor CPU tersedia.",
+      "Laptop dan Raspberry Pi dibandingkan pada workload identik."
+    ],
+    "quiz": [
+      {
+        "q": "Bagian serial membatasi percepatan paralel menurut…",
+        "options": [
+          "Hukum Amdahl",
+          "DORA",
+          "NAT"
+        ],
+        "answer": 0,
+        "explanation": "Tidak semua pekerjaan dapat diparalelkan."
+      },
+      {
+        "q": "Preset x264 lebih lambat umumnya melakukan…",
+        "options": [
+          "Lebih banyak pencarian/komputasi",
+          "Mengubah fps monitor",
+          "Menghapus audio otomatis"
+        ],
+        "answer": 0,
+        "explanation": "Usaha komputasi yang lebih besar dapat meningkatkan efisiensi kompresi."
+      },
+      {
+        "q": "Thread dua kali lebih banyak pasti dua kali lebih cepat?",
+        "options": [
+          "Selalu",
+          "Tidak; ada bagian serial dan overhead",
+          "Hanya jika warna videonya sama"
+        ],
+        "answer": 1,
+        "explanation": "Paralelisme, termal, dan bandwidth memori membatasi percepatan."
+      }
+    ],
+    "sections": [
+      {
+        "title": "I. Tujuan",
+        "text": "1. Mahasiswa mampu menjelaskan struktur dan siklus kerja CPU melalui pengamatan \nbeban kerja nyata.\n2. Mahasiswa mampu menganalisis pengaruh jumlah thread dan kompleksitas algoritma \nterhadap waktu proses.\n3. Mahasiswa mampu membandingkan kinerja arsitektur x86 (laptop) dan ARM \n(Raspberry Pi).",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Mahasiswa mampu menjelaskan struktur dan siklus kerja CPU melalui pengamatan beban kerja nyata.",
+              "Mahasiswa mampu menganalisis pengaruh jumlah *thread* dan kompleksitas algoritma terhadap waktu proses.",
+              "Mahasiswa mampu membandingkan kinerja arsitektur x86 (laptop) dan ARM (Raspberry Pi)."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "II. Tugas Pendahuluan",
+        "text": "1. Jelaskan siklus fetch–decode–execute.\n2. Apa perbedaan core dan thread? Apa itu SIMD dan mengapa penting untuk \nmultimedia?\n3. Jelaskan perbedaan mendasar arsitektur ARM dan x86.\n4. Apa arti preset pada encoder x264, dan apa yang dipertukarkan di dalamnya?",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Jelaskan siklus *fetch–decode–execute*.",
+              "Apa perbedaan *core* dan *thread*? Apa itu SIMD dan mengapa penting untuk multimedia?",
+              "Jelaskan perbedaan mendasar arsitektur ARM dan x86.",
+              "Apa arti *preset* pada encoder x264, dan apa yang dipertukarkan di dalamnya?"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "III. Dasar Teori",
+        "text": "Encoding video adalah salah satu beban kerja paling menuntut CPU. Encoder seperti x264 \nmelakukan prediksi gerak, transformasi, kuantisasi, dan pengkodean entropi untuk setiap blok\npada setiap frame. Semakin teliti pencarian yang dilakukan, semakin baik kualitas per bit yang \ndihasilkan, tetapi semakin banyak instruksi yang harus dieksekusi CPU. Preset pada x264 \n(ultrafast … veryslow) pada dasarnya adalah pengatur seberapa banyak pekerjaan yang boleh\ndilakukan CPU.\nCPU modern mempercepat pekerjaan ini dengan dua cara: paralelisme (banyak core/thread\nmengerjakan potongan frame berbeda) dan instruksi vektor SIMD (satu instruksi mengolah \nbanyak piksel sekaligus). Raspberry Pi menggunakan arsitektur ARM dengan jumlah dan lebar\nunit eksekusi yang jauh lebih kecil, sehingga cocok dijadikan pembanding untuk memahami \nhubungan arsitektur–kinerja.",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "*Encoding* video adalah salah satu beban kerja paling menuntut CPU. Encoder seperti x264 melakukan prediksi gerak, transformasi, kuantisasi, dan pengkodean entropi untuk setiap blok pada setiap *frame*. Semakin teliti pencarian yang dilakukan, semakin baik kualitas per bit yang dihasilkan, tetapi semakin banyak instruksi yang harus dieksekusi CPU. *Preset* pada x264 (`ultrafast` … `veryslow`) pada dasarnya adalah pengatur seberapa banyak pekerjaan yang boleh dilakukan CPU."
+          },
+          {
+            "type": "paragraph",
+            "text": "CPU modern mempercepat pekerjaan ini dengan dua cara: **paralelisme** (banyak *core*/*thread* mengerjakan potongan *frame* berbeda) dan **instruksi vektor SIMD** (satu instruksi mengolah banyak piksel sekaligus). Raspberry Pi menggunakan arsitektur ARM dengan jumlah dan lebar unit eksekusi yang jauh lebih kecil, sehingga cocok dijadikan pembanding untuk memahami hubungan arsitektur–kinerja."
+          }
+        ]
+      },
+      {
+        "title": "IV. Alat dan Bahan",
+        "text": "Laptop, Raspberry Pi (SSH), FFmpeg pada kedua perangkat, htop, berkas uji-1080p.mp4.",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Laptop, Raspberry Pi (SSH), FFmpeg pada kedua perangkat, `htop`, berkas `uji-1080p.mp4`."
+          }
+        ]
+      },
+      {
+        "title": "V. Langkah Praktikum",
+        "text": "Tahap 1 — Pengaruh preset (50 menit)\ncd ~/praktikum && mkdir -p modul02 && cd modul02\nfor p in ultrafast veryfast medium slow; do\n echo \"=== $p ===\"\n /usr/bin/time -f \"%e detik\" ffmpeg -y -i ../media/uji-1080p.mp4 \\\n -c:v libx264 -preset $p -crf 23 -t 30 out_$p.mp4 2>&1 | tail -3\n ls -lh out_$p.mp4\ndone\nCatat untuk tiap preset: waktu proses, ukuran berkas, dan (secara subjektif) kualitas visual \npada bagian bergerak cepat.\nCheckpoint 1: tabel 4 baris preset lengkap dengan waktu dan ukuran berkas.\nTahap 2 — Pengaruh jumlah thread (40 menit)\nfor t in 1 2 4 0; do\n /usr/bin/time -f \"threads=$t -> %e detik\" ffmpeg -y -i ../media/uji-1080p.mp4 -c:v libx264 -threads:v $t -preset medium -t 30 th_$t.mp4 2>&1 | tail -1\ndone\n-threads 0 berarti otomatis. Sambil proses berjalan, amati htop (Linux) atau Task Manager \n(Windows): apakah semua core terpakai? Ambil tangkapan layar.\nCheckpoint 2: grafik waktu terhadap jumlah thread + tangkapan layar monitor CPU.\nTahap 3 — Perbandingan x86 vs ARM (60 menit)\nssh mhsNN@192.168.10.1N\nmkdir -p ~/praktikum/modul02 && cd ~/praktikum/modul02\n# Salin media dari laptop dengan scp ke akun dan IP Pi yang diberikan asisten sebelum login SSH.\nlscpu | grep -E \"Model name|CPU\\(s\\)|Architecture\"\n/usr/bin/time -f \"%e detik\" ffmpeg -y -i uji-1080p.mp4 -vf scale=640:-2 \\\n -c:v libx264 -preset veryfast -t 10 rpi_out.mp4\nBandingkan hasil Raspberry Pi (640×360, 10 detik untuk sumber 16:9) dengan laptop pada pekerjaan yang sama \npersis. Hitung rasio kecepatan.\nCheckpoint 3: angka perbandingan laptop vs Raspberry Pi beserta penjelasan penyebabnya.\nTahap 4 — Diskusi terpandu (40 menit)\nDiskusikan mengapa penambahan thread tidak memberikan percepatan linier (Hukum \nAmdahl, ketergantungan antar-frame, batas termal).",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Tahap 1 — Pengaruh preset (50 menit)"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "text": "cd ~/praktikum && mkdir -p modul02 && cd modul02\nfor p in ultrafast veryfast medium slow; do\n  echo \"=== $p ===\"\n  /usr/bin/time -f \"%e detik\" ffmpeg -y -i ../media/uji-1080p.mp4 \\\n    -c:v libx264 -preset $p -crf 23 -t 30 out_$p.mp4 2>&1 | tail -3\n  ls -lh out_$p.mp4\ndone"
+          },
+          {
+            "type": "paragraph",
+            "text": "Catat untuk tiap *preset*: waktu proses, ukuran berkas, dan (secara subjektif) kualitas visual pada bagian bergerak cepat."
+          },
+          {
+            "type": "paragraph",
+            "text": "**Checkpoint 1:** tabel 4 baris preset lengkap dengan waktu dan ukuran berkas."
+          },
+          {
+            "type": "heading",
+            "text": "Tahap 2 — Pengaruh jumlah thread (40 menit)"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "text": "for t in 1 2 4 0; do\n  /usr/bin/time -f \"threads=$t -> %e detik\" ffmpeg -y -i ../media/uji-1080p.mp4 -c:v libx264 -threads:v $t -preset medium -t 30 th_$t.mp4 2>&1 | tail -1\ndone"
+          },
+          {
+            "type": "paragraph",
+            "text": "`-threads 0` berarti otomatis. Sambil proses berjalan, amati `htop` (Linux) atau Task Manager (Windows): apakah semua *core* terpakai? Ambil tangkapan layar."
+          },
+          {
+            "type": "paragraph",
+            "text": "**Checkpoint 2:** grafik waktu terhadap jumlah *thread* + tangkapan layar monitor CPU."
+          },
+          {
+            "type": "heading",
+            "text": "Tahap 3 — Perbandingan x86 vs ARM (60 menit)"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "text": "ssh mhsNN@192.168.10.1N\nmkdir -p ~/praktikum/modul02 && cd ~/praktikum/modul02\ncp ~/praktikum/media/uji-1080p.mp4 .\nlscpu | grep -E \"Model name|CPU\\(s\\)|Architecture\"\n/usr/bin/time -f \"%e detik\" ffmpeg -y -i ~/praktikum/media/uji-1080p.mp4 -vf scale=640:-2 \\\n  -c:v libx264 -preset veryfast -t 10 rpi_out.mp4"
+          },
+          {
+            "type": "paragraph",
+            "text": "Bandingkan hasil Raspberry Pi (640×360, 10 detik untuk sumber 16:9) dengan laptop pada pekerjaan yang sama persis. Hitung rasio kecepatan."
+          },
+          {
+            "type": "paragraph",
+            "text": "**Checkpoint 3:** angka perbandingan laptop vs Raspberry Pi beserta penjelasan penyebabnya."
+          },
+          {
+            "type": "heading",
+            "text": "Tahap 4 — Diskusi terpandu (40 menit)"
+          },
+          {
+            "type": "paragraph",
+            "text": "Diskusikan mengapa penambahan *thread* tidak memberikan percepatan linier (Hukum Amdahl, ketergantungan antar-*frame*, batas termal)."
+          }
+        ]
+      },
+      {
+        "title": "VI. Tugas Praktikum dan Laporan",
+        "text": "1. Tabel dan grafik preset vs waktu vs ukuran berkas.\n2. Grafik jumlah thread vs waktu, disertai analisis efisiensi.\n3. Perbandingan x86 dan ARM dalam bentuk tabel.\n4. Rekomendasi preset untuk tiga skenario: siaran langsung, unggah ke media sosial, arsip\nmaster.",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Tabel dan grafik preset vs waktu vs ukuran berkas.",
+              "Grafik jumlah *thread* vs waktu, disertai analisis efisiensi.",
+              "Perbandingan x86 dan ARM dalam bentuk tabel.",
+              "Rekomendasi *preset* untuk tiga skenario: siaran langsung, unggah ke media sosial, arsip master."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "VII. Pertanyaan Analisis",
+        "text": "1. Mengapa ultrafast menghasilkan berkas lebih besar padahal bitrate target tidak \ndiubah?\n2. Pada titik berapa penambahan thread berhenti memberi manfaat pada laptop Anda? \nMengapa?\n★ Tantangan: ulangi Tahap 1 dengan encoder libx265 dan bandingkan waktu serta ukuran \nberkasnya terhadap libx264.",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Mengapa `ultrafast` menghasilkan berkas lebih besar padahal *bitrate* target tidak diubah?",
+              "Pada titik berapa penambahan *thread* berhenti memberi manfaat pada laptop Anda? Mengapa?"
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "★ **Tantangan:** ulangi Tahap 1 dengan encoder `libx265` dan bandingkan waktu serta ukuran berkasnya terhadap `libx264`."
+          }
+        ]
+      }
+    ],
+    "clo": "CLO 1",
+    "assessment": false
+  },
+  {
+    "id": 3,
+    "title": "Memori & proxy editing",
+    "fullTitle": "Memori, Cache, dan Proxy Editing",
+    "hook": "Mengapa timeline 4K tersendat, padahal CPU belum penuh?",
+    "concepts": [
+      "Hierarki register → cache → RAM → storage menukar kecepatan, kapasitas, dan biaya.",
+      "Frame 4K RGB 8-bit membutuhkan 24.883.200 byte, atau 23,73 MiB; ini bukan ukuran frame terkompresi.",
+      "Proxy mengurangi beban selama editing; render akhir tetap memakai media asli."
+    ],
+    "tools": "Laptop / Raspberry Pi · pemantau RAM",
+    "strategy": "Predict–Observe–Explain",
+    "explorer": "frame",
+    "checks": [
+      "Tiga kondisi penggunaan memori tercatat.",
+      "Puncak RAM 4K versus 1080p dibandingkan.",
+      "Proxy tersedia dan rasio ukuran dihitung."
+    ],
+    "quiz": [
+      {
+        "q": "Ukuran satu frame RGB 8-bit 1920×1080 adalah…",
+        "options": [
+          "2.073.600 byte",
+          "6.220.800 byte",
+          "49.766.400 byte"
+        ],
+        "answer": 1,
+        "explanation": "RGB memiliki 3 kanal × 1 byte per piksel."
+      },
+      {
+        "q": "Proxy digunakan untuk…",
+        "options": [
+          "Mengurangi beban editing",
+          "Mengganti seluruh backup",
+          "Meningkatkan resolusi asli"
+        ],
+        "answer": 0,
+        "explanation": "Proxy memberi salinan kerja ringan dan dihubungkan kembali ke media asli saat ekspor."
+      },
+      {
+        "q": "Swap yang meningkat saat RAM penuh menunjukkan…",
+        "options": [
+          "DNS bermasalah",
+          "Kabel putus",
+          "Tekanan memori"
+        ],
+        "answer": 2,
+        "explanation": "Data dipindahkan ke penyimpanan sekunder; dampaknya perlu diukur."
+      }
+    ],
+    "sections": [
+      {
+        "title": "I. Tujuan",
+        "text": "1. Mahasiswa mampu menjelaskan hirarki memori dan sifat volatile/non-volatile.\n2. Mahasiswa mampu mengukur pemakaian memori pada beban kerja multimedia.\n3. Mahasiswa mampu menerapkan teknik proxy editing sebagai solusi keterbatasan \nmemori.",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Mahasiswa mampu menjelaskan hirarki memori dan sifat *volatile*/*non-volatile*.",
+              "Mahasiswa mampu mengukur pemakaian memori pada beban kerja multimedia.",
+              "Mahasiswa mampu menerapkan teknik *proxy editing* sebagai solusi keterbatasan memori."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "II. Tugas Pendahuluan",
+        "text": "1. Gambarkan hirarki memori dari register hingga penyimpanan sekunder beserta \nperkiraan kecepatan dan kapasitasnya.\n2. Jelaskan perbedaan RAM dan ROM, serta volatile dan non-volatile.\n3. Apa itu swap dan mengapa penggunaannya membuat sistem terasa lambat?\n4. Hitung ukuran satu frame video 4K RGB 8-bit tanpa kompresi dalam megabyte.",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Gambarkan hirarki memori dari register hingga penyimpanan sekunder beserta perkiraan kecepatan dan kapasitasnya.",
+              "Jelaskan perbedaan RAM dan ROM, serta *volatile* dan *non-volatile*.",
+              "Apa itu *swap* dan mengapa penggunaannya membuat sistem terasa lambat?",
+              "Hitung ukuran satu *frame* video 4K RGB 8-bit tanpa kompresi dalam megabyte."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "III. Dasar Teori",
+        "text": "Memori disusun berlapis karena tidak ada teknologi tunggal yang sekaligus cepat, besar, dan \nmurah. Register dan cache berada paling dekat dengan inti CPU: sangat cepat namun \nberkapasitas kecil. RAM menampung data kerja aktif, sedangkan penyimpanan sekunder \nmenyimpan data secara permanen.\nPada editing video, seluruh hirarki ini terasa langsung. Satu frame 4K RGB 8-bit berukuran \n3840 × 2160 × 3 byte ≈ 23,7 MiB. Sebuah timeline yang menyimpan beberapa detik frame\nmentah untuk preview dan efek dapat menghabiskan gigabyte memori dalam hitungan detik. \nKetika RAM habis, sistem operasi memindahkan sebagian data ke swap di penyimpanan yang \nbiasanya lebih lambat untuk akses data acak — inilah penyebab editing mendadak tersendat.\nSolusi standar industri adalah proxy editing: bekerja dengan salinan beresolusi rendah selama\nproses editing, lalu mengganti kembali ke berkas asli saat render akhir.",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Memori disusun berlapis karena tidak ada teknologi tunggal yang sekaligus cepat, besar, dan murah. Register dan cache berada paling dekat dengan inti CPU: sangat cepat namun berkapasitas kecil. RAM menampung data kerja aktif, sedangkan penyimpanan sekunder menyimpan data secara permanen."
+          },
+          {
+            "type": "paragraph",
+            "text": "Pada *editing* video, seluruh hirarki ini terasa langsung. Satu *frame* 4K RGB 8-bit berukuran 3840 × 2160 × 3 byte ≈ 23,7 MiB. Sebuah *timeline* yang menyimpan beberapa detik *frame* mentah untuk *preview* dan efek dapat menghabiskan gigabyte memori dalam hitungan detik. Ketika RAM habis, sistem operasi memindahkan sebagian data ke *swap* di penyimpanan yang biasanya lebih lambat untuk akses data acak — inilah penyebab *editing* mendadak tersendat."
+          },
+          {
+            "type": "paragraph",
+            "text": "Solusi standar industri adalah ***proxy editing***: bekerja dengan salinan beresolusi rendah selama proses *editing*, lalu mengganti kembali ke berkas asli saat *render* akhir."
+          }
+        ]
+      },
+      {
+        "title": "IV. Alat dan Bahan",
+        "text": "Laptop, Raspberry Pi, FFmpeg, htop/Task Manager, berkas uji-4k.mp4 dan uji-1080p.mp4.",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Laptop, Raspberry Pi, FFmpeg, `htop`/Task Manager, berkas `uji-4k.mp4` dan `uji-1080p.mp4`."
+          }
+        ]
+      },
+      {
+        "title": "V. Langkah Praktikum",
+        "text": "Tahap 1 — Pengukuran dasar (40 menit)\nfree -h # Linux / Raspberry Pi\n# Windows:\nGet-CimInstance Win32_OperatingSystem |\n Select-Object TotalVisibleMemorySize,FreePhysicalMemory\nCatat memori total, terpakai, dan tersedia dalam kondisi idle, lalu setelah membuka pemutar \nvideo dan browser.\nCheckpoint 1: tabel tiga kondisi pemakaian memori.\nTahap 2 — Beban memori saat pengolahan video (60 menit)\nJalankan encoding 4K sambil memantau memori setiap 2 detik:\n( while true; do free -m | awk '/Mem:/{print strftime(\"%T\"),$3}'; sleep 2; done ) &\nffmpeg -y -i ~/praktikum/media/uji-4k.mp4 -vf scale=1920:-2 \\\n -c:v libx264 -preset medium -t 20 turun.mp4\nkill %1\nUlangi untuk uji-1080p.mp4 dan bandingkan puncak pemakaian memori.\nCheckpoint 2: grafik pemakaian memori 4K vs 1080p.\nTahap 3 — Membuat proxy (50 menit)\nffmpeg -y -i ~/praktikum/media/uji-4k.mp4 -vf scale=960:-2 \\\n -c:v libx264 -preset veryfast -crf 26 -c:a aac proxy_4k.mp4\nls -lh ~/praktikum/media/uji-4k.mp4 proxy_4k.mp4\nBandingkan ukuran berkas, waktu buka pada pemutar, dan kelancaran saat seeking.\nCheckpoint 3: berkas proxy ada, rasio ukuran dihitung, perbedaan kelancaran dijelaskan.\nTahap 4 — Batas memori pada Raspberry Pi (50 menit)\nssh mhsNN@192.168.10.1N\nfree -h\nswapon --show\nvmstat 2 10 # jalankan sambil melakukan encoding 4K -> 720p\nAmati kolom si/so (swap in/out). Catat apa yang terjadi ketika memori tidak mencukupi.",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Tahap 1 — Pengukuran dasar (40 menit)"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "text": "free -h              # Linux / Raspberry Pi\n# Windows:\nGet-CimInstance Win32_OperatingSystem |\n  Select-Object TotalVisibleMemorySize,FreePhysicalMemory"
+          },
+          {
+            "type": "paragraph",
+            "text": "Catat memori total, terpakai, dan tersedia dalam kondisi *idle*, lalu setelah membuka pemutar video dan *browser*."
+          },
+          {
+            "type": "paragraph",
+            "text": "**Checkpoint 1:** tabel tiga kondisi pemakaian memori."
+          },
+          {
+            "type": "heading",
+            "text": "Tahap 2 — Beban memori saat pengolahan video (60 menit)"
+          },
+          {
+            "type": "paragraph",
+            "text": "Jalankan *encoding* 4K sambil memantau memori setiap 2 detik:"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "text": "( while true; do free -m | awk '/Mem:/{print strftime(\"%T\"),$3}'; sleep 2; done ) &\nffmpeg -y -i ~/praktikum/media/uji-4k.mp4 -vf scale=1920:-2 \\\n  -c:v libx264 -preset medium -t 20 turun.mp4\nkill %1"
+          },
+          {
+            "type": "paragraph",
+            "text": "Ulangi untuk `uji-1080p.mp4` dan bandingkan puncak pemakaian memori."
+          },
+          {
+            "type": "paragraph",
+            "text": "**Checkpoint 2:** grafik pemakaian memori 4K vs 1080p."
+          },
+          {
+            "type": "heading",
+            "text": "Tahap 3 — Membuat proxy (50 menit)"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "text": "ffmpeg -y -i ~/praktikum/media/uji-4k.mp4 -vf scale=960:-2 \\\n  -c:v libx264 -preset veryfast -crf 26 -c:a aac proxy_4k.mp4\nls -lh ~/praktikum/media/uji-4k.mp4 proxy_4k.mp4"
+          },
+          {
+            "type": "paragraph",
+            "text": "Bandingkan ukuran berkas, waktu buka pada pemutar, dan kelancaran saat *seeking*."
+          },
+          {
+            "type": "paragraph",
+            "text": "**Checkpoint 3:** berkas proxy ada, rasio ukuran dihitung, perbedaan kelancaran dijelaskan."
+          },
+          {
+            "type": "heading",
+            "text": "Tahap 4 — Batas memori pada Raspberry Pi (50 menit)"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "text": "ssh mhsNN@192.168.10.1N\nfree -h\nswapon --show\nvmstat 2 10          # jalankan sambil melakukan encoding 4K -> 720p"
+          },
+          {
+            "type": "paragraph",
+            "text": "Amati kolom `si`/`so` (*swap in/out*). Catat apa yang terjadi ketika memori tidak mencukupi."
+          }
+        ]
+      },
+      {
+        "title": "VI. Tugas Praktikum dan Laporan",
+        "text": "1. Tabel dan grafik pemakaian memori untuk tiga skenario.\n2. Perhitungan manual ukuran frame mentah 1080p dan 4K, dibandingkan dengan \npengamatan.\n3. Laporan pembuatan proxy beserta rasio ukuran dan waktu pembuatannya.\n4. Analisis perilaku swap di Raspberry Pi.",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Tabel dan grafik pemakaian memori untuk tiga skenario.",
+              "Perhitungan manual ukuran *frame* mentah 1080p dan 4K, dibandingkan dengan pengamatan.",
+              "Laporan pembuatan *proxy* beserta rasio ukuran dan waktu pembuatannya.",
+              "Analisis perilaku *swap* di Raspberry Pi."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "VII. Pertanyaan Analisis",
+        "text": "1. Mengapa menambah RAM tidak selalu mempercepat encoding, tetapi hampir selalu \nmemperlancar editing?\n2. Kapan proxy editing justru merugikan?\n★ Tantangan: buat skrip batch yang membuat proxy untuk seluruh berkas video dalam \nsebuah folder secara otomatis.",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Mengapa menambah RAM tidak selalu mempercepat *encoding*, tetapi hampir selalu memperlancar *editing*?",
+              "Kapan *proxy editing* justru merugikan?"
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "★ **Tantangan:** buat skrip *batch* yang membuat *proxy* untuk seluruh berkas video dalam sebuah folder secara otomatis."
+          }
+        ]
+      }
+    ],
+    "clo": "CLO 1",
+    "assessment": false
+  },
+  {
+    "id": 4,
+    "title": "Data digital & ukuran media",
+    "fullTitle": "Representasi Data Digital dan Ukuran Berkas Media",
+    "hook": "Berapa banyak data yang sebenarnya ada dalam satu detik video?",
+    "concepts": [
+      "Bit adalah satuan informasi; 8 bit = 1 byte. Bedakan MB desimal dan MiB biner.",
+      "Ukuran PCM = sample rate × bit depth × kanal × durasi ÷ 8.",
+      "Ukuran video mentah bergantung pada resolusi, fps, bit per piksel, dan durasi; codec mengubah ukuran akhirnya."
+    ],
+    "tools": "Laptop · ffprobe · hex viewer",
+    "strategy": "Latihan konversi berpasangan",
+    "explorer": "audio",
+    "checks": [
+      "Minimal 10 dari 12 konversi bilangan benar.",
+      "Ukuran mentah versus nyata dan rasio kompresi tercatat.",
+      "Header PNG/WAV ditandai dan dijelaskan."
+    ],
+    "quiz": [
+      {
+        "q": "Audio 48 kHz, 16-bit, stereo memiliki bitrate PCM…",
+        "options": [
+          "768 kbps",
+          "1.536 kbps",
+          "48 Mbps"
+        ],
+        "answer": 1,
+        "explanation": "48.000 × 16 × 2 = 1.536.000 bit/s."
+      },
+      {
+        "q": "Satu byte sama dengan…",
+        "options": [
+          "8 bit",
+          "10 bit",
+          "1.024 bit"
+        ],
+        "answer": 0,
+        "explanation": "Bit dan byte berbeda faktor delapan."
+      },
+      {
+        "q": "Nilai heksadesimal FF dalam desimal adalah…",
+        "options": [
+          "128",
+          "256",
+          "255"
+        ],
+        "answer": 2,
+        "explanation": "15 × 16 + 15 = 255."
+      }
+    ],
+    "sections": [
+      {
+        "title": "I. Tujuan",
+        "text": "1. Mahasiswa mampu melakukan konversi antar sistem bilangan (biner, desimal, \nheksadesimal).\n2. Mahasiswa mampu menghitung ukuran data mentah gambar, audio, dan video.\n3. Mahasiswa mampu membaca representasi biner sebuah berkas media dan \nmengaitkannya dengan teori.",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Mahasiswa mampu melakukan konversi antar sistem bilangan (biner, desimal, heksadesimal).",
+              "Mahasiswa mampu menghitung ukuran data mentah gambar, audio, dan video.",
+              "Mahasiswa mampu membaca representasi biner sebuah berkas media dan mengaitkannya dengan teori."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "II. Tugas Pendahuluan",
+        "text": "1. Konversikan: 202 ke biner dan heksadesimal; ₁₀ 1101 0110₂ ke desimal; #FF7A00 ke \nRGB desimal.\n2. Jelaskan istilah bit depth, sample rate, dan chroma subsampling 4:2:0.\n3. Hitung bitrate mentah audio CD (44,1 kHz, 16 bit, stereo) dalam kbps.\n4. Apa itu magic number pada berkas dan untuk apa digunakan?",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Konversikan: 202₁₀ ke biner dan heksadesimal; `1101 0110`₂ ke desimal; `#FF7A00` ke RGB desimal.",
+              "Jelaskan istilah *bit depth*, *sample rate*, dan *chroma subsampling* 4:2:0.",
+              "Hitung *bitrate* mentah audio CD (44,1 kHz, 16 bit, stereo) dalam kbps.",
+              "Apa itu *magic number* pada berkas dan untuk apa digunakan?"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "III. Dasar Teori",
+        "text": "Semua karya multimedia pada akhirnya adalah deretan bilangan biner. Warna satu piksel RGB \n8-bit adalah tiga bilangan 0–255, yang lazim ditulis heksadesimal (#FF7A00). Audio digital \nadalah deret sampel amplitudo yang diambil pada laju tertentu (sample rate) dengan ketelitian\ntertentu (bit depth). Video adalah deret gambar per satuan waktu.\nUkuran data mentah dapat dihitung persis:\n• Gambar: lebar × tinggi × jumlah kanal × bit depth\n• Audio: sample rate × bit depth × jumlah kanal × durasi\n• Video: lebar × tinggi × bit per piksel × fps × durasi\nAngka yang dihasilkan hampir selalu tidak masuk akal untuk disimpan atau dikirim — video \n4K mentah membutuhkan sekitar 6 Gbps. Dari sinilah kompresi dan chroma subsampling lahir:\nmata manusia jauh lebih peka pada perubahan terang (luma) daripada warna (chroma), \nsehingga informasi warna dapat dikurangi tanpa terlalu terasa. Skema 4:2:0 menyimpan \ninformasi warna hanya seperempat dari resolusi luma.",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Semua karya multimedia pada akhirnya adalah deretan bilangan biner. Warna satu piksel RGB 8-bit adalah tiga bilangan 0–255, yang lazim ditulis heksadesimal (`#FF7A00`). Audio digital adalah deret sampel amplitudo yang diambil pada laju tertentu (*sample rate*) dengan ketelitian tertentu (*bit depth*). Video adalah deret gambar per satuan waktu."
+          },
+          {
+            "type": "paragraph",
+            "text": "Ukuran data mentah dapat dihitung persis:"
+          },
+          {
+            "type": "list",
+            "ordered": false,
+            "items": [
+              "Gambar: `lebar × tinggi × jumlah kanal × bit depth`",
+              "Audio: `sample rate × bit depth × jumlah kanal × durasi`",
+              "Video: `lebar × tinggi × bit per piksel × fps × durasi`"
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "Angka yang dihasilkan hampir selalu tidak masuk akal untuk disimpan atau dikirim — video 4K mentah membutuhkan sekitar 6 Gbps. Dari sinilah kompresi dan *chroma subsampling* lahir: mata manusia jauh lebih peka pada perubahan terang (*luma*) daripada warna (*chroma*), sehingga informasi warna dapat dikurangi tanpa terlalu terasa. Skema 4:2:0 menyimpan informasi warna hanya seperempat dari resolusi *luma*."
+          }
+        ]
+      },
+      {
+        "title": "IV. Alat dan Bahan",
+        "text": "Laptop, FFmpeg/ffprobe, xxd atau HxD, kalkulator, berkas media uji.",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Laptop, FFmpeg/`ffprobe`, `xxd` atau HxD, kalkulator, berkas media uji."
+          }
+        ]
+      },
+      {
+        "title": "V. Langkah Praktikum",
+        "text": "Tahap 1 — Latihan konversi bilangan (40 menit)\nKerjakan 12 soal konversi yang disediakan asisten (desimal ↔ biner ↔ heksadesimal ↔ kode \nwarna). Koreksi silang berpasangan.\nCheckpoint 1: lembar jawaban benar minimal 10 dari 12 soal.\nTahap 2 — Perhitungan ukuran data mentah (50 menit)\nHitung secara manual, lalu verifikasi:\nffprobe -v error -select_streams v:0 \\\n -show_entries stream=width,height,r_frame_rate,pix_fmt,bit_rate \\\n -of default=noprint_wrappers=1 ~/praktikum/media/uji-1080p.mp4\nffprobe -v error -select_streams a:0 \\\n -show_entries stream=sample_rate,channels,bits_per_raw_sample \\\n -of default=noprint_wrappers=1 ~/praktikum/media/uji-audio.wav\nBandingkan hasil perhitungan mentah dengan ukuran berkas sebenarnya, lalu hitung rasio \nkompresi.\nCheckpoint 2: tabel perhitungan mentah, ukuran nyata, dan rasio kompresi untuk gambar, \naudio, dan video.\nTahap 3 — Membongkar berkas hingga level byte (60 menit)\nxxd ~/praktikum/media/uji-gambar.png | head -4\nxxd ~/praktikum/media/uji-audio.wav | head -4\nIdentifikasi magic number (89 50 4E 47 untuk PNG, 52 49 46 46 = “RIFF” untuk WAV), dan \npada WAV baca sample rate serta jumlah kanal dari header-nya. Cocokkan dengan keluaran \nffprobe.\nCheckpoint 3: mahasiswa dapat menunjuk byte mana yang menyatakan apa dan \nmenjelaskannya.\nTahap 4 — Eksperimen bit depth dan subsampling (50 menit)\nffmpeg -y -i uji-gambar.png -vf format=gray gray.png\nffmpeg -y -i uji-gambar.png -vf \"scale=iw:ih,format=rgb8\" rgb8.png\nffmpeg -y -i uji-1080p.mp4 -pix_fmt yuv420p -t 10 sub420.mp4\nffmpeg -y -i uji-1080p.mp4 -pix_fmt yuv444p -t 10 sub444.mp4\nls -lh gray.png rgb8.png sub420.mp4 sub444.mp4\nBandingkan ukuran dan kualitas visualnya.",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Tahap 1 — Latihan konversi bilangan (40 menit)"
+          },
+          {
+            "type": "paragraph",
+            "text": "Kerjakan 12 soal konversi yang disediakan asisten (desimal ↔ biner ↔ heksadesimal ↔ kode warna). Koreksi silang berpasangan."
+          },
+          {
+            "type": "paragraph",
+            "text": "**Checkpoint 1:** lembar jawaban benar minimal 10 dari 12 soal."
+          },
+          {
+            "type": "heading",
+            "text": "Tahap 2 — Perhitungan ukuran data mentah (50 menit)"
+          },
+          {
+            "type": "paragraph",
+            "text": "Hitung secara manual, lalu verifikasi:"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "text": "ffprobe -v error -select_streams v:0 \\\n  -show_entries stream=width,height,r_frame_rate,pix_fmt,bit_rate \\\n  -of default=noprint_wrappers=1 ~/praktikum/media/uji-1080p.mp4\nffprobe -v error -select_streams a:0 \\\n  -show_entries stream=sample_rate,channels,bits_per_raw_sample \\\n  -of default=noprint_wrappers=1 ~/praktikum/media/uji-audio.wav"
+          },
+          {
+            "type": "paragraph",
+            "text": "Bandingkan hasil perhitungan mentah dengan ukuran berkas sebenarnya, lalu hitung **rasio kompresi**."
+          },
+          {
+            "type": "paragraph",
+            "text": "**Checkpoint 2:** tabel perhitungan mentah, ukuran nyata, dan rasio kompresi untuk gambar, audio, dan video."
+          },
+          {
+            "type": "heading",
+            "text": "Tahap 3 — Membongkar berkas hingga level byte (60 menit)"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "text": "xxd ~/praktikum/media/uji-gambar.png | head -4\nxxd ~/praktikum/media/uji-audio.wav | head -4"
+          },
+          {
+            "type": "paragraph",
+            "text": "Identifikasi *magic number* (`89 50 4E 47` untuk PNG, `52 49 46 46` = \"RIFF\" untuk WAV), dan pada WAV baca *sample rate* serta jumlah kanal dari *header*-nya. Cocokkan dengan keluaran `ffprobe`."
+          },
+          {
+            "type": "paragraph",
+            "text": "**Checkpoint 3:** mahasiswa dapat menunjuk byte mana yang menyatakan apa dan menjelaskannya."
+          },
+          {
+            "type": "heading",
+            "text": "Tahap 4 — Eksperimen bit depth dan subsampling (50 menit)"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "text": "ffmpeg -y -i ~/praktikum/media/uji-gambar.png -vf format=gray gray.png\nffmpeg -y -i ~/praktikum/media/uji-gambar.png -vf \"scale=iw:ih,format=rgb8\" rgb8.png\nffmpeg -y -i ~/praktikum/media/uji-1080p.mp4 -pix_fmt yuv420p -t 10 sub420.mp4\nffmpeg -y -i ~/praktikum/media/uji-1080p.mp4 -pix_fmt yuv444p -t 10 sub444.mp4\nls -lh gray.png rgb8.png sub420.mp4 sub444.mp4"
+          },
+          {
+            "type": "paragraph",
+            "text": "Bandingkan ukuran dan kualitas visualnya."
+          }
+        ]
+      },
+      {
+        "title": "VI. Tugas Praktikum dan Laporan",
+        "text": "1. Lembar konversi bilangan.\n2. Tabel perhitungan ukuran mentah vs ukuran nyata vs rasio kompresi.\n3. Tangkapan layar hex dump dengan anotasi bagian header.\n4. Perbandingan hasil eksperimen bit depth dan chroma subsampling.\n5. Kalkulasi Tugas Besar: kebutuhan penyimpanan untuk 3 hari syuting, 4 kamera, 6 \njam per hari, format 1080p 50 Mbps.",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Lembar konversi bilangan.",
+              "Tabel perhitungan ukuran mentah vs ukuran nyata vs rasio kompresi.",
+              "Tangkapan layar *hex dump* dengan anotasi bagian *header*.",
+              "Perbandingan hasil eksperimen *bit depth* dan *chroma subsampling*.",
+              "**Kalkulasi Tugas Besar:** kebutuhan penyimpanan untuk 3 hari syuting, 4 kamera, 6 jam per hari, format 1080p 50 Mbps."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "VII. Pertanyaan Analisis",
+        "text": "1. Mengapa 4:2:0 hampir tidak terlihat pada rekaman biasa tetapi merusak teks berwarna\npada tangkapan layar?\n2. Berapa bitrate mentah video 4K 60 fps 10-bit, dan apa artinya bagi kebutuhan jaringan \nstudio?\n★ Tantangan: buat berkas PPM/BMP sederhana dengan menulis byte secara manual melalui \nskrip Python, lalu buka hasilnya.",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Mengapa 4:2:0 hampir tidak terlihat pada rekaman biasa tetapi merusak teks berwarna pada tangkapan layar?",
+              "Berapa *bitrate* mentah video 4K 60 fps 10-bit, dan apa artinya bagi kebutuhan jaringan studio?"
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "★ **Tantangan:** buat berkas PPM/BMP sederhana dengan menulis byte secara manual melalui skrip Python, lalu buka hasilnya."
+          }
+        ]
+      }
+    ],
+    "clo": "CLO 1",
+    "assessment": false
+  },
+  {
+    "id": 5,
+    "title": "Asesmen 1 · Sistem komputer",
+    "fullTitle": "Asesmen 1: Praktik Terpadu Sistem Komputer",
+    "hook": "Buktikan pilihan workstation untuk sebuah rumah produksi dengan hasil pengukuran.",
+    "concepts": [
+      "Uraikan kebutuhan produksi menjadi beban CPU, memori, jaringan, dan kapasitas.",
+      "Ulangi pengukuran dengan kontrol yang sama sebelum menyimpulkan penyebab bottleneck.",
+      "Justifikasi harus menghubungkan angka hasil uji dengan pilihan komponen."
+    ],
+    "tools": "Laptop · alat analisis",
+    "strategy": "Asesmen individu",
+    "explorer": "capacity",
+    "checks": [
+      "Kebutuhan storage, backup, dan proxy dihitung.",
+      "Tiga preset diuji dan bottleneck dibuktikan.",
+      "Spesifikasi usulan dijustifikasi dengan data."
+    ],
+    "quiz": [
+      {
+        "q": "Bukti diagnosis bottleneck terbaik adalah…",
+        "options": [
+          "Usia laptop saja",
+          "Pengukuran beban dan hasil uji terkontrol",
+          "Merek laptop"
+        ],
+        "answer": 1,
+        "explanation": "Kesimpulan harus didukung data."
+      },
+      {
+        "q": "Backup satu salinan tambahan berarti total salinan…",
+        "options": [
+          "1",
+          "2",
+          "3"
+        ],
+        "answer": 1,
+        "explanation": "Satu asli dan satu backup."
+      },
+      {
+        "q": "Asesmen individu mengharuskan…",
+        "options": [
+          "Menyalin hasil teman",
+          "Melewati pengukuran",
+          "Menyajikan data pekerjaan sendiri"
+        ],
+        "answer": 2,
+        "explanation": "Open tools tidak menghapus keharusan bekerja mandiri."
+      }
+    ],
+    "sections": [
+      {
+        "title": "I. Tujuan",
+        "text": "Mengukur ketercapaian Sub-CLO 1–4: definisi sistem komputer, perangkat pemrosesan data, \nmemori, serta sistem bilangan dan data digital, dalam bentuk pemecahan masalah nyata.",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Mengukur ketercapaian Sub-CLO 1–4: definisi sistem komputer, perangkat pemrosesan data, memori, serta sistem bilangan dan data digital, dalam bentuk pemecahan masalah nyata."
+          }
+        ]
+      },
+      {
+        "title": "II. Ketentuan",
+        "text": "• Bersifat open tools, dilarang bekerja sama.\n• Waktu: 180 menit pengerjaan + 60 menit presentasi kilat (5 menit per mahasiswa, \ndipilih acak 12 orang; sisanya menyerahkan rekaman layar 3 menit).\n• Seluruh bukti dikumpulkan dalam satu folder NIM_Asesmen1/.",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": false,
+            "items": [
+              "Bersifat *open tools*, dilarang bekerja sama.",
+              "Waktu: 180 menit pengerjaan + 60 menit presentasi kilat (5 menit per mahasiswa, dipilih acak 12 orang; sisanya menyerahkan rekaman layar 3 menit).",
+              "Seluruh bukti dikumpulkan dalam satu folder `NIM_Asesmen1/`."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "III. Studi Kasus",
+        "text": "Sebuah rumah produksi menerima proyek dokumenter: 4 kamera 1080p 50 Mbps, \nsyuting 5 hari × 6 jam, editing multi-kamera, dan render akhir ke H.264 dan H.265. \nAnggaran hanya cukup untuk satu komputer editing baru dan satu perangkat \npenyimpanan.",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Sebuah rumah produksi menerima proyek dokumenter: 4 kamera 1080p 50 Mbps, syuting 5 hari × 6 jam, *editing* multi-kamera, dan *render* akhir ke H.264 dan H.265. Anggaran hanya cukup untuk **satu** komputer *editing* baru dan **satu** perangkat penyimpanan."
+          }
+        ]
+      },
+      {
+        "title": "IV. Tugas yang Dinilai",
+        "text": "No Tugas Bobot\n1 Hitung kebutuhan \npenyimpanan total, termasuk\nsalinan cadangan dan proxy\n20\nNo Tugas Bobot\n2 Hitung bitrate mentah dan \nbitrate terkompresi; jelaskan \nmengapa keduanya berbeda\n15\n3 Jalankan benchmark \nencoding pada laptop Anda \n(3 preset) dan sajikan \ndatanya\n20\n4 Tentukan bottleneck sistem \nAnda berdasarkan data, \nbukan dugaan\n20\n5 Susun spesifikasi komputer \nusulan + justifikasi tiap \nkomponen\n15\n6 Kualitas dokumentasi dan \npresentasi\n10",
+        "blocks": [
+          {
+            "type": "table",
+            "headers": [
+              "No",
+              "Tugas",
+              "Bobot"
+            ],
+            "rows": [
+              [
+                "1",
+                "Hitung kebutuhan penyimpanan total, termasuk salinan cadangan dan *proxy*",
+                "20"
+              ],
+              [
+                "2",
+                "Hitung *bitrate* mentah dan *bitrate* terkompresi; jelaskan mengapa keduanya berbeda",
+                "15"
+              ],
+              [
+                "3",
+                "Jalankan *benchmark encoding* pada laptop Anda (3 *preset*) dan sajikan datanya",
+                "20"
+              ],
+              [
+                "4",
+                "Tentukan *bottleneck* sistem Anda berdasarkan data, bukan dugaan",
+                "20"
+              ],
+              [
+                "5",
+                "Susun spesifikasi komputer usulan + justifikasi tiap komponen",
+                "15"
+              ],
+              [
+                "6",
+                "Kualitas dokumentasi dan presentasi",
+                "10"
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "title": "V. Rubrik Ringkas",
+        "text": "• A (85–100): perhitungan benar, data eksperimen valid, kesimpulan didukung angka, \njustifikasi menyebut trade-off.\n• B (70–84): perhitungan benar, kesimpulan sebagian besar didukung data.\n• C (55–69): ada kesalahan perhitungan, kesimpulan bersifat umum.\n• D/E (<55): data tidak lengkap atau tidak dikerjakan sendiri.",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": false,
+            "items": [
+              "**A (85–100):** perhitungan benar, data eksperimen valid, kesimpulan didukung angka, justifikasi menyebut *trade-off*.",
+              "**B (70–84):** perhitungan benar, kesimpulan sebagian besar didukung data.",
+              "**C (55–69):** ada kesalahan perhitungan, kesimpulan bersifat umum.",
+              "**D/E (<55):** data tidak lengkap atau tidak dikerjakan sendiri."
+            ]
+          }
+        ]
+      }
+    ],
+    "clo": "CLO 1",
+    "assessment": true
+  },
+  {
+    "id": 6,
+    "title": "Storage & throughput produksi",
+    "fullTitle": "Media Penyimpanan dan Throughput Produksi",
+    "hook": "Mampukah penyimpanan Anda melayani empat editor secara bersamaan?",
+    "concepts": [
+      "Sequential throughput relevan untuk aliran video; IOPS menggambarkan banyaknya operasi per detik.",
+      "Empat stream 50 Mbps membutuhkan 200 Mbps atau 25 MB/s, sebelum overhead.",
+      "Cache, antarmuka, suhu, dan pola akses memengaruhi hasil benchmark; catat metode pengujian."
+    ],
+    "tools": "Laptop / Pi · media simpan",
+    "strategy": "Station rotation",
+    "explorer": "capacity",
+    "checks": [
+      "Benchmark media dengan metode dan satuan yang konsisten.",
+      "Empat aliran video diuji dan dijelaskan.",
+      "Kapasitas proyek dihitung dengan asumsi tertulis."
+    ],
+    "quiz": [
+      {
+        "q": "Empat stream 50 Mbps memerlukan minimum payload…",
+        "options": [
+          "25 MB/s",
+          "200 MB/s",
+          "6,25 MB/s"
+        ],
+        "answer": 0,
+        "explanation": "4 × 50 ÷ 8 = 25 MB/s, belum termasuk overhead."
+      },
+      {
+        "q": "Cache dapat menyebabkan benchmark…",
+        "options": [
+          "Selalu lebih lambat",
+          "Terlihat lebih cepat daripada akses media sebenarnya",
+          "Tidak pernah berubah"
+        ],
+        "answer": 1,
+        "explanation": "Hasil perlu menyebut apakah cache terlibat."
+      },
+      {
+        "q": "RAID menggantikan backup?",
+        "options": [
+          "Ya",
+          "Ya, untuk semua RAID",
+          "Tidak"
+        ],
+        "answer": 2,
+        "explanation": "RAID tidak melindungi dari semua penghapusan, korupsi, atau kehilangan."
+      }
+    ],
+    "sections": [
+      {
+        "title": "I. Tujuan",
+        "text": "1. Mahasiswa mampu menjelaskan jenis dan karakteristik media penyimpanan internal \nmaupun eksternal.\n2. Mahasiswa mampu mengukur kecepatan baca/tulis dan mengaitkannya dengan \nkebutuhan produksi video.\n3. Mahasiswa mampu menghitung kebutuhan kapasitas penyimpanan sebuah proyek \nmultimedia.",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Mahasiswa mampu menjelaskan jenis dan karakteristik media penyimpanan internal maupun eksternal.",
+              "Mahasiswa mampu mengukur kecepatan baca/tulis dan mengaitkannya dengan kebutuhan produksi video.",
+              "Mahasiswa mampu menghitung kebutuhan kapasitas penyimpanan sebuah proyek multimedia."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "II. Tugas Pendahuluan",
+        "text": "1. Bandingkan HDD, SSD SATA, SSD NVMe, dan microSD dalam hal kecepatan, ketahanan, \ndan harga per GB.\n2. Apa itu IOPS dan sequential throughput? Mana yang lebih penting untuk playback\nvideo?\n3. Jelaskan konsep RAID 0, 1, dan 5 secara singkat.\n4. Hitung throughput minimum untuk memutar 4 aliran video 1080p 50 Mbps secara \nbersamaan.",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Bandingkan HDD, SSD SATA, SSD NVMe, dan microSD dalam hal kecepatan, ketahanan, dan harga per GB.",
+              "Apa itu IOPS dan *sequential throughput*? Mana yang lebih penting untuk *playback* video?",
+              "Jelaskan konsep RAID 0, 1, dan 5 secara singkat.",
+              "Hitung *throughput* minimum untuk memutar 4 aliran video 1080p 50 Mbps secara bersamaan."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "III. Dasar Teori",
+        "text": "Produksi video adalah pekerjaan streaming dari penyimpanan: data dibaca berurutan dalam \njumlah besar dan terus-menerus. Karena itu ukuran kinerja yang paling relevan adalah \nsequential throughput (MB/s), bukan IOPS acak seperti pada basis data.\nSetiap media memiliki batasnya. MicroSD kelas biasa pada Raspberry Pi umumnya hanya \nmampu 20–45 MB/s, cukup untuk satu aliran 1080p tetapi tidak untuk editing multi-kamera. \nSSD NVMe dapat melampaui 2000 MB/s. Ketika kebutuhan melebihi kemampuan satu \nperangkat, digunakan RAID atau penyimpanan jaringan berkecepatan tinggi — yang menjadi \njembatan ke bagian jaringan pada mata kuliah ini.\nKonversi penting: 1 Mbps ≈ 0,125 MB/s. Video 50 Mbps membutuhkan sekitar 6,25 MB/s per \naliran.",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Produksi video adalah pekerjaan *streaming* dari penyimpanan: data dibaca berurutan dalam jumlah besar dan terus-menerus. Karena itu ukuran kinerja yang paling relevan adalah *sequential throughput* (MB/s), bukan IOPS acak seperti pada basis data."
+          },
+          {
+            "type": "paragraph",
+            "text": "Setiap media memiliki batasnya. MicroSD kelas biasa pada Raspberry Pi umumnya hanya mampu 20–45 MB/s, cukup untuk satu aliran 1080p tetapi tidak untuk *editing* multi-kamera. SSD NVMe dapat melampaui 2000 MB/s. Ketika kebutuhan melebihi kemampuan satu perangkat, digunakan RAID atau penyimpanan jaringan berkecepatan tinggi — yang menjadi jembatan ke bagian jaringan pada mata kuliah ini."
+          },
+          {
+            "type": "paragraph",
+            "text": "Konversi penting: **1 Mbps ≈ 0,125 MB/s**. Video 50 Mbps membutuhkan sekitar 6,25 MB/s per aliran."
+          }
+        ]
+      },
+      {
+        "title": "IV. Alat dan Bahan",
+        "text": "Laptop, Raspberry Pi, microSD, flash disk USB, SSD eksternal (jika ada), FFmpeg, dd, fio\n(opsional).",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Laptop, Raspberry Pi, microSD, *flash disk* USB, SSD eksternal (jika ada), FFmpeg, `dd`, `fio` (opsional)."
+          }
+        ]
+      },
+      {
+        "title": "V. Langkah Praktikum",
+        "text": "Station A — Benchmark Raspberry Pi (45 menit)\nssh mhsNN@192.168.10.1N\ncd ~/praktikum && mkdir -p modul06 && cd modul06\n# tulis\ndd if=/dev/zero of=uji.bin bs=1M count=512 oflag=direct status=progress\n# baca (bersihkan cache dulu)\n# Hindari drop_caches global pada Pi bersama; gunakan direct I/O jika didukung\ndd if=uji.bin of=/dev/null bs=1M iflag=direct status=progress\nrm uji.bin\nStation B — Benchmark laptop dan media eksternal (45 menit)\nWindows (PowerShell, tulis 1 GB):\n$f=\"D:\\uji.bin\"; $sw=[Diagnostics.Stopwatch]::StartNew()\n$fs=[IO.File]::Create($f); $buf=New-Object byte[] (1MB)\n1..1024 | % { $fs.Write($buf,0,$buf.Length) }; $fs.Close(); $sw.Stop()\n\"{0:N1} MB/s\" -f (1024/$sw.Elapsed.TotalSeconds)\nUlangi untuk penyimpanan internal, flash disk, dan SSD eksternal.\nStation C — Uji beban nyata (45 menit)\n# salin 2 GB berkas video dan ukur waktunya\n/usr/bin/time -f \"%e detik\" cp ~/praktikum/media/uji-4k.mp4 /media/usb/\n# putar 4 aliran video sekaligus dan amati apakah tersendat\nfor i in 1 2 3 4; do ffplay -autoexit -loglevel quiet uji-1080p.mp4 & done\nStation D — Kalkulasi kapasitas proyek (45 menit)\nHitung untuk skenario Tugas Besar: 4 kamera × 6 jam × 3 hari pada 1080p 50 Mbps, ditambah \nproxy (5 Mbps), berkas kerja, dan salinan cadangan 1×. Sajikan dalam tabel dan tentukan \nkonfigurasi penyimpanan yang disarankan.\nCheckpoint 1: hasil benchmark tiga media terisi. Checkpoint 2: demonstrasi 4 aliran video + \npenjelasan hasilnya. Checkpoint 3: tabel kalkulasi kapasitas lengkap dengan asumsi tertulis.",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Station A — Benchmark Raspberry Pi (45 menit)"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "text": "ssh mhsNN@192.168.10.1N\ncd ~/praktikum && mkdir -p modul06 && cd modul06\n# tulis\ndd if=/dev/zero of=uji.bin bs=1M count=512 oflag=direct status=progress\n# baca (bersihkan cache dulu)\n# Jangan drop_caches pada Pi bersama; gunakan direct I/O jika didukung\ndd if=uji.bin of=/dev/null bs=1M iflag=direct status=progress\nrm uji.bin"
+          },
+          {
+            "type": "heading",
+            "text": "Station B — Benchmark laptop dan media eksternal (45 menit)"
+          },
+          {
+            "type": "paragraph",
+            "text": "Windows (PowerShell, tulis 1 GB):"
+          },
+          {
+            "type": "code",
+            "language": "powershell",
+            "text": "$f=\"D:\\uji.bin\"; $sw=[Diagnostics.Stopwatch]::StartNew()\n$fs=[IO.File]::Create($f); $buf=New-Object byte[] (1MB)\n1..1024 | % { $fs.Write($buf,0,$buf.Length) }; $fs.Close(); $sw.Stop()\n\"{0:N1} MB/s\" -f (1024/$sw.Elapsed.TotalSeconds)"
+          },
+          {
+            "type": "paragraph",
+            "text": "Ulangi untuk penyimpanan internal, *flash disk*, dan SSD eksternal."
+          },
+          {
+            "type": "heading",
+            "text": "Station C — Uji beban nyata (45 menit)"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "text": "# salin 2 GB berkas video dan ukur waktunya\n/usr/bin/time -f \"%e detik\" cp ~/praktikum/media/uji-4k.mp4 /media/usb/\n# putar 4 aliran video sekaligus dan amati apakah tersendat\nfor i in 1 2 3 4; do ffplay -autoexit -loglevel quiet ~/praktikum/media/uji-1080p.mp4 & done"
+          },
+          {
+            "type": "heading",
+            "text": "Station D — Kalkulasi kapasitas proyek (45 menit)"
+          },
+          {
+            "type": "paragraph",
+            "text": "Hitung untuk skenario Tugas Besar: 4 kamera × 6 jam × 3 hari pada 1080p 50 Mbps, ditambah *proxy* (5 Mbps), berkas kerja, dan salinan cadangan 1×. Sajikan dalam tabel dan tentukan konfigurasi penyimpanan yang disarankan."
+          },
+          {
+            "type": "paragraph",
+            "text": "**Checkpoint 1:** hasil benchmark tiga media terisi. **Checkpoint 2:** demonstrasi 4 aliran video + penjelasan hasilnya. **Checkpoint 3:** tabel kalkulasi kapasitas lengkap dengan asumsi tertulis."
+          }
+        ]
+      },
+      {
+        "title": "VI. Tugas Praktikum dan Laporan",
+        "text": "1. Tabel perbandingan throughput baca/tulis seluruh media yang diuji.\n2. Analisis: berapa aliran 1080p 50 Mbps yang sanggup dilayani tiap media?\n3. Tabel kalkulasi kebutuhan penyimpanan proyek + rekomendasi.\n4. Kesimpulan mengapa microSD tidak layak menjadi penyimpanan produksi.",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Tabel perbandingan *throughput* baca/tulis seluruh media yang diuji.",
+              "Analisis: berapa aliran 1080p 50 Mbps yang sanggup dilayani tiap media?",
+              "Tabel kalkulasi kebutuhan penyimpanan proyek + rekomendasi.",
+              "Kesimpulan mengapa microSD tidak layak menjadi penyimpanan produksi."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "VII. Pertanyaan Analisis",
+        "text": "1. Mengapa hasil dd tanpa oflag=direct bisa jauh lebih tinggi dari kenyataan?\n2. Jika throughput penyimpanan hanya 40 MB/s, strategi kerja apa yang tetap \nmemungkinkan editor bekerja dengan materi 4K?\n★ Tantangan: jalankan fio dengan pola akses acak dan bandingkan hasilnya dengan pola \nberurutan.",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Mengapa hasil `dd` tanpa `oflag=direct` bisa jauh lebih tinggi dari kenyataan?",
+              "Jika *throughput* penyimpanan hanya 40 MB/s, strategi kerja apa yang tetap memungkinkan editor bekerja dengan materi 4K?"
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "★ **Tantangan:** jalankan `fio` dengan pola akses acak dan bandingkan hasilnya dengan pola berurutan."
+          }
+        ]
+      }
+    ],
+    "clo": "CLO 1",
+    "assessment": false
+  },
+  {
+    "id": 7,
+    "title": "I/O & instalasi interaktif",
+    "fullTitle": "Perangkat I/O: GPIO, Kamera, dan Mikrofon untuk  Instalasi Interaktif",
+    "hook": "Ubah sebuah tombol menjadi pemicu pengalaman multimedia.",
+    "concepts": [
+      "Masukan → pemrosesan → keluaran membentuk interaksi tombol, sensor, suara, dan visual.",
+      "GPIO Raspberry Pi menggunakan logika 3,3 V. Gunakan resistor LED dan wiring yang diverifikasi asisten.",
+      "Latensi bergantung pada seluruh jalur: sensor, aplikasi, buffering, dan perangkat keluaran."
+    ],
+    "tools": "Pi · tombol/LED atau simulasi laptop",
+    "strategy": "Station rotation",
+    "explorer": "gpio",
+    "checks": [
+      "LED mengikuti tombol atau simulasi input berhasil.",
+      "Pemicu audio berjalan dan latensi diukur.",
+      "Metadata hasil akuisisi diperiksa; simulasi dicatat bila alat tidak tersedia."
+    ],
+    "quiz": [
+      {
+        "q": "Logika GPIO Raspberry Pi menggunakan…",
+        "options": [
+          "3,3 V",
+          "5 V langsung",
+          "12 V"
+        ],
+        "answer": 0,
+        "explanation": "Jangan memasukkan 5 V langsung ke GPIO."
+      },
+      {
+        "q": "Resistor seri pada LED membantu…",
+        "options": [
+          "Mempercepat SSH",
+          "Membatasi arus",
+          "Memperbesar file"
+        ],
+        "answer": 1,
+        "explanation": "Pembatasan arus melindungi LED dan rangkaian."
+      },
+      {
+        "q": "Latensi tombol ke suara sebaiknya diukur…",
+        "options": [
+          "Dari panjang kabel saja",
+          "Dari warna LED",
+          "Dari timestamp trigger hingga respons yang ditentukan"
+        ],
+        "answer": 2,
+        "explanation": "Tentukan titik awal/akhir pengukuran yang konsisten."
+      }
+    ],
+    "sections": [
+      {
+        "title": "I. Tujuan",
+        "text": "1. Mahasiswa mampu mengklasifikasikan perangkat masukan dan keluaran beserta cara \nkerjanya.\n2. Mahasiswa mampu menggunakan GPIO Raspberry Pi sebagai pemicu peristiwa \nmultimedia.\n3. Mahasiswa mampu melakukan akuisisi audio dan video dari perangkat masukan.",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Mahasiswa mampu mengklasifikasikan perangkat masukan dan keluaran beserta cara kerjanya.",
+              "Mahasiswa mampu menggunakan GPIO Raspberry Pi sebagai pemicu peristiwa multimedia.",
+              "Mahasiswa mampu melakukan akuisisi audio dan video dari perangkat masukan."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "II. Tugas Pendahuluan",
+        "text": "1. Klasifikasikan 10 perangkat multimedia menjadi masukan, keluaran, atau keduanya.\n2. Apa perbedaan sinyal analog dan digital? Di mana proses konversi terjadi pada \nmikrofon USB?\n3. Jelaskan fungsi GPIO dan bedanya dengan port USB.\n4. Sebutkan tiga contoh instalasi seni interaktif dan perangkat masukan yang dipakainya.",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Klasifikasikan 10 perangkat multimedia menjadi masukan, keluaran, atau keduanya.",
+              "Apa perbedaan sinyal analog dan digital? Di mana proses konversi terjadi pada mikrofon USB?",
+              "Jelaskan fungsi GPIO dan bedanya dengan port USB.",
+              "Sebutkan tiga contoh instalasi seni interaktif dan perangkat masukan yang dipakainya."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "III. Dasar Teori",
+        "text": "Perangkat I/O adalah gerbang antara dunia fisik dan representasi digital. Pada karya \nmultimedia interaktif, gerbang ini menjadi bagian dari karya itu sendiri: sebuah tombol, sensor\njarak, atau kamera mengubah kehadiran penonton menjadi peristiwa yang memicu suara dan \ngambar.\nRaspberry Pi memiliki header GPIO (General Purpose Input/Output) 40 pin yang dapat \nmembaca kondisi tinggi/rendah dari tombol atau sensor, dan mengeluarkan tegangan untuk \nmenyalakan LED atau relai. Berbeda dari USB yang berkomunikasi lewat protokol berlapis, \nGPIO bekerja melalui pin logika dan software pengendalinya, dan dapat mendukung respons cepat; latensi aplikasi tetap harus diukur — sifat yang \ndibutuhkan instalasi interaktif.\nPeringatan: GPIO Raspberry Pi bekerja pada 3,3 V. Memberi 5 V langsung ke pin masukan \ndapat merusak board secara permanen.",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Perangkat I/O adalah gerbang antara dunia fisik dan representasi digital. Pada karya multimedia interaktif, gerbang ini menjadi bagian dari karya itu sendiri: sebuah tombol, sensor jarak, atau kamera mengubah kehadiran penonton menjadi peristiwa yang memicu suara dan gambar."
+          },
+          {
+            "type": "paragraph",
+            "text": "Raspberry Pi memiliki *header* **GPIO** (*General Purpose Input/Output*) 40 pin yang dapat membaca kondisi tinggi/rendah dari tombol atau sensor, dan mengeluarkan tegangan untuk menyalakan LED atau relai. Berbeda dari USB yang berkomunikasi lewat protokol berlapis, GPIO bekerja melalui pin logika dan software pengendalinya, sehingga responsnya dapat cepat, tetapi latensi aplikasi tetap perlu diukur — sifat yang dibutuhkan instalasi interaktif."
+          },
+          {
+            "type": "paragraph",
+            "text": "**Peringatan:** GPIO Raspberry Pi bekerja pada 3,3 V. Memberi 5 V langsung ke pin masukan dapat merusak *board* secara permanen."
+          }
+        ]
+      },
+      {
+        "title": "IV. Alat dan Bahan",
+        "text": "Raspberry Pi, breadboard, tombol push button, LED + resistor 220 , kabel jumper, webcam Ω\nUSB / modul kamera, mikrofon USB, headphone.",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Raspberry Pi, *breadboard*, tombol *push button*, LED + resistor 220 Ω, kabel jumper, webcam USB / modul kamera, mikrofon USB, *headphone*."
+          }
+        ]
+      },
+      {
+        "title": "V. Langkah Praktikum",
+        "text": "Station A — GPIO dasar (45 menit)\nRangkai LED pada GPIO17 dan tombol pada GPIO27 (dengan pull-up internal).\n# ~/praktikum/modul07/led.py\nfrom gpiozero import LED, Button\nfrom signal import pause\nled, tombol = LED(17), Button(27)\ntombol.when_pressed = led.on\ntombol.when_released = led.off\npause()\npython3 led.py\nCheckpoint 1: LED menyala saat tombol ditekan; mahasiswa menjelaskan arah arus dan \nfungsi resistor.\nStation B — Tombol sebagai pemicu media (45 menit)\n# ~/praktikum/modul07/pemicu.py\nfrom gpiozero import Button\nfrom subprocess import Popen\nfrom signal import pause\ndef putar():\n Popen([\"ffplay\",\"-autoexit\",\"-nodisp\",\"/home/mhsNN/praktikum/media/uji-audio.wav\"])\nButton(27).when_pressed = putar\npause()\nCheckpoint 2: audio berbunyi saat tombol ditekan; ukur perkiraan jeda antara tekan dan \nbunyi.\nStation C — Akuisisi audio (45 menit)\narecord -l # daftar perangkat\narecord -D plughw:1,0 -d 10 -f cd rekam.wav # rekam 10 detik\nffprobe rekam.wav\naplay rekam.wav\nCatat sample rate, bit depth, dan ukuran berkas; cocokkan dengan perhitungan Modul 4.\nStation D — Akuisisi video (45 menit)\nv4l2-ctl --list-devices\nffmpeg -f v4l2 -framerate 25 -video_size 640x480 -i /dev/video0 -t 10 webcam.mp4\n# modul kamera resmi:\nrpicam-still -o foto.jpg # Raspberry Pi OS baru; cek nama tool pada image lab\nCheckpoint 3: berkas audio dan video hasil rekaman ada dan dapat diputar.",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Station A — GPIO dasar (45 menit)"
+          },
+          {
+            "type": "paragraph",
+            "text": "Rangkai LED pada GPIO17 dan tombol pada GPIO27 (dengan *pull-up* internal)."
+          },
+          {
+            "type": "code",
+            "language": "python",
+            "text": "# ~/praktikum/modul07/led.py\nfrom gpiozero import LED, Button\nfrom signal import pause\nled, tombol = LED(17), Button(27)\ntombol.when_pressed = led.on\ntombol.when_released = led.off\npause()"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "text": "python3 led.py"
+          },
+          {
+            "type": "paragraph",
+            "text": "**Checkpoint 1:** LED menyala saat tombol ditekan; mahasiswa menjelaskan arah arus dan fungsi resistor."
+          },
+          {
+            "type": "heading",
+            "text": "Station B — Tombol sebagai pemicu media (45 menit)"
+          },
+          {
+            "type": "code",
+            "language": "python",
+            "text": "# ~/praktikum/modul07/pemicu.py\nfrom gpiozero import Button\nfrom subprocess import Popen\nfrom signal import pause\ndef putar():\n    Popen([\"ffplay\",\"-autoexit\",\"-nodisp\",\"/home/mhsNN/praktikum/media/uji-audio.wav\"])\nButton(27).when_pressed = putar\npause()"
+          },
+          {
+            "type": "paragraph",
+            "text": "**Checkpoint 2:** audio berbunyi saat tombol ditekan; ukur perkiraan jeda antara tekan dan bunyi."
+          },
+          {
+            "type": "heading",
+            "text": "Station C — Akuisisi audio (45 menit)"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "text": "arecord -l                                   # daftar perangkat\narecord -D plughw:1,0 -d 10 -f cd rekam.wav  # rekam 10 detik\nffprobe rekam.wav\naplay rekam.wav"
+          },
+          {
+            "type": "paragraph",
+            "text": "Catat *sample rate*, *bit depth*, dan ukuran berkas; cocokkan dengan perhitungan Modul 4."
+          },
+          {
+            "type": "heading",
+            "text": "Station D — Akuisisi video (45 menit)"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "text": "v4l2-ctl --list-devices\nffmpeg -f v4l2 -framerate 25 -video_size 640x480 -i /dev/video0 -t 10 webcam.mp4\n# modul kamera resmi:\nrpicam-still -o foto.jpg  # Raspberry Pi OS baru; sesuaikan image lab"
+          },
+          {
+            "type": "paragraph",
+            "text": "**Checkpoint 3:** berkas audio dan video hasil rekaman ada dan dapat diputar."
+          }
+        ]
+      },
+      {
+        "title": "VI. Tugas Praktikum dan Laporan",
+        "text": "1. Foto rangkaian + diagram pin yang digunakan.\n2. Kode program dan penjelasan alurnya.\n3. Berkas hasil rekaman audio dan video beserta metadatanya.\n4. Rancangan instalasi interaktif: satu ide karya multimedia berbasis sensor, lengkap \ndengan diagram alur masukan → proses → keluaran.",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Foto rangkaian + diagram pin yang digunakan.",
+              "Kode program dan penjelasan alurnya.",
+              "Berkas hasil rekaman audio dan video beserta metadatanya.",
+              "**Rancangan instalasi interaktif**: satu ide karya multimedia berbasis sensor, lengkap dengan diagram alur masukan → proses → keluaran."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "VII. Pertanyaan Analisis",
+        "text": "1. Faktor apa saja yang menentukan latensi GPIO maupun masukan USB pada aplikasi Anda?\n2. Apa risiko teknis instalasi interaktif yang berjalan 8 jam nonstop di ruang pameran, dan\nbagaimana mengurangi risikonya?\n★ Tantangan: tambahkan sensor jarak ultrasonik (HC-SR04) sehingga video berganti sesuai \njarak penonton.",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Faktor apa saja yang menentukan latensi GPIO maupun masukan USB pada aplikasi Anda?",
+              "Apa risiko teknis instalasi interaktif yang berjalan 8 jam nonstop di ruang pameran, dan bagaimana mengurangi risikonya?"
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "★ **Tantangan:** tambahkan sensor jarak ultrasonik (HC-SR04) sehingga video berganti sesuai jarak penonton."
+          }
+        ]
+      }
+    ],
+    "clo": "CLO 1",
+    "assessment": false
+  },
+  {
+    "id": 8,
+    "title": "Perangkat & identitas jaringan",
+    "fullTitle": "Perangkat Keras Jaringan dan Identitas Perangkat",
+    "hook": "Telusuri perjalanan aset dari laptop Anda menuju Raspberry Pi.",
+    "concepts": [
+      "Switch meneruskan frame dalam LAN; router meneruskan paket antarjaringan.",
+      "IP, prefix, interface, dan gateway membentuk konfigurasi logis perangkat.",
+      "Alamat MAC lokal/acak tidak selalu menunjukkan pabrikan; OUI hanya petunjuk ketika berlaku."
+    ],
+    "tools": "Laptop / Pi · switch",
+    "strategy": "Jigsaw perangkat",
+    "explorer": "network",
+    "checks": [
+      "Tabel perangkat fisik dan fungsinya lengkap.",
+      "Tabel interface, IP, mask, dan gateway lengkap.",
+      "Peta segmen lab dan mekanisme ARP dijelaskan."
+    ],
+    "quiz": [
+      {
+        "q": "Perangkat yang meneruskan paket antarjaringan adalah…",
+        "options": [
+          "Hub",
+          "Router",
+          "Konektor RJ45"
+        ],
+        "answer": 1,
+        "explanation": "Router memakai informasi jaringan untuk menentukan next hop."
+      },
+      {
+        "q": "ARP pada IPv4 mencari pemetaan…",
+        "options": [
+          "IP ke MAC pada link lokal",
+          "Nama file ke ukuran",
+          "Bit ke warna"
+        ],
+        "answer": 0,
+        "explanation": "ARP menghubungkan alamat IPv4 lokal ke alamat link."
+      },
+      {
+        "q": "Dua host memakai IP sama dapat menyebabkan…",
+        "options": [
+          "Video lebih tajam",
+          "Kapasitas disk naik",
+          "Konflik pengalamatan"
+        ],
+        "answer": 2,
+        "explanation": "Pemetaan IP–MAC menjadi tidak konsisten."
+      }
+    ],
+    "sections": [
+      {
+        "title": "I. Tujuan",
+        "text": "1. Mahasiswa mampu mengidentifikasi dan menjelaskan fungsi perangkat keras jaringan.\n2. Mahasiswa mampu membaca identitas jaringan sebuah perangkat (MAC, IP, interface).\n3. Mahasiswa mampu memetakan perangkat yang aktif dalam satu segmen jaringan.",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Mahasiswa mampu mengidentifikasi dan menjelaskan fungsi perangkat keras jaringan.",
+              "Mahasiswa mampu membaca identitas jaringan sebuah perangkat (MAC, IP, *interface*).",
+              "Mahasiswa mampu memetakan perangkat yang aktif dalam satu segmen jaringan."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "II. Tugas Pendahuluan",
+        "text": "1. Jelaskan fungsi dan perbedaan: NIC, hub, switch, router, access point, repeater, bridge.\n2. Apa itu MAC address, berapa panjangnya, dan apa arti tiga oktet pertamanya?\n3. Mengapa hub tidak lagi digunakan pada jaringan modern?\n4. Apa perbedaan antarmuka eth0 dan wlan0 pada Raspberry Pi?",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Jelaskan fungsi dan perbedaan: NIC, hub, switch, router, *access point*, *repeater*, *bridge*.",
+              "Apa itu MAC address, berapa panjangnya, dan apa arti tiga oktet pertamanya?",
+              "Mengapa hub tidak lagi digunakan pada jaringan modern?",
+              "Apa perbedaan antarmuka `eth0` dan `wlan0` pada Raspberry Pi?"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "III. Dasar Teori",
+        "text": "Jaringan komputer dibangun dari perangkat dengan pembagian tugas yang jelas. NIC memberi \nsetiap perangkat identitas fisik berupa MAC address 48 bit; tiga oktet pertamanya (OUI) \nmenunjukkan pabrikannya. Switch meneruskan frame hanya ke port tujuan berdasarkan \ntabel MAC, sedangkan hub menyiarkan ke semua port sehingga menimbulkan tabrakan data \n— alasan hub ditinggalkan. Router menghubungkan jaringan berbeda berdasarkan alamat IP, \ndan access point menjembatani perangkat nirkabel ke jaringan kabel.\nDalam studio multimedia, pilihan perangkat berdampak langsung pada pekerjaan: switch\ngigabit yang kelebihan beban akan membuat transfer aset lambat dan siaran langsung \ntersendat, sementara access point yang padat pengguna tidak layak dipakai untuk mengalirkan\nvideo mentah.",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Jaringan komputer dibangun dari perangkat dengan pembagian tugas yang jelas. **NIC** memberi setiap perangkat identitas fisik berupa **MAC address** 48 bit; tiga oktet pertamanya (**OUI**) menunjukkan pabrikannya. **Switch** meneruskan *frame* hanya ke port tujuan berdasarkan tabel MAC, sedangkan **hub** menyiarkan ke semua port sehingga menimbulkan tabrakan data — alasan hub ditinggalkan. **Router** menghubungkan jaringan berbeda berdasarkan alamat IP, dan **access point** menjembatani perangkat nirkabel ke jaringan kabel."
+          },
+          {
+            "type": "paragraph",
+            "text": "Dalam studio multimedia, pilihan perangkat berdampak langsung pada pekerjaan: *switch* gigabit yang kelebihan beban akan membuat transfer aset lambat dan siaran langsung tersendat, sementara *access point* yang padat pengguna tidak layak dipakai untuk mengalirkan video mentah."
+          }
+        ]
+      },
+      {
+        "title": "IV. Alat dan Bahan",
+        "text": "Laptop, Raspberry Pi, switch lab, access point, kabel UTP, perangkat jaringan untuk diamati \n(router, hub jika tersedia).",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Laptop, Raspberry Pi, switch lab, *access point*, kabel UTP, perangkat jaringan untuk diamati (router, hub jika tersedia)."
+          }
+        ]
+      },
+      {
+        "title": "V. Langkah Praktikum",
+        "text": "Tahap 1 — Identifikasi fisik perangkat (45 menit)\nAmati perangkat yang disediakan. Isi tabel: nama perangkat, jumlah dan jenis port, indikator \nLED, kecepatan yang didukung, dan posisi fungsionalnya dalam jaringan studio.\nCheckpoint 1: tabel identifikasi lengkap disertai foto.\nTahap 2 — Membaca identitas jaringan (50 menit)\n# Linux / Raspberry Pi\nip a\nip link show\nip route\n# Windows\nipconfig /all\ngetmac /v\nCatat nama antarmuka, MAC, IP, netmask, dan gateway untuk laptop Anda dan Raspberry Pi \nkelompok. Cari pabrikan dari OUI MAC Anda menggunakan basis data OUI daring.\nCheckpoint 2: tabel identitas terisi dan OUI berhasil diidentifikasi.\nTahap 3 — Pemetaan segmen jaringan (60 menit)\nSambungkan seluruh laptop kelompok dan Raspberry Pi ke switch lab, lalu:\nping -c 4 192.168.10.1N\narp -a\nnmap -sn 192.168.10.0/24 # hanya di segmen lab, dengan izin asisten\nSusun peta perangkat aktif: IP, MAC, jenis perangkat, pemilik.\nCheckpoint 3: peta segmen lab lengkap dan mahasiswa dapat menjelaskan cara arp\nmenemukan pasangan IP–MAC.\nTahap 4 — Pengamatan perilaku switch (40 menit)\nCabut satu kabel, amati LED port dan hasil ping. Pindahkan kabel ke port lain, amati berapa \nlama koneksi pulih. Diskusikan apa yang terjadi pada tabel MAC switch.",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Tahap 1 — Identifikasi fisik perangkat (45 menit)"
+          },
+          {
+            "type": "paragraph",
+            "text": "Amati perangkat yang disediakan. Isi tabel: nama perangkat, jumlah dan jenis port, indikator LED, kecepatan yang didukung, dan posisi fungsionalnya dalam jaringan studio."
+          },
+          {
+            "type": "paragraph",
+            "text": "**Checkpoint 1:** tabel identifikasi lengkap disertai foto."
+          },
+          {
+            "type": "heading",
+            "text": "Tahap 2 — Membaca identitas jaringan (50 menit)"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "text": "# Linux / Raspberry Pi\nip a\nip link show\nip route\n# Windows\nipconfig /all\ngetmac /v"
+          },
+          {
+            "type": "paragraph",
+            "text": "Catat nama antarmuka, MAC, IP, *netmask*, dan *gateway* untuk laptop Anda dan Raspberry Pi kelompok. Cari pabrikan dari OUI MAC Anda menggunakan basis data OUI daring."
+          },
+          {
+            "type": "paragraph",
+            "text": "**Checkpoint 2:** tabel identitas terisi dan OUI berhasil diidentifikasi."
+          },
+          {
+            "type": "heading",
+            "text": "Tahap 3 — Pemetaan segmen jaringan (60 menit)"
+          },
+          {
+            "type": "paragraph",
+            "text": "Sambungkan seluruh laptop kelompok dan Raspberry Pi ke switch lab, lalu:"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "text": "ping -c 4 192.168.10.1N\narp -a\nnmap -sn 192.168.10.0/24        # hanya di segmen lab, dengan izin asisten"
+          },
+          {
+            "type": "paragraph",
+            "text": "Susun peta perangkat aktif: IP, MAC, jenis perangkat, pemilik."
+          },
+          {
+            "type": "paragraph",
+            "text": "**Checkpoint 3:** peta segmen lab lengkap dan mahasiswa dapat menjelaskan cara `arp` menemukan pasangan IP–MAC."
+          },
+          {
+            "type": "heading",
+            "text": "Tahap 4 — Pengamatan perilaku switch (40 menit)"
+          },
+          {
+            "type": "paragraph",
+            "text": "Cabut satu kabel, amati LED port dan hasil `ping`. Pindahkan kabel ke port lain, amati berapa lama koneksi pulih. Diskusikan apa yang terjadi pada tabel MAC switch."
+          }
+        ]
+      },
+      {
+        "title": "VI. Tugas Praktikum dan Laporan",
+        "text": "1. Tabel identifikasi perangkat keras jaringan lab.\n2. Tabel identitas jaringan seluruh anggota kelompok.\n3. Peta segmen jaringan lab (diagram + tabel).\n4. Analisis: perangkat mana yang akan menjadi bottleneck jika 8 editor memindahkan \naset bersamaan?",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Tabel identifikasi perangkat keras jaringan lab.",
+              "Tabel identitas jaringan seluruh anggota kelompok.",
+              "Peta segmen jaringan lab (diagram + tabel).",
+              "Analisis: perangkat mana yang akan menjadi *bottleneck* jika 8 editor memindahkan aset bersamaan?"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "VII. Pertanyaan Analisis",
+        "text": "1. Mengapa dua perangkat dengan MAC berbeda tetapi IP sama menyebabkan gangguan?\n2. Apa yang terjadi jika sebuah switch dihubungkan ke dirinya sendiri (loop), dan \nbagaimana pencegahannya?\n★ Tantangan: gunakan tcpdump -i eth0 arp di Raspberry Pi dan jelaskan proses ARP yang \ntertangkap.",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Mengapa dua perangkat dengan MAC berbeda tetapi IP sama menyebabkan gangguan?",
+              "Apa yang terjadi jika sebuah switch dihubungkan ke dirinya sendiri (*loop*), dan bagaimana pencegahannya?"
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "★ **Tantangan:** gunakan `tcpdump -i eth0 arp` di Raspberry Pi dan jelaskan proses ARP yang tertangkap."
+          }
+        ]
+      }
+    ],
+    "clo": "CLO 1",
+    "assessment": false
+  },
+  {
+    "id": 9,
+    "title": "Topologi jaringan studio",
+    "fullTitle": "Perancangan Topologi Jaringan Studio Multimedia",
+    "hook": "Rancang studio yang tetap lancar saat editor, render node, dan siaran aktif bersamaan.",
+    "concepts": [
+      "Topologi fisik menunjukkan hubungan kabel; topologi logis menunjukkan aliran komunikasi.",
+      "Hitung port, trafik puncak, titik kegagalan, dan kebutuhan isolasi sebelum memilih topologi.",
+      "Segmentasi memisahkan domain broadcast; kapasitas link dan kebijakan trafik tetap perlu dirancang."
+    ],
+    "tools": "Laptop · switch · diagrams.net",
+    "strategy": "Gallery walk",
+    "explorer": "topology",
+    "checks": [
+      "Kebutuhan port dan bandwidth dijustifikasi.",
+      "Dua alternatif topologi dibandingkan.",
+      "Mini-LAN saling terjangkau dan transfer diuji."
+    ],
+    "quiz": [
+      {
+        "q": "Topologi fisik menjelaskan…",
+        "options": [
+          "Hubungan kabel/perangkat",
+          "Daftar password",
+          "Isi aset video"
+        ],
+        "answer": 0,
+        "explanation": "Topologi logis menjelaskan aliran komunikasi."
+      },
+      {
+        "q": "Single point of failure berarti…",
+        "options": [
+          "Semua node punya backup",
+          "Satu komponen gagal dapat memutus layanan",
+          "Ada banyak kabel"
+        ],
+        "answer": 1,
+        "explanation": "Pertimbangkan dampak kegagalan komponen pusat."
+      },
+      {
+        "q": "Segmentasi saja menjamin bandwidth streaming?",
+        "options": [
+          "Ya",
+          "Ya, selama IP berbeda",
+          "Tidak; kapasitas link dan kebijakan trafik tetap berpengaruh"
+        ],
+        "answer": 2,
+        "explanation": "Segmentasi harus disertai perencanaan kapasitas."
+      }
+    ],
+    "sections": [
+      {
+        "title": "I. Tujuan",
+        "text": "1. Mahasiswa mampu menjelaskan model jaringan PAN, LAN, MAN, dan WAN beserta \ncontohnya.\n2. Mahasiswa mampu membandingkan topologi bus, star, ring, mesh, dan hibrida.\n3. Mahasiswa mampu merancang dan mengimplementasikan topologi untuk kebutuhan \nstudio multimedia.",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Mahasiswa mampu menjelaskan model jaringan PAN, LAN, MAN, dan WAN beserta contohnya.",
+              "Mahasiswa mampu membandingkan topologi *bus*, *star*, *ring*, *mesh*, dan hibrida.",
+              "Mahasiswa mampu merancang dan mengimplementasikan topologi untuk kebutuhan studio multimedia."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "II. Tugas Pendahuluan",
+        "text": "1. Jelaskan perbedaan PAN, LAN, MAN, dan WAN dengan contoh nyata di lingkungan \nkampus.\n2. Sebutkan kelebihan dan kekurangan topologi star dan mesh.\n3. Mengapa hampir semua jaringan kantor modern menggunakan topologi star\nbertingkat?\n4. Apa yang dimaksud single point of failure?",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Jelaskan perbedaan PAN, LAN, MAN, dan WAN dengan contoh nyata di lingkungan kampus.",
+              "Sebutkan kelebihan dan kekurangan topologi *star* dan *mesh*.",
+              "Mengapa hampir semua jaringan kantor modern menggunakan topologi *star* bertingkat?",
+              "Apa yang dimaksud *single point of failure*?"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "III. Dasar Teori",
+        "text": "Topologi adalah pola hubungan antar-perangkat dalam jaringan. Topologi fisik\nmenggambarkan susunan kabel dan perangkat, sedangkan topologi logis menggambarkan \nalur data. Jaringan modern hampir selalu berbentuk star bertingkat (hierarchical star): \nperangkat akhir terhubung ke switch akses, switch akses terhubung ke switch inti.\nPada studio multimedia, perancangan topologi bukan sekadar soal konektivitas melainkan soal\npemisahan lalu lintas. Transfer aset 20 GB antar-editor tidak boleh membuat siaran langsung\nterputus, dan tamu tidak boleh berada di jalur yang sama dengan penyimpanan aset. Karena \nitu jaringan studio umumnya dibagi menjadi beberapa segmen: produksi, render, siaran, \nmanajemen, dan tamu — konsep yang akan diimplementasikan pada Modul 13 dan 14.",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Topologi adalah pola hubungan antar-perangkat dalam jaringan. **Topologi fisik** menggambarkan susunan kabel dan perangkat, sedangkan **topologi logis** menggambarkan alur data. Jaringan modern hampir selalu berbentuk *star* bertingkat (*hierarchical star*): perangkat akhir terhubung ke *switch* akses, *switch* akses terhubung ke *switch* inti."
+          },
+          {
+            "type": "paragraph",
+            "text": "Pada studio multimedia, perancangan topologi bukan sekadar soal konektivitas melainkan soal **pemisahan lalu lintas**. Transfer aset 20 GB antar-editor tidak boleh membuat siaran langsung terputus, dan tamu tidak boleh berada di jalur yang sama dengan penyimpanan aset. Karena itu jaringan studio umumnya dibagi menjadi beberapa segmen: produksi, *render*, siaran, manajemen, dan tamu — konsep yang akan diimplementasikan pada Modul 13 dan 14."
+          }
+        ]
+      },
+      {
+        "title": "IV. Alat dan Bahan",
+        "text": "Laptop, draw.io, switch lab, kabel UTP, Raspberry Pi.",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Laptop, draw.io, switch lab, kabel UTP, Raspberry Pi."
+          }
+        ]
+      },
+      {
+        "title": "V. Langkah Praktikum",
+        "text": "Tahap 1 — Analisis kebutuhan (40 menit)\nBerdasarkan skenario Tugas Besar (6 editor, 1 render node, 1 server aset, 1 komputer siaran, \ntamu), susun tabel kebutuhan: jumlah perangkat, perkiraan lalu lintas puncak per perangkat, \ndan tingkat kekritisannya.\nCheckpoint 1: tabel kebutuhan disertai estimasi bandwidth yang beralasan.\nTahap 2 — Perancangan topologi (60 menit)\nBuat dua alternatif rancangan di draw.io: (a) star tunggal dengan satu switch, (b) star\nbertingkat dengan pemisahan segmen. Untuk setiap alternatif, tuliskan: jumlah port yang \ndibutuhkan, perkiraan panjang kabel, titik kegagalan tunggal, dan perkiraan biaya relatif.\nCheckpoint 2: dua diagram berlabel + tabel perbandingan.\nTahap 3 — Implementasi mini-LAN (70 menit)\nBangun jaringan nyata: seluruh laptop kelompok + Raspberry Pi ke satu switch, alamat statis \n192.168.10.101–192.168.10.110, netmask 255.255.255.0.\n# Raspberry Pi (NetworkManager)\nsudo nmcli con mod \"Wired connection 1\" ipv4.addresses 192.168.10.13/24\nsudo nmcli con mod \"Wired connection 1\" ipv4.method manual\nsudo nmcli con up \"Wired connection 1\"\nip a show eth0\nUji: ping antar-perangkat, transfer berkas 500 MB antar-laptop, catat waktunya.\nCheckpoint 3: seluruh perangkat saling ping dan hasil transfer tercatat.\nTahap 4 — Uji kegagalan (30 menit)\nCabut kabel uplink, amati siapa saja yang terdampak. Catat pada diagram bagian mana yang \nmerupakan single point of failure dan usulkan mitigasinya.",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Tahap 1 — Analisis kebutuhan (40 menit)"
+          },
+          {
+            "type": "paragraph",
+            "text": "Berdasarkan skenario Tugas Besar (6 editor, 1 *render node*, 1 server aset, 1 komputer siaran, tamu), susun tabel kebutuhan: jumlah perangkat, perkiraan lalu lintas puncak per perangkat, dan tingkat kekritisannya."
+          },
+          {
+            "type": "paragraph",
+            "text": "**Checkpoint 1:** tabel kebutuhan disertai estimasi *bandwidth* yang beralasan."
+          },
+          {
+            "type": "heading",
+            "text": "Tahap 2 — Perancangan topologi (60 menit)"
+          },
+          {
+            "type": "paragraph",
+            "text": "Buat dua alternatif rancangan di draw.io: (a) *star* tunggal dengan satu *switch*, (b) *star* bertingkat dengan pemisahan segmen. Untuk setiap alternatif, tuliskan: jumlah port yang dibutuhkan, perkiraan panjang kabel, titik kegagalan tunggal, dan perkiraan biaya relatif."
+          },
+          {
+            "type": "paragraph",
+            "text": "**Checkpoint 2:** dua diagram berlabel + tabel perbandingan."
+          },
+          {
+            "type": "heading",
+            "text": "Tahap 3 — Implementasi mini-LAN (70 menit)"
+          },
+          {
+            "type": "paragraph",
+            "text": "Bangun jaringan nyata: seluruh laptop kelompok + Raspberry Pi ke satu switch, alamat statis `192.168.10.101`–`192.168.10.110`, *netmask* `255.255.255.0`."
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "text": "# Raspberry Pi (NetworkManager)\nsudo nmcli con mod \"Wired connection 1\" ipv4.addresses 192.168.10.13/24\nsudo nmcli con mod \"Wired connection 1\" ipv4.method manual\nsudo nmcli con up \"Wired connection 1\"\nip a show eth0"
+          },
+          {
+            "type": "paragraph",
+            "text": "Uji: `ping` antar-perangkat, transfer berkas 500 MB antar-laptop, catat waktunya."
+          },
+          {
+            "type": "paragraph",
+            "text": "**Checkpoint 3:** seluruh perangkat saling *ping* dan hasil transfer tercatat."
+          },
+          {
+            "type": "heading",
+            "text": "Tahap 4 — Uji kegagalan (30 menit)"
+          },
+          {
+            "type": "paragraph",
+            "text": "Cabut kabel *uplink*, amati siapa saja yang terdampak. Catat pada diagram bagian mana yang merupakan *single point of failure* dan usulkan mitigasinya."
+          }
+        ]
+      },
+      {
+        "title": "VI. Tugas Praktikum dan Laporan",
+        "text": "1. Tabel kebutuhan dan estimasi bandwidth.\n2. Dua alternatif diagram topologi + tabel perbandingan + rekomendasi akhir.\n3. Bukti implementasi mini-LAN (tangkapan layar ping dan hasil transfer).\n4. Analisis single point of failure dan mitigasinya.",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Tabel kebutuhan dan estimasi *bandwidth*.",
+              "Dua alternatif diagram topologi + tabel perbandingan + rekomendasi akhir.",
+              "Bukti implementasi mini-LAN (tangkapan layar `ping` dan hasil transfer).",
+              "Analisis *single point of failure* dan mitigasinya."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "VII. Pertanyaan Analisis",
+        "text": "1. Mengapa topologi mesh penuh tidak praktis untuk studio 10 perangkat?\n2. Jika anggaran hanya cukup untuk satu switch gigabit, di titik mana harus dipasang?\n★ Tantangan: rancang topologi untuk studio dua lantai dan hitung kebutuhan kabel serta \nperangkat penghubungnya.",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Mengapa topologi *mesh* penuh tidak praktis untuk studio 10 perangkat?",
+              "Jika anggaran hanya cukup untuk satu *switch* gigabit, di titik mana harus dipasang?"
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "★ **Tantangan:** rancang topologi untuk studio dua lantai dan hitung kebutuhan kabel serta perangkat penghubungnya."
+          }
+        ]
+      }
+    ],
+    "clo": "CLO 2",
+    "assessment": false
+  },
+  {
+    "id": 10,
+    "title": "Asesmen 2 · Mini-LAN",
+    "fullTitle": "Asesmen 2: Desain dan Implementasi Mini-LAN",
+    "hook": "Gabungkan desain, pengalamatan, dan pengukuran pada satu mini-LAN.",
+    "concepts": [
+      "Jaringan berfungsi bila pengalamatan dan konektivitas sesuai desain yang dapat ditelusuri.",
+      "Ping menguji keterjangkauan; iperf3 mengukur throughput pada konfigurasi pengujian tertentu.",
+      "Penjelasan lisan dan bukti eksperimen sama pentingnya dengan sistem yang menyala."
+    ],
+    "tools": "Laptop / Pi · switch",
+    "strategy": "Demo & tanya jawab",
+    "explorer": "network",
+    "checks": [
+      "Desain studio dan IP plan lengkap.",
+      "Implementasi mini-LAN sesuai desain.",
+      "Hasil throughput, diagnosis, dan penjelasan individu tersedia."
+    ],
+    "quiz": [
+      {
+        "q": "Ping berhasil membuktikan…",
+        "options": [
+          "Keterjangkauan ICMP sesuai pengujian",
+          "Kecepatan transfer maksimal",
+          "Semua service sehat"
+        ],
+        "answer": 0,
+        "explanation": "Layanan dan throughput memerlukan pengujian tambahan."
+      },
+      {
+        "q": "Alat untuk mengukur throughput jaringan terkontrol adalah…",
+        "options": [
+          "Hex viewer",
+          "iperf3",
+          "Crimper"
+        ],
+        "answer": 1,
+        "explanation": "Catat arah, durasi, transport, dan jumlah aliran."
+      },
+      {
+        "q": "Konfigurasi yang baik harus…",
+        "options": [
+          "Hanya ada di kepala operator",
+          "Tidak pernah diuji",
+          "Sesuai desain dan terdokumentasi"
+        ],
+        "answer": 2,
+        "explanation": "Bukti memungkinkan orang lain memverifikasi sistem."
+      }
+    ],
+    "sections": [
+      {
+        "title": "I. Tujuan",
+        "text": "Mengukur ketercapaian Sub-CLO media penyimpanan, perangkat I/O, pengenalan jaringan, \ndan model jaringan komputer secara terpadu.",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Mengukur ketercapaian Sub-CLO media penyimpanan, perangkat I/O, pengenalan jaringan, dan model jaringan komputer secara terpadu."
+          }
+        ]
+      },
+      {
+        "title": "II. Ketentuan",
+        "text": "• Dikerjakan berkelompok (4–5 orang), dinilai per kelompok (70%) dan per individu \nmelalui tanya jawab (30%).\n• Waktu: 150 menit implementasi + 60 menit demo dan tanya jawab + 30 menit \ndokumentasi.\n• Setiap anggota harus dapat menjelaskan seluruh bagian pekerjaan, bukan hanya \nbagiannya.",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": false,
+            "items": [
+              "Dikerjakan berkelompok (4–5 orang), dinilai per kelompok (70%) dan per individu melalui tanya jawab (30%).",
+              "Waktu: 150 menit implementasi + 60 menit demo dan tanya jawab + 30 menit dokumentasi.",
+              "Setiap anggota harus dapat menjelaskan seluruh bagian pekerjaan, bukan hanya bagiannya."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "III. Soal Asesmen",
+        "text": "Bangun jaringan mini untuk sebuah unit produksi kecil: 4 workstation editor (laptop \nanggota), 1 server aset (Raspberry Pi), dan 1 titik pemicu instalasi interaktif (GPIO \npada Raspberry Pi yang sama). Jaringan harus berada pada subnet 192.168.10.0/24, \nseluruh perangkat saling terjangkau, dan server aset harus dapat menerima berkas \ndari seluruh workstation.",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Bangun jaringan mini untuk sebuah unit produksi kecil: 4 *workstation* editor (laptop anggota), 1 server aset (Raspberry Pi), dan 1 titik pemicu instalasi interaktif (GPIO pada Raspberry Pi yang sama). Jaringan harus berada pada subnet `192.168.10.0/24`, seluruh perangkat saling terjangkau, dan server aset harus dapat menerima berkas dari seluruh *workstation*."
+          }
+        ]
+      },
+      {
+        "title": "IV. Komponen Penilaian",
+        "text": "No Komponen Bobot\n1 Diagram topologi yang sesuai\ndengan implementasi nyata\n15\n2 Konfigurasi alamat dan \nkonektivitas berjalan (ping\nseluruh perangkat)\n20\n3 Transfer berkas ke server \naset berhasil + waktu \ntercatat\n15\n4 Pemicu GPIO berfungsi \nmemutar media\n15\n5 Kalkulasi kebutuhan \npenyimpanan dan bandwidth\nproyek\n15\n6 Tanya jawab individu \n(pemahaman konsep)\n20",
+        "blocks": [
+          {
+            "type": "table",
+            "headers": [
+              "No",
+              "Komponen",
+              "Bobot"
+            ],
+            "rows": [
+              [
+                "1",
+                "Diagram topologi yang sesuai dengan implementasi nyata",
+                "15"
+              ],
+              [
+                "2",
+                "Konfigurasi alamat dan konektivitas berjalan (`ping` seluruh perangkat)",
+                "20"
+              ],
+              [
+                "3",
+                "Transfer berkas ke server aset berhasil + waktu tercatat",
+                "15"
+              ],
+              [
+                "4",
+                "Pemicu GPIO berfungsi memutar media",
+                "15"
+              ],
+              [
+                "5",
+                "Kalkulasi kebutuhan penyimpanan dan *bandwidth* proyek",
+                "15"
+              ],
+              [
+                "6",
+                "Tanya jawab individu (pemahaman konsep)",
+                "20"
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "title": "V. Ketentuan Demo",
+        "text": "Demo dilakukan tanpa konfigurasi ulang. Asisten akan mencabut satu kabel secara acak dan \nmeminta kelompok mendiagnosis serta memulihkan koneksi dalam 5 menit — kemampuan \nini dinilai sebagai bagian dari komponen 2.",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Demo dilakukan tanpa konfigurasi ulang. Asisten akan mencabut satu kabel secara acak dan meminta kelompok mendiagnosis serta memulihkan koneksi dalam 5 menit — kemampuan ini dinilai sebagai bagian dari komponen 2."
+          }
+        ]
+      }
+    ],
+    "clo": "CLO 2",
+    "assessment": true
+  },
+  {
+    "id": 11,
+    "title": "Kabel & kualitas koneksi",
+    "fullTitle": "Pengkabelan Straight, Cross, Roll-over dan Uji  Throughput",
+    "hook": "Kabel berhasil melakukan ping. Apakah sudah cukup untuk streaming?",
+    "concepts": [
+      "T568A dan T568B mengatur pasangan kabel, bukan kecepatan yang dijamin.",
+      "Straight memakai standar sama pada dua ujung; crossover A–B melatih pemahaman pasangan.",
+      "Auto MDI-X sering membuat crossover tidak diperlukan; tetap verifikasi tester dan throughput."
+    ],
+    "tools": "Crimper · RJ45 · UTP · LAN tester",
+    "strategy": "Station rotation",
+    "explorer": "cable",
+    "checks": [
+      "Kabel straight lolos LAN tester.",
+      "Kabel crossover dan pola kegagalan dianalisis.",
+      "Throughput dua arah serta ping tercatat."
+    ],
+    "quiz": [
+      {
+        "q": "Kabel straight menggunakan…",
+        "options": [
+          "A di satu ujung dan B di ujung lain",
+          "Standar sama di kedua ujung",
+          "Warna acak"
+        ],
+        "answer": 1,
+        "explanation": "Straight bisa A–A atau B–B."
+      },
+      {
+        "q": "Ping cukup untuk menilai kualitas kabel?",
+        "options": [
+          "Tidak; gunakan tester dan uji throughput",
+          "Ya, selalu",
+          "Hanya satu kali ping"
+        ],
+        "answer": 0,
+        "explanation": "Ping tidak memeriksa semua aspek wiring atau kapasitas."
+      },
+      {
+        "q": "Pin pertama T568B adalah…",
+        "options": [
+          "Putih-hijau",
+          "Biru",
+          "Putih-oranye"
+        ],
+        "answer": 2,
+        "explanation": "Urutan B dimulai putih-oranye, oranye, putih-hijau."
+      }
+    ],
+    "sections": [
+      {
+        "title": "I. Tujuan",
+        "text": "1. Mahasiswa mampu membuat kabel UTP straight dan crossover sesuai standar \nT568A/T568B.\n2. Mahasiswa mampu menguji kabel dengan LAN tester dan mendiagnosis kegagalannya.\n3. Mahasiswa mampu mengukur throughput tautan dan membandingkannya dengan \nkebutuhan bitrate multimedia.",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Mahasiswa mampu membuat kabel UTP straight dan crossover sesuai standar T568A/T568B.",
+              "Mahasiswa mampu menguji kabel dengan LAN tester dan mendiagnosis kegagalannya.",
+              "Mahasiswa mampu mengukur *throughput* tautan dan membandingkannya dengan kebutuhan *bitrate* multimedia."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "II. Tugas Pendahuluan",
+        "text": "1. Tuliskan urutan warna T568A dan T568B secara lengkap.\n2. Apa perbedaan penggunaan kabel straight, crossover, dan roll-over?\n3. Apa itu auto-MDIX dan mengapa kabel crossover kini jarang dibutuhkan?\n4. Hitung berapa aliran video 25 Mbps yang dapat dibawa tautan Fast Ethernet 100 Mbps \nsecara teoritis dan realistis.",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Tuliskan urutan warna T568A dan T568B secara lengkap.",
+              "Apa perbedaan penggunaan kabel straight, crossover, dan roll-over?",
+              "Apa itu *auto-MDIX* dan mengapa kabel crossover kini jarang dibutuhkan?",
+              "Hitung berapa aliran video 25 Mbps yang dapat dibawa tautan *Fast Ethernet* 100 Mbps secara teoritis dan realistis."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "III. Dasar Teori",
+        "text": "Kabel UTP kategori 5e/6 berisi empat pasang kawat terpilin. Pilinan tersebut bukan hiasan: ia \nmeredam interferensi elektromagnetik melalui pembatalan medan. Karena itu, membuka \npilinan lebih dari sekitar 13 mm saat memasang konektor RJ45 akan menurunkan kualitas \ntautan, terutama pada kecepatan gigabit.\nKabel straight memakai urutan yang sama di kedua ujung dan dipakai untuk \nmenghubungkan perangkat berbeda jenis (komputer–switch). Kabel crossover menukar \npasangan transmisi dan penerimaan untuk menghubungkan perangkat sejenis (komputer–\nkomputer). Perangkat modern umumnya mendukung auto-MDIX sehingga dapat \nmenyesuaikan sendiri, tetapi kemampuan membuat dan mendiagnosis kedua jenis kabel tetap \nmerupakan keterampilan dasar.\nBagi studio multimedia, mutu tautan fisik berdampak langsung: kabel yang buruk \nmenghasilkan retransmission pada TCP dan frame drop pada siaran langsung, meski lampu \nLED tetap menyala hijau.",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Kabel UTP kategori 5e/6 berisi empat pasang kawat terpilin. Pilinan tersebut bukan hiasan: ia meredam interferensi elektromagnetik melalui pembatalan medan. Karena itu, membuka pilinan lebih dari sekitar 13 mm saat memasang konektor RJ45 akan menurunkan kualitas tautan, terutama pada kecepatan gigabit."
+          },
+          {
+            "type": "paragraph",
+            "text": "Kabel **straight** memakai urutan yang sama di kedua ujung dan dipakai untuk menghubungkan perangkat berbeda jenis (komputer–switch). Kabel **crossover** menukar pasangan transmisi dan penerimaan untuk menghubungkan perangkat sejenis (komputer–komputer). Perangkat modern umumnya mendukung *auto-MDIX* sehingga dapat menyesuaikan sendiri, tetapi kemampuan membuat dan mendiagnosis kedua jenis kabel tetap merupakan keterampilan dasar."
+          },
+          {
+            "type": "paragraph",
+            "text": "Bagi studio multimedia, mutu tautan fisik berdampak langsung: kabel yang buruk menghasilkan *retransmission* pada TCP dan *frame drop* pada siaran langsung, meski lampu LED tetap menyala hijau."
+          }
+        ]
+      },
+      {
+        "title": "IV. Alat dan Bahan",
+        "text": "Kabel UTP Cat5e/Cat6, konektor RJ45, tang crimping, pemotong, LAN tester, laptop, Raspberry \nPi, iperf3.",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Kabel UTP Cat5e/Cat6, konektor RJ45, tang crimping, pemotong, LAN tester, laptop, Raspberry Pi, `iperf3`."
+          }
+        ]
+      },
+      {
+        "title": "V. Langkah Praktikum",
+        "text": "Station A — Membuat kabel straight (45 menit)\n1. Potong kabel sepanjang ± 1,5 m dan kupas selongsong luar ± 2,5 cm.\n2. Urai pasangan, luruskan, susun sesuai T568B: putih-oranye, oranye, putih-hijau, biru, \nputih-biru, hijau, putih-cokelat, cokelat.\n3. Ratakan ujung dengan pemotong hingga rapi, masukkan ke RJ45 sampai menyentuh \nujung konektor; selongsong harus ikut masuk ke dalam konektor.\n4. Crimping dengan tekanan penuh sekali saja. Ulangi untuk ujung kedua dengan urutan \nsama.\nCheckpoint 1: kabel straight lolos uji LAN tester (LED 1–8 menyala berurutan).\nStation B — Membuat kabel crossover + diagnosis (45 menit)\nUjung pertama T568B, ujung kedua T568A (putih-hijau, hijau, putih-oranye, biru, putih-biru, \noranye, putih-cokelat, cokelat).\nUji dengan tester dan catat pola LED. Kemudian buat satu kabel cacat secara sengaja (misal \npasangan 3 dan 6 tertukar) dan catat pola kegagalannya sebagai bahan diagnosis.\nCheckpoint 2: kabel crossover lolos uji + tabel pola kegagalan kabel cacat.\nStation C — Uji tautan langsung dan throughput (45 menit)\nHubungkan laptop ke Raspberry Pi langsung dengan kabel buatan sendiri (tanpa switch). Beri\nalamat manual 192.168.50.1/24 (laptop) dan 192.168.50.2/24 (Raspberry Pi).\n# di Raspberry Pi\niperf3 -s\n# di laptop\niperf3 -c 192.168.50.2 -t 20\niperf3 -c 192.168.50.2 -t 20 -R # arah sebaliknya\nping -c 20 192.168.50.2 # catat rata-rata dan variasi latensi\nCheckpoint 3: angka throughput dua arah tercatat + hasil ping.\nStation D — Analisis kelayakan multimedia (45 menit)\nDengan angka throughput yang diperoleh, hitung: berapa aliran 1080p 25 Mbps, 1080p 50 \nMbps, dan 4K 100 Mbps yang dapat dilayani tautan tersebut secara bersamaan dengan \ncadangan aman 30%. Bandingkan pula dengan hasil transfer berkas nyata.",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Station A — Membuat kabel straight (45 menit)"
+          },
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Potong kabel sepanjang ± 1,5 m dan kupas selongsong luar ± 2,5 cm.",
+              "Urai pasangan, luruskan, susun sesuai **T568B**: putih-oranye, oranye, putih-hijau, biru, putih-biru, hijau, putih-cokelat, cokelat.",
+              "Ratakan ujung dengan pemotong hingga rapi, masukkan ke RJ45 sampai menyentuh ujung konektor; selongsong harus ikut masuk ke dalam konektor.",
+              "Crimping dengan tekanan penuh sekali saja. Ulangi untuk ujung kedua dengan urutan sama."
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "**Checkpoint 1:** kabel straight lolos uji LAN tester (LED 1–8 menyala berurutan)."
+          },
+          {
+            "type": "heading",
+            "text": "Station B — Membuat kabel crossover + diagnosis (45 menit)"
+          },
+          {
+            "type": "paragraph",
+            "text": "Ujung pertama T568B, ujung kedua **T568A** (putih-hijau, hijau, putih-oranye, biru, putih-biru, oranye, putih-cokelat, cokelat)."
+          },
+          {
+            "type": "paragraph",
+            "text": "Uji dengan tester dan catat pola LED. Kemudian buat satu kabel **cacat** secara sengaja (misal pasangan 3 dan 6 tertukar) dan catat pola kegagalannya sebagai bahan diagnosis."
+          },
+          {
+            "type": "paragraph",
+            "text": "**Checkpoint 2:** kabel crossover lolos uji + tabel pola kegagalan kabel cacat."
+          },
+          {
+            "type": "heading",
+            "text": "Station C — Uji tautan langsung dan throughput (45 menit)"
+          },
+          {
+            "type": "paragraph",
+            "text": "Hubungkan laptop ke Raspberry Pi **langsung** dengan kabel buatan sendiri (tanpa switch). Beri alamat manual `192.168.50.1/24` (laptop) dan `192.168.50.2/24` (Raspberry Pi)."
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "text": "# di Raspberry Pi\niperf3 -s\n# di laptop\niperf3 -c 192.168.50.2 -t 20\niperf3 -c 192.168.50.2 -t 20 -R      # arah sebaliknya\nping -c 20 192.168.50.2              # catat rata-rata dan variasi latensi"
+          },
+          {
+            "type": "paragraph",
+            "text": "**Checkpoint 3:** angka *throughput* dua arah tercatat + hasil `ping`."
+          },
+          {
+            "type": "heading",
+            "text": "Station D — Analisis kelayakan multimedia (45 menit)"
+          },
+          {
+            "type": "paragraph",
+            "text": "Dengan angka *throughput* yang diperoleh, hitung: berapa aliran 1080p 25 Mbps, 1080p 50 Mbps, dan 4K 100 Mbps yang dapat dilayani tautan tersebut secara bersamaan dengan cadangan aman 30%. Bandingkan pula dengan hasil transfer berkas nyata."
+          }
+        ]
+      },
+      {
+        "title": "VI. Tugas Praktikum dan Laporan",
+        "text": "1. Foto kabel buatan sendiri (kedua ujung) dan hasil uji tester.\n2. Tabel pola kegagalan kabel cacat beserta interpretasinya.\n3. Hasil iperf3 dua arah dan ping.\n4. Perhitungan kelayakan tautan untuk beban multimedia.",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Foto kabel buatan sendiri (kedua ujung) dan hasil uji tester.",
+              "Tabel pola kegagalan kabel cacat beserta interpretasinya.",
+              "Hasil `iperf3` dua arah dan `ping`.",
+              "Perhitungan kelayakan tautan untuk beban multimedia."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "VII. Pertanyaan Analisis",
+        "text": "1. Mengapa throughput nyata selalu lebih rendah dari kecepatan nominal tautan?\n2. Sebuah kabel lolos tester tetapi throughput-nya hanya 90 Mbps pada perangkat gigabit. \nApa dugaan penyebabnya?\n★ Tantangan: buat kabel roll-over dan jelaskan pemakaiannya untuk akses konsol perangkat \njaringan.",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Mengapa *throughput* nyata selalu lebih rendah dari kecepatan nominal tautan?",
+              "Sebuah kabel lolos tester tetapi *throughput*-nya hanya 90 Mbps pada perangkat gigabit. Apa dugaan penyebabnya?"
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "★ **Tantangan:** buat kabel roll-over dan jelaskan pemakaiannya untuk akses konsol perangkat jaringan."
+          }
+        ]
+      }
+    ],
+    "clo": "CLO 2",
+    "assessment": false
+  },
+  {
+    "id": 12,
+    "title": "Protokol streaming",
+    "fullTitle": "Analisis Protokol Streaming dengan Wireshark",
+    "hook": "Jelaskan video yang tersendat melalui bukti pada protokol jaringan.",
+    "concepts": [
+      "OSI membantu menelusuri gejala dari link hingga aplikasi; TCP/IP mengelompokkan fungsi komunikasi.",
+      "TCP menyediakan pengiriman andal dan berurutan; UDP tidak menjamin pengiriman ulang.",
+      "Bitrate, loss, jitter, dan buffering bersama-sama memengaruhi pengalaman streaming."
+    ],
+    "tools": "Laptop / Pi · Wireshark",
+    "strategy": "Jigsaw OSI & error hunt",
+    "explorer": "protocol",
+    "checks": [
+      "Capture lab diberi anotasi lapisan OSI.",
+      "Statistik TCP dan UDP dibandingkan.",
+      "Gejala visual dipasangkan dengan bukti jaringan."
+    ],
+    "quiz": [
+      {
+        "q": "TCP menyediakan…",
+        "options": [
+          "Pengiriman andal dan berurutan",
+          "Jaminan latensi nol",
+          "Bandwidth tanpa batas"
+        ],
+        "answer": 0,
+        "explanation": "Keandalan menggunakan mekanisme seperti acknowledgment dan retransmisi."
+      },
+      {
+        "q": "Jitter merupakan variasi…",
+        "options": [
+          "Ukuran layar",
+          "Waktu kedatangan/delay paket",
+          "Jumlah folder"
+        ],
+        "answer": 1,
+        "explanation": "Variasi delay dapat mengganggu kelancaran playback."
+      },
+      {
+        "q": "Capture praktikum dilakukan pada…",
+        "options": [
+          "Seluruh komunikasi kampus",
+          "Pesan pribadi teman",
+          "Trafik uji di segmen lab yang diizinkan"
+        ],
+        "answer": 2,
+        "explanation": "Gunakan lingkup lab sesuai prosedur modul."
+      }
+    ],
+    "sections": [
+      {
+        "title": "I. Tujuan",
+        "text": "1. Mahasiswa mampu memetakan lapisan model OSI pada paket data nyata.\n2. Mahasiswa mampu membedakan perilaku TCP dan UDP pada pengiriman media.\n3. Mahasiswa mampu menganalisis dampak packet loss dan latensi terhadap kualitas \nstreaming.",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Mahasiswa mampu memetakan lapisan model OSI pada paket data nyata.",
+              "Mahasiswa mampu membedakan perilaku TCP dan UDP pada pengiriman media.",
+              "Mahasiswa mampu menganalisis dampak *packet loss* dan latensi terhadap kualitas *streaming*."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "II. Tugas Pendahuluan",
+        "text": "1. Sebutkan tujuh lapisan OSI beserta fungsi dan satu contoh protokol tiap lapisan.\n2. Jelaskan three-way handshake TCP.\n3. Mengapa live streaming sering memilih UDP, sementara pengiriman berkas selalu \nmemakai TCP?\n4. Apa itu RTMP, HLS, dan SRT? Di lapisan mana masing-masing bekerja?",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Sebutkan tujuh lapisan OSI beserta fungsi dan satu contoh protokol tiap lapisan.",
+              "Jelaskan *three-way handshake* TCP.",
+              "Mengapa *live streaming* sering memilih UDP, sementara pengiriman berkas selalu memakai TCP?",
+              "Apa itu RTMP, HLS, dan SRT? Di lapisan mana masing-masing bekerja?"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "III. Dasar Teori",
+        "text": "Model OSI membagi komunikasi menjadi tujuh lapisan agar setiap persoalan ditangani pada \ntempatnya. Dalam praktik, satu frame yang lewat di kabel dapat dibaca berlapis: Ethernet \n(lapisan 2) membungkus IP (lapisan 3), yang membungkus TCP atau UDP (lapisan 4), yang \nmembungkus muatan aplikasi (lapisan 7). Wireshark menampilkan pembungkusan ini secara \nlangsung, sehingga model OSI berhenti menjadi hafalan.\nPilihan protokol lapisan transport menentukan karakter layanan multimedia. TCP menjamin \nseluruh data sampai utuh dan berurutan dengan cara mengirim ulang paket hilang — bagus \nuntuk transfer berkas, tetapi pengiriman ulang menambah keterlambatan yang merusak \nsiaran langsung. UDP tidak menjamin apa pun, sehingga paket hilang berarti artifact pada \ngambar, namun aliran tetap berjalan tanpa jeda. Protokol modern seperti SRT berupaya \nmenggabungkan keduanya: berbasis UDP dengan pemulihan kesalahan yang terkendali batas \nwaktu.",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Model OSI membagi komunikasi menjadi tujuh lapisan agar setiap persoalan ditangani pada tempatnya. Dalam praktik, satu *frame* yang lewat di kabel dapat dibaca berlapis: Ethernet (lapisan 2) membungkus IP (lapisan 3), yang membungkus TCP atau UDP (lapisan 4), yang membungkus muatan aplikasi (lapisan 7). Wireshark menampilkan pembungkusan ini secara langsung, sehingga model OSI berhenti menjadi hafalan."
+          },
+          {
+            "type": "paragraph",
+            "text": "Pilihan protokol lapisan transport menentukan karakter layanan multimedia. **TCP** menjamin seluruh data sampai utuh dan berurutan dengan cara mengirim ulang paket hilang — bagus untuk transfer berkas, tetapi pengiriman ulang menambah keterlambatan yang merusak siaran langsung. **UDP** tidak menjamin apa pun, sehingga paket hilang berarti *artifact* pada gambar, namun aliran tetap berjalan tanpa jeda. Protokol modern seperti SRT berupaya menggabungkan keduanya: berbasis UDP dengan pemulihan kesalahan yang terkendali batas waktu."
+          }
+        ]
+      },
+      {
+        "title": "IV. Alat dan Bahan",
+        "text": "Laptop (Wireshark, FFmpeg, VLC), Raspberry Pi, jaringan lab.",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Laptop (Wireshark, FFmpeg, VLC), Raspberry Pi, jaringan lab."
+          }
+        ]
+      },
+      {
+        "title": "V. Langkah Praktikum",
+        "text": "Tahap 1 — Membedah frame (50 menit)\nJalankan Wireshark pada antarmuka lab, lalu:\nping -c 4 192.168.10.1N\nGunakan filter icmp. Buka satu paket dan petakan setiap lapisan yang tampak ke lapisan OSI. \nCatat: MAC sumber/tujuan, IP sumber/tujuan, jenis protokol, ukuran frame.\nCheckpoint 1: tangkapan layar paket beranotasi lapisan OSI.\nTahap 2 — TCP vs UDP untuk media (60 menit)\nKirim video melalui UDP dari laptop A ke laptop B:\n# pengirim\nffmpeg -re -i uji-1080p.mp4 -c copy -f mpegts udp://192.168.10.102:1234\n# penerima\nffplay udp://192.168.10.102:1234\nLalu bandingkan dengan pengiriman berbasis TCP:\nffmpeg -re -i uji-1080p.mp4 -c copy -f mpegts tcp://192.168.10.102:1234?listen\nffplay tcp://192.168.10.101:1234\nTangkap keduanya di Wireshark (filter udp.port==1234 dan tcp.port==1234). Bandingkan: \njumlah paket, adanya retransmission, keteraturan waktu antar-paket.\nCheckpoint 2: perbandingan statistik kedua sesi (gunakan Statistics → Conversations).\nTahap 3 — Simulasi jaringan buruk (60 menit)\nPada Raspberry Pi yang menjadi perantara atau pada pengirim Linux:\nsudo tc qdisc add dev eth0 root netem loss 5%\n# ulangi pengiriman UDP dan amati kualitas gambar\nsudo tc qdisc change dev eth0 root netem delay 200ms\nsudo tc qdisc del dev eth0 root # kembalikan\nCatat gejala visual dan gejala pada Wireshark untuk setiap kondisi.\nCheckpoint 3: tabel kondisi jaringan → gejala visual → bukti pada Wireshark.\nTahap 4 — Analisis HTTP/HLS (30 menit)\nBuka sebuah pemutar video web, gunakan filter http atau tls, dan amati pola permintaan \nsegmen berkala yang menjadi ciri HLS/DASH.",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Tahap 1 — Membedah frame (50 menit)"
+          },
+          {
+            "type": "paragraph",
+            "text": "Jalankan Wireshark pada antarmuka lab, lalu:"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "text": "ping -c 4 192.168.10.1N"
+          },
+          {
+            "type": "paragraph",
+            "text": "Gunakan filter `icmp`. Buka satu paket dan petakan setiap lapisan yang tampak ke lapisan OSI. Catat: MAC sumber/tujuan, IP sumber/tujuan, jenis protokol, ukuran *frame*."
+          },
+          {
+            "type": "paragraph",
+            "text": "**Checkpoint 1:** tangkapan layar paket beranotasi lapisan OSI."
+          },
+          {
+            "type": "heading",
+            "text": "Tahap 2 — TCP vs UDP untuk media (60 menit)"
+          },
+          {
+            "type": "paragraph",
+            "text": "Kirim video melalui UDP dari laptop A ke laptop B:"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "text": "# pengirim\nffmpeg -re -i ~/praktikum/media/uji-1080p.mp4 -c copy -f mpegts udp://192.168.10.102:1234\n# penerima\nffplay udp://192.168.10.102:1234"
+          },
+          {
+            "type": "paragraph",
+            "text": "Lalu bandingkan dengan pengiriman berbasis TCP:"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "text": "ffmpeg -re -i ~/praktikum/media/uji-1080p.mp4 -c copy -f mpegts tcp://192.168.10.102:1234?listen\nffplay tcp://192.168.10.101:1234"
+          },
+          {
+            "type": "paragraph",
+            "text": "Tangkap keduanya di Wireshark (filter `udp.port==1234` dan `tcp.port==1234`). Bandingkan: jumlah paket, adanya *retransmission*, keteraturan waktu antar-paket."
+          },
+          {
+            "type": "paragraph",
+            "text": "**Checkpoint 2:** perbandingan statistik kedua sesi (gunakan *Statistics → Conversations*)."
+          },
+          {
+            "type": "heading",
+            "text": "Tahap 3 — Simulasi jaringan buruk (60 menit)"
+          },
+          {
+            "type": "paragraph",
+            "text": "Pada Raspberry Pi yang menjadi perantara atau pada pengirim Linux:"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "text": "sudo tc qdisc add dev eth0 root netem loss 5%\n# ulangi pengiriman UDP dan amati kualitas gambar\nsudo tc qdisc change dev eth0 root netem delay 200ms\nsudo tc qdisc del dev eth0 root      # kembalikan"
+          },
+          {
+            "type": "paragraph",
+            "text": "Catat gejala visual dan gejala pada Wireshark untuk setiap kondisi."
+          },
+          {
+            "type": "paragraph",
+            "text": "**Checkpoint 3:** tabel kondisi jaringan → gejala visual → bukti pada Wireshark."
+          },
+          {
+            "type": "heading",
+            "text": "Tahap 4 — Analisis HTTP/HLS (30 menit)"
+          },
+          {
+            "type": "paragraph",
+            "text": "Buka sebuah pemutar video web, gunakan filter `http` atau `tls`, dan amati pola permintaan segmen berkala yang menjadi ciri HLS/DASH."
+          }
+        ]
+      },
+      {
+        "title": "VI. Tugas Praktikum dan Laporan",
+        "text": "1. Paket beranotasi lapisan OSI.\n2. Tabel perbandingan TCP vs UDP (jumlah paket, retransmission, jitter, pengalaman \nmenonton).\n3. Tabel simulasi jaringan buruk.\n4. Rekomendasi protokol untuk tiga kasus: siaran langsung ke publik, kontribusi kamera \njarak jauh, unggah berkas master.",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Paket beranotasi lapisan OSI.",
+              "Tabel perbandingan TCP vs UDP (jumlah paket, *retransmission*, jitter, pengalaman menonton).",
+              "Tabel simulasi jaringan buruk.",
+              "Rekomendasi protokol untuk tiga kasus: siaran langsung ke publik, kontribusi kamera jarak jauh, unggah berkas master."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "VII. Pertanyaan Analisis",
+        "text": "1. Mengapa penambahan buffer mengurangi gejala stuttering tetapi menambah latensi?\n2. Apa yang terlihat di Wireshark ketika jaringan mengalami congestion pada sesi TCP?\n★ Tantangan: ukur latensi ujung-ke-ujung dengan merekam jam digital di layar sumber dan \nmembandingkannya di layar penerima.",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Mengapa penambahan *buffer* mengurangi gejala *stuttering* tetapi menambah latensi?",
+              "Apa yang terlihat di Wireshark ketika jaringan mengalami *congestion* pada sesi TCP?"
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "★ **Tantangan:** ukur latensi ujung-ke-ujung dengan merekam jam digital di layar sumber dan membandingkannya di layar penerima."
+          }
+        ]
+      }
+    ],
+    "clo": "CLO 2",
+    "assessment": false
+  },
+  {
+    "id": 13,
+    "title": "IP, DHCP & resolusi nama",
+    "fullTitle": "IP Address, DHCP, dan DNS untuk Jaringan Studio",
+    "hook": "Bagaimana workstation menemukan alamatnya, gateway, dan server studio?",
+    "concepts": [
+      "DHCP mengalokasikan konfigurasi melalui Discover, Offer, Request, Acknowledge.",
+      "Default gateway digunakan untuk tujuan di luar subnet lokal; DNS menerjemahkan nama.",
+      "mDNS untuk nama .local berbeda dari DNS unicast. Uji keduanya secara terpisah."
+    ],
+    "tools": "Pi / VM · switch · dnsmasq",
+    "strategy": "Live config & error hunt",
+    "explorer": "subnet",
+    "checks": [
+      "Alamat statis berfungsi antarperangkat lab.",
+      "Lease DHCP dan tahapan DORA dibuktikan.",
+      "Akses menggunakan nama berhasil dan dijelaskan."
+    ],
+    "quiz": [
+      {
+        "q": "Urutan DHCP adalah…",
+        "options": [
+          "Discover–Offer–Request–Acknowledge",
+          "Offer–Discover–Acknowledge–Request",
+          "Request–Offer–Discover–Acknowledge"
+        ],
+        "answer": 0,
+        "explanation": "DORA merangkum empat tahap DHCP."
+      },
+      {
+        "q": "Tujuan di luar subnet biasanya dikirim ke…",
+        "options": [
+          "Monitor",
+          "Default gateway",
+          "Folder home"
+        ],
+        "answer": 1,
+        "explanation": "Tabel routing menentukan next hop."
+      },
+      {
+        "q": "Bisa ping IP, tetapi nama gagal. Kandidat awal…",
+        "options": [
+          "Kapasitas RAM",
+          "Crimping pasti rusak",
+          "Resolusi nama / DNS"
+        ],
+        "answer": 2,
+        "explanation": "Konektivitas IP yang berhasil membantu mempersempit diagnosis."
+      }
+    ],
+    "sections": [
+      {
+        "title": "I. Tujuan",
+        "text": "1. Mahasiswa mampu menjelaskan struktur IPv4, kelas alamat, dan alamat privat.\n2. Mahasiswa mampu mengonfigurasi alamat statis dan dinamis pada Linux dan \nWindows.\n3. Mahasiswa mampu menjalankan layanan DHCP dan resolusi nama sederhana pada \nRaspberry Pi.",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Mahasiswa mampu menjelaskan struktur IPv4, kelas alamat, dan alamat privat.",
+              "Mahasiswa mampu mengonfigurasi alamat statis dan dinamis pada Linux dan Windows.",
+              "Mahasiswa mampu menjalankan layanan DHCP dan resolusi nama sederhana pada Raspberry Pi."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "II. Tugas Pendahuluan",
+        "text": "1. Tuliskan rentang alamat privat kelas A, B, dan C.\n2. Jelaskan empat tahap proses DHCP (DORA).\n3. Apa perbedaan alamat statis dan dinamis, dan perangkat studio mana yang wajib \nberalamat statis?\n4. Apa itu mDNS dan bagaimana nama.local dapat bekerja tanpa server DNS?",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Tuliskan rentang alamat privat kelas A, B, dan C.",
+              "Jelaskan empat tahap proses DHCP (DORA).",
+              "Apa perbedaan alamat statis dan dinamis, dan perangkat studio mana yang wajib beralamat statis?",
+              "Apa itu mDNS dan bagaimana `nama.local` dapat bekerja tanpa server DNS?"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "III. Dasar Teori",
+        "text": "Alamat IP adalah identitas logis perangkat pada lapisan jaringan. IPv4 terdiri atas 32 bit yang \nditulis sebagai empat oktet desimal, dengan sebagian bit menyatakan jaringan dan sisanya \nmenyatakan host. Alamat dengan seluruh bit host bernilai 0 adalah alamat jaringan, dan yang\nseluruhnya 1 adalah alamat broadcast — keduanya tidak dapat diberikan ke perangkat.\nDHCP menghemat tenaga administrasi dengan memberikan alamat secara otomatis melalui \nempat tahap: Discover, Offer, Request, Acknowledge. Namun dalam studio, perangkat yang \ndituju oleh perangkat lain — server aset, encoder siaran, printer, kamera IP — sebaiknya \nberalamat tetap, baik melalui konfigurasi statis maupun DHCP reservation, agar konfigurasi \nklien tidak perlu diubah setiap kali perangkat menyala ulang.\nPeringatan lab: DHCP server hanya boleh dijalankan pada segmen 192.168.10.0/24 yang \nterisolasi. Menjalankannya di jaringan kampus akan mengganggu pengguna lain.",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Alamat IP adalah identitas logis perangkat pada lapisan jaringan. IPv4 terdiri atas 32 bit yang ditulis sebagai empat oktet desimal, dengan sebagian bit menyatakan jaringan dan sisanya menyatakan *host*. Alamat dengan seluruh bit *host* bernilai 0 adalah **alamat jaringan**, dan yang seluruhnya 1 adalah **alamat broadcast** — keduanya tidak dapat diberikan ke perangkat."
+          },
+          {
+            "type": "paragraph",
+            "text": "**DHCP** menghemat tenaga administrasi dengan memberikan alamat secara otomatis melalui empat tahap: *Discover*, *Offer*, *Request*, *Acknowledge*. Namun dalam studio, perangkat yang dituju oleh perangkat lain — server aset, *encoder* siaran, *printer*, kamera IP — sebaiknya beralamat tetap, baik melalui konfigurasi statis maupun *DHCP reservation*, agar konfigurasi klien tidak perlu diubah setiap kali perangkat menyala ulang."
+          },
+          {
+            "type": "paragraph",
+            "text": "**Peringatan lab:** DHCP server hanya boleh dijalankan pada segmen `192.168.10.0/24` yang terisolasi. Menjalankannya di jaringan kampus akan mengganggu pengguna lain."
+          }
+        ]
+      },
+      {
+        "title": "IV. Alat dan Bahan",
+        "text": "Raspberry Pi, laptop, switch lab (terisolasi dari jaringan kampus), dnsmasq, avahi-daemon.",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Raspberry Pi, laptop, switch lab (terisolasi dari jaringan kampus), `dnsmasq`, `avahi-daemon`."
+          }
+        ]
+      },
+      {
+        "title": "V. Langkah Praktikum",
+        "text": "Tahap 1 — Alamat statis (45 menit)\n# Raspberry Pi\nsudo nmcli con mod \"Wired connection 1\" \\\n ipv4.addresses 192.168.10.13/24 ipv4.gateway 192.168.10.1 \\\n ipv4.dns \"8.8.8.8 1.1.1.1\" ipv4.method manual\nsudo nmcli con up \"Wired connection 1\"\nip a show eth0 && ip route && cat /etc/resolv.conf\nPada Windows, atur melalui Control Panel → Network and Sharing Center → Change adapter \nsettings → IPv4 Properties. Verifikasi dengan ipconfig /all dan ping.\nCheckpoint 1: seluruh perangkat kelompok beralamat statis dan saling terjangkau.\nTahap 2 — Menjalankan DHCP server (60 menit)\nsudo apt install -y dnsmasq\nsudo tee /etc/dnsmasq.d/studio.conf >/dev/null <<'EOF'\ninterface=eth0\ndhcp-range=192.168.10.150,192.168.10.180,255.255.255.0,12h\ndhcp-option=3,192.168.10.1\ndhcp-option=6,8.8.8.8,1.1.1.1\ndhcp-host=AA:BB:CC:DD:EE:FF,192.168.10.60 # reservasi server aset\nlog-dhcp\nEOF\nsudo systemctl restart dnsmasq && systemctl status dnsmasq --no-pager\nsudo journalctl -u dnsmasq -f\nUbah satu laptop menjadi Obtain an IP address automatically, lalu amati log DORA di \nRaspberry Pi dan hasil ipconfig /all pada klien (alamat, lease, server DHCP).\nCheckpoint 2: klien memperoleh alamat dari Raspberry Pi + bukti log empat tahap DHCP.\nTahap 3 — Resolusi nama (45 menit)\nsudo apt install -y avahi-daemon\nsudo systemctl enable --now avahi-daemon\n# dari laptop:\nping rpi-03.local\nTambahkan pula entri statis pada /etc/hosts (Linux) atau C:\n\\Windows\\System32\\drivers\\etc\\hosts (Windows), misalnya 192.168.10.60 \nasset.studio.lokal, lalu uji dengan ping asset.studio.lokal.\nCheckpoint 3: akses perangkat berhasil menggunakan nama, bukan alamat IP.\nTahap 4 — Diagnosis konflik (40 menit)\nDua laptop sengaja diberi alamat sama. Amati pesan kesalahan sistem operasi, hasil arp -a, dan\nperilaku ping. Catat langkah diagnosis dan penyelesaiannya.",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Tahap 1 — Alamat statis (45 menit)"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "text": "# Raspberry Pi\nsudo nmcli con mod \"Wired connection 1\" \\\n  ipv4.addresses 192.168.10.13/24 ipv4.gateway 192.168.10.1 \\\n  ipv4.dns \"8.8.8.8 1.1.1.1\" ipv4.method manual\nsudo nmcli con up \"Wired connection 1\"\nip a show eth0 && ip route && cat /etc/resolv.conf"
+          },
+          {
+            "type": "paragraph",
+            "text": "Pada Windows, atur melalui *Control Panel → Network and Sharing Center → Change adapter settings → IPv4 Properties*. Verifikasi dengan `ipconfig /all` dan `ping`."
+          },
+          {
+            "type": "paragraph",
+            "text": "**Checkpoint 1:** seluruh perangkat kelompok beralamat statis dan saling terjangkau."
+          },
+          {
+            "type": "heading",
+            "text": "Tahap 2 — Menjalankan DHCP server (60 menit)"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "text": "sudo apt install -y dnsmasq\nsudo tee /etc/dnsmasq.d/studio.conf >/dev/null <<'EOF'\ninterface=eth0\ndhcp-range=192.168.10.150,192.168.10.180,255.255.255.0,12h\ndhcp-option=3,192.168.10.1\ndhcp-option=6,8.8.8.8,1.1.1.1\ndhcp-host=AA:BB:CC:DD:EE:FF,192.168.10.60      # reservasi server aset\nlog-dhcp\nEOF\nsudo systemctl restart dnsmasq && systemctl status dnsmasq --no-pager\nsudo journalctl -u dnsmasq -f"
+          },
+          {
+            "type": "paragraph",
+            "text": "Ubah satu laptop menjadi *Obtain an IP address automatically*, lalu amati log DORA di Raspberry Pi dan hasil `ipconfig /all` pada klien (alamat, *lease*, server DHCP)."
+          },
+          {
+            "type": "paragraph",
+            "text": "**Checkpoint 2:** klien memperoleh alamat dari Raspberry Pi + bukti log empat tahap DHCP."
+          },
+          {
+            "type": "heading",
+            "text": "Tahap 3 — Resolusi nama (45 menit)"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "text": "sudo apt install -y avahi-daemon\nsudo systemctl enable --now avahi-daemon\n# dari laptop:\nping rpi-03.local"
+          },
+          {
+            "type": "paragraph",
+            "text": "Tambahkan pula entri statis pada `/etc/hosts` (Linux) atau `C:\\Windows\\System32\\drivers\\etc\\hosts` (Windows), misalnya `192.168.10.60  asset.studio.lokal`, lalu uji dengan `ping asset.studio.lokal`."
+          },
+          {
+            "type": "paragraph",
+            "text": "**Checkpoint 3:** akses perangkat berhasil menggunakan nama, bukan alamat IP."
+          },
+          {
+            "type": "heading",
+            "text": "Tahap 4 — Diagnosis konflik (40 menit)"
+          },
+          {
+            "type": "paragraph",
+            "text": "Dua laptop sengaja diberi alamat sama. Amati pesan kesalahan sistem operasi, hasil `arp -a`, dan perilaku `ping`. Catat langkah diagnosis dan penyelesaiannya."
+          }
+        ]
+      },
+      {
+        "title": "VI. Tugas Praktikum dan Laporan",
+        "text": "1. Tabel pengalamatan kelompok (perangkat, MAC, IP, statis/dinamis, alasan).\n2. Berkas konfigurasi dnsmasq beserta penjelasan tiap baris.\n3. Bukti log DORA dan hasil ipconfig /all klien.\n4. Laporan eksperimen konflik alamat IP dan penyelesaiannya.",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Tabel pengalamatan kelompok (perangkat, MAC, IP, statis/dinamis, alasan).",
+              "Berkas konfigurasi `dnsmasq` beserta penjelasan tiap baris.",
+              "Bukti log DORA dan hasil `ipconfig /all` klien.",
+              "Laporan eksperimen konflik alamat IP dan penyelesaiannya."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "VII. Pertanyaan Analisis",
+        "text": "1. Mengapa DHCP reservation lebih baik daripada alamat statis manual untuk perangkat \nyang banyak?\n2. Apa yang terjadi jika dua DHCP server aktif di satu segmen?\n★ Tantangan: aktifkan pencatatan nama host pada dnsmasq sehingga seluruh klien DHCP \notomatis dapat diakses melalui namanya.",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Mengapa *DHCP reservation* lebih baik daripada alamat statis manual untuk perangkat yang banyak?",
+              "Apa yang terjadi jika dua DHCP server aktif di satu segmen?"
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "★ **Tantangan:** aktifkan pencatatan nama *host* pada dnsmasq sehingga seluruh klien DHCP otomatis dapat diakses melalui namanya."
+          }
+        ]
+      }
+    ],
+    "clo": "CLO 2",
+    "assessment": false
+  },
+  {
+    "id": 14,
+    "title": "Subnetting, VLSM & routing",
+    "fullTitle": "Subnetting, VLSM, dan Routing untuk Segmentasi  Studio",
+    "hook": "Pisahkan produksi dan tamu tanpa memutus layanan yang dibutuhkan.",
+    "concepts": [
+      "Untuk subnet IPv4 biasa /1–/30, host usable = 2^(32−prefix) − 2.",
+      "VLSM mengalokasikan kebutuhan host terbesar terlebih dahulu pada batas blok yang tepat.",
+      "Routing menghubungkan subnet; firewall membatasi akses; NAT menerjemahkan alamat. Ketiganya berbeda."
+    ],
+    "tools": "Pi dua interface / VM · nftables",
+    "strategy": "Whiteboard sprint",
+    "explorer": "vlsm",
+    "checks": [
+      "Tabel VLSM benar dan tidak overlap.",
+      "Routing antarsegmen dibuktikan.",
+      "Akses tamu ke produksi ditolak; layanan yang diizinkan tetap berfungsi."
+    ],
+    "quiz": [
+      {
+        "q": "Subnet /26 biasa menyediakan host usable…",
+        "options": [
+          "64",
+          "62",
+          "254"
+        ],
+        "answer": 1,
+        "explanation": "Ada 64 alamat, dua dicadangkan untuk network dan broadcast."
+      },
+      {
+        "q": "VLSM dimulai dengan…",
+        "options": [
+          "Kebutuhan host terbesar",
+          "Warna kabel",
+          "Kelompok paling kecil"
+        ],
+        "answer": 0,
+        "explanation": "Alokasi blok besar lebih dahulu memudahkan penyelarasan."
+      },
+      {
+        "q": "NAT dan firewall adalah…",
+        "options": [
+          "Hal yang identik",
+          "Pengganti DHCP",
+          "Fungsi berbeda"
+        ],
+        "answer": 2,
+        "explanation": "Translasi alamat dan kebijakan akses memiliki tujuan berbeda."
+      }
+    ],
+    "sections": [
+      {
+        "title": "I. Tujuan",
+        "text": "1. Mahasiswa mampu menghitung subnet mask, alamat jaringan, broadcast, dan rentang \nhost yang dapat dipakai.\n2. Mahasiswa mampu merancang pengalamatan dengan prinsip VLSM sesuai kebutuhan \nnyata.\n3. Mahasiswa mampu mengimplementasikan routing dan NAT antar-segmen pada \nRaspberry Pi.",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Mahasiswa mampu menghitung *subnet mask*, alamat jaringan, *broadcast*, dan rentang *host* yang dapat dipakai.",
+              "Mahasiswa mampu merancang pengalamatan dengan prinsip VLSM sesuai kebutuhan nyata.",
+              "Mahasiswa mampu mengimplementasikan *routing* dan NAT antar-segmen pada Raspberry Pi."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "II. Tugas Pendahuluan",
+        "text": "1. Hitung alamat jaringan, broadcast, dan jumlah host untuk 192.168.20.0/26.\n2. Jelaskan perbedaan subnetting berukuran tetap dan VLSM.\n3. Apa fungsi default gateway dan bagaimana perangkat memutuskan paket harus dikirim\nke mana?\n4. Jelaskan apa yang dilakukan NAT masquerade.",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Hitung alamat jaringan, *broadcast*, dan jumlah *host* untuk `192.168.20.0/26`.",
+              "Jelaskan perbedaan subnetting berukuran tetap dan VLSM.",
+              "Apa fungsi *default gateway* dan bagaimana perangkat memutuskan paket harus dikirim ke mana?",
+              "Jelaskan apa yang dilakukan NAT *masquerade*."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "III. Dasar Teori",
+        "text": "Subnetting membagi satu blok alamat menjadi beberapa jaringan lebih kecil dengan \nmeminjam bit dari bagian host. VLSM melangkah lebih jauh: setiap segmen mendapat ukuran \nsesuai kebutuhannya, sehingga alamat tidak terbuang. Aturan pengerjaannya sederhana — \nurutkan kebutuhan dari yang terbesar ke terkecil, lalu alokasikan blok berurutan.\nSegmentasi bukan hanya soal penghematan alamat. Pada studio multimedia, segmentasi \nmemisahkan broadcast domain sehingga lonjakan lalu lintas produksi tidak mengganggu \nsegmen siaran, dan membatasi akses tamu ke penyimpanan aset. Agar segmen tetap dapat \nberkomunikasi seperlunya, dibutuhkan perangkat routing — dalam praktikum ini diperankan \noleh Raspberry Pi dengan dua antarmuka (eth0 dan wlan0, atau eth0 ditambah adaptor USB-Ethernet).",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Subnetting membagi satu blok alamat menjadi beberapa jaringan lebih kecil dengan meminjam bit dari bagian *host*. **VLSM** melangkah lebih jauh: setiap segmen mendapat ukuran sesuai kebutuhannya, sehingga alamat tidak terbuang. Aturan pengerjaannya sederhana — urutkan kebutuhan dari yang terbesar ke terkecil, lalu alokasikan blok berurutan."
+          },
+          {
+            "type": "paragraph",
+            "text": "Segmentasi bukan hanya soal penghematan alamat. Pada studio multimedia, segmentasi memisahkan *broadcast domain* sehingga lonjakan lalu lintas produksi tidak mengganggu segmen siaran, dan membatasi akses tamu ke penyimpanan aset. Agar segmen tetap dapat berkomunikasi seperlunya, dibutuhkan perangkat *routing* — dalam praktikum ini diperankan oleh Raspberry Pi dengan dua antarmuka (`eth0` dan `wlan0`, atau `eth0` ditambah adaptor USB-Ethernet)."
+          }
+        ]
+      },
+      {
+        "title": "IV. Alat dan Bahan",
+        "text": "Raspberry Pi (dua antarmuka), laptop, switch lab, nftables, kalkulator subnet manual.",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Raspberry Pi (dua antarmuka), laptop, switch lab, `nftables`, kalkulator subnet manual."
+          }
+        ]
+      },
+      {
+        "title": "V. Langkah Praktikum",
+        "text": "Tahap 1 — Perhitungan VLSM (60 menit)\nBlok tersedia: 192.168.20.0/24. Kebutuhan studio:\nSegmen Jumlah host Keterangan\nProduksi/editor 50 Transfer aset besar\nRender farm 12 Lalu lintas internal\nSiaran/streaming 6 Wajib stabil\nManajemen perangkat 6 Akses admin\nTamu 25 Terisolasi\nKerjakan alokasi VLSM secara manual. Sajikan tabel: nama segmen, alamat jaringan, prefiks, \nsubnet mask, rentang host, alamat broadcast, jumlah alamat terpakai dan tersisa.\nCheckpoint 1: tabel VLSM benar, diperiksa silang antar-kelompok.\nTahap 2 — Implementasi dua segmen (70 menit)\nRaspberry Pi berperan sebagai router antara 192.168.20.0/26 (segmen produksi, eth0) dan \n192.168.20.192/27 (segmen tamu, wlan0).\nsudo sysctl -w net.ipv4.ip_forward=1\necho \"net.ipv4.ip_forward=1\" | sudo tee /etc/sysctl.d/99-router.conf\nsudo nmcli con mod \"Wired connection 1\" ipv4.addresses 192.168.20.1/26 ipv4.method \nmanual\nsudo nmcli con up \"Wired connection 1\"\nsudo nft add table inet studio\nsudo nft add chain inet studio postrouting '{ type nat hook postrouting priority 100; }'\nsudo nft add rule inet studio postrouting oifname \"eth0\" masquerade\nsudo nft list ruleset\nAtur laptop pada masing-masing segmen dengan gateway alamat Raspberry Pi, lalu uji \njangkauan antar-segmen dengan ping dan traceroute.\nCheckpoint 2: paket berhasil melintas antar-segmen melalui Raspberry Pi (dibuktikan dengan\ntraceroute).\nTahap 3 — Kebijakan isolasi tamu (50 menit)\nsudo nft add chain inet studio forward '{ type filter hook forward priority 0; policy \naccept; }'\nsudo nft add rule inet studio forward ip saddr 192.168.20.192/27 \\\n ip daddr 192.168.20.0/26 drop\nUji: laptop tamu masih dapat mencapai internet/gateway, tetapi tidak dapat menjangkau \nsegmen produksi.\nCheckpoint 3: demonstrasi isolasi berhasil dan aturan dapat dijelaskan baris per baris.\nTahap 4 — Pengukuran dampak routing (30 menit)\nJalankan iperf3 di dalam satu segmen dan antar-segmen. Bandingkan throughput serta \nlatensinya, lalu jelaskan penyebab perbedaannya.",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Tahap 1 — Perhitungan VLSM (60 menit)"
+          },
+          {
+            "type": "paragraph",
+            "text": "Blok tersedia: `192.168.20.0/24`. Kebutuhan studio:"
+          },
+          {
+            "type": "table",
+            "headers": [
+              "Segmen",
+              "Jumlah host",
+              "Keterangan"
+            ],
+            "rows": [
+              [
+                "Produksi/editor",
+                "50",
+                "Transfer aset besar"
+              ],
+              [
+                "Render farm",
+                "12",
+                "Lalu lintas internal"
+              ],
+              [
+                "Siaran/streaming",
+                "6",
+                "Wajib stabil"
+              ],
+              [
+                "Manajemen perangkat",
+                "6",
+                "Akses admin"
+              ],
+              [
+                "Tamu",
+                "25",
+                "Terisolasi"
+              ]
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "Kerjakan alokasi VLSM secara manual. Sajikan tabel: nama segmen, alamat jaringan, prefiks, *subnet mask*, rentang *host*, alamat *broadcast*, jumlah alamat terpakai dan tersisa."
+          },
+          {
+            "type": "paragraph",
+            "text": "**Checkpoint 1:** tabel VLSM benar, diperiksa silang antar-kelompok."
+          },
+          {
+            "type": "heading",
+            "text": "Tahap 2 — Implementasi dua segmen (70 menit)"
+          },
+          {
+            "type": "paragraph",
+            "text": "Raspberry Pi berperan sebagai *router* antara `192.168.20.0/26` (segmen produksi, `eth0`) dan `192.168.20.192/27` (segmen tamu, `wlan0`)."
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "text": "sudo sysctl -w net.ipv4.ip_forward=1\necho \"net.ipv4.ip_forward=1\" | sudo tee /etc/sysctl.d/99-router.conf\n\nsudo nmcli con mod \"Wired connection 1\" ipv4.addresses 192.168.20.1/26 ipv4.method manual\nsudo nmcli con up \"Wired connection 1\"\n\nsudo nft add table inet studio\nsudo nft add chain inet studio postrouting '{ type nat hook postrouting priority 100; }'\nsudo nft add rule inet studio postrouting oifname \"eth0\" masquerade\nsudo nft list ruleset"
+          },
+          {
+            "type": "paragraph",
+            "text": "Atur laptop pada masing-masing segmen dengan *gateway* alamat Raspberry Pi, lalu uji jangkauan antar-segmen dengan `ping` dan `traceroute`."
+          },
+          {
+            "type": "paragraph",
+            "text": "**Checkpoint 2:** paket berhasil melintas antar-segmen melalui Raspberry Pi (dibuktikan dengan `traceroute`)."
+          },
+          {
+            "type": "heading",
+            "text": "Tahap 3 — Kebijakan isolasi tamu (50 menit)"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "text": "sudo nft add chain inet studio forward '{ type filter hook forward priority 0; policy accept; }'\nsudo nft add rule inet studio forward ip saddr 192.168.20.192/27 \\\n  ip daddr 192.168.20.0/26 drop"
+          },
+          {
+            "type": "paragraph",
+            "text": "Uji: laptop tamu masih dapat mencapai internet/gateway, tetapi **tidak** dapat menjangkau segmen produksi."
+          },
+          {
+            "type": "paragraph",
+            "text": "**Checkpoint 3:** demonstrasi isolasi berhasil dan aturan dapat dijelaskan baris per baris."
+          },
+          {
+            "type": "heading",
+            "text": "Tahap 4 — Pengukuran dampak routing (30 menit)"
+          },
+          {
+            "type": "paragraph",
+            "text": "Jalankan `iperf3` di dalam satu segmen dan antar-segmen. Bandingkan *throughput* serta latensinya, lalu jelaskan penyebab perbedaannya."
+          }
+        ]
+      },
+      {
+        "title": "VI. Tugas Praktikum dan Laporan",
+        "text": "1. Tabel VLSM lengkap beserta langkah perhitungan.\n2. Diagram jaringan hasil implementasi dengan alamat pada setiap antarmuka.\n3. Bukti traceroute dan pengujian isolasi.\n4. Perbandingan throughput intra-segmen dan antar-segmen.",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Tabel VLSM lengkap beserta langkah perhitungan.",
+              "Diagram jaringan hasil implementasi dengan alamat pada setiap antarmuka.",
+              "Bukti `traceroute` dan pengujian isolasi.",
+              "Perbandingan *throughput* intra-segmen dan antar-segmen."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "VII. Pertanyaan Analisis",
+        "text": "1. Mengapa Raspberry Pi kurang ideal sebagai router utama studio, dan apa \npenggantinya?\n2. Bagaimana Anda mengubah rancangan VLSM jika jumlah editor bertambah dari 50 \nmenjadi 80?\n★ Tantangan: tambahkan aturan pembatasan bandwidth untuk segmen tamu dengan tc dan \nbuktikan efeknya dengan iperf3.",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Mengapa Raspberry Pi kurang ideal sebagai *router* utama studio, dan apa penggantinya?",
+              "Bagaimana Anda mengubah rancangan VLSM jika jumlah editor bertambah dari 50 menjadi 80?"
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "★ **Tantangan:** tambahkan aturan pembatasan *bandwidth* untuk segmen tamu dengan `tc` dan buktikan efeknya dengan `iperf3`."
+          }
+        ]
+      }
+    ],
+    "clo": "CLO 2",
+    "assessment": false
+  },
+  {
+    "id": 15,
+    "title": "Server aset & live streaming",
+    "fullTitle": "Raspberry Pi sebagai Server Aset dan Live Streaming",
+    "hook": "Bangun tempat berbagi aset dan menayangkan siaran dari Raspberry Pi.",
+    "concepts": [
+      "systemd mengelola siklus hidup service; status aktif belum menjamin port dan aplikasi sehat.",
+      "Samba membagikan aset dengan akun dan hak akses yang ditentukan.",
+      "RTMP dapat dipakai dari OBS ke server; HLS menyajikan segmen HTTP. Dukungan pemutar browser harus diperiksa."
+    ],
+    "tools": "Pi / VM · Samba · NGINX · OBS",
+    "strategy": "Station rotation",
+    "explorer": "stream",
+    "checks": [
+      "Share Samba diakses minimal dua laptop berizin.",
+      "Konfigurasi NGINX valid dan listener tersedia.",
+      "Dua penonton menerima siaran; latensi tercatat."
+    ],
+    "quiz": [
+      {
+        "q": "Service aktif berarti aplikasi pasti dapat diakses?",
+        "options": [
+          "Ya",
+          "Tidak; periksa port, akses, dan jalur jaringan",
+          "Ya, jika ada monitor"
+        ],
+        "answer": 1,
+        "explanation": "Status proses hanya salah satu lapisan bukti."
+      },
+      {
+        "q": "HLS membawa segmen media melalui…",
+        "options": [
+          "HTTP",
+          "ARP",
+          "GPIO"
+        ],
+        "answer": 0,
+        "explanation": "Diperlukan pemutar yang mendukung HLS."
+      },
+      {
+        "q": "Akses Samba produksi sebaiknya…",
+        "options": [
+          "Terbuka untuk semua tamu",
+          "Tanpa kontrol akun",
+          "Dibatasi sesuai akun dan kebijakan studio"
+        ],
+        "answer": 2,
+        "explanation": "Hak akses mengikuti kebutuhan peran."
+      }
+    ],
+    "sections": [
+      {
+        "title": "I. Tujuan",
+        "text": "1. Mahasiswa mampu menjelaskan fungsi dan layanan sistem operasi server Linux.\n2. Mahasiswa mampu memasang dan mengonfigurasi file server untuk berbagi aset \nmultimedia.\n3. Mahasiswa mampu membangun server live streaming RTMP/HLS dan mengujinya dari\nklien.",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Mahasiswa mampu menjelaskan fungsi dan layanan sistem operasi server Linux.",
+              "Mahasiswa mampu memasang dan mengonfigurasi *file server* untuk berbagi aset multimedia.",
+              "Mahasiswa mampu membangun server *live streaming* RTMP/HLS dan mengujinya dari klien."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "II. Tugas Pendahuluan",
+        "text": "1. Apa perbedaan sistem operasi desktop dan server?\n2. Jelaskan fungsi Samba, NFS, dan FTP; kapan masing-masing dipilih?\n3. Apa perbedaan RTMP dan HLS dari sisi latensi dan kompatibilitas?\n4. Jelaskan fungsi perintah systemctl enable, start, dan status.",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Apa perbedaan sistem operasi *desktop* dan server?",
+              "Jelaskan fungsi Samba, NFS, dan FTP; kapan masing-masing dipilih?",
+              "Apa perbedaan RTMP dan HLS dari sisi latensi dan kompatibilitas?",
+              "Jelaskan fungsi perintah `systemctl enable`, `start`, dan `status`."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "III. Dasar Teori",
+        "text": "Sistem operasi server dirancang untuk melayani permintaan secara terus-menerus dengan \nkonsumsi sumber daya sekecil mungkin — karena itu umumnya berjalan tanpa antarmuka \ngrafis dan dikendalikan melalui SSH. Layanan (service) dijalankan sebagai daemon yang diatur \nsystemd.\nUntuk studio multimedia, dua layanan paling mendasar adalah server berkas dan server \nmedia. Server berkas (Samba) memungkinkan aset diakses seolah-olah folder lokal dari \nWindows, macOS, dan Linux. Server media (NGINX dengan modul RTMP) menerima aliran \ndari encoder seperti OBS melalui RTMP — protokol berlatensi rendah untuk kontribusi — lalu \nmengemasnya ulang menjadi HLS, potongan-potongan berkas kecil yang dapat diputar oleh pemutar dengan dukungan HLS. Pola ini memisahkan jalur kontribusi dan distribusi media.",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Sistem operasi server dirancang untuk melayani permintaan secara terus-menerus dengan konsumsi sumber daya sekecil mungkin — karena itu umumnya berjalan tanpa antarmuka grafis dan dikendalikan melalui SSH. Layanan (*service*) dijalankan sebagai *daemon* yang diatur `systemd`."
+          },
+          {
+            "type": "paragraph",
+            "text": "Untuk studio multimedia, dua layanan paling mendasar adalah **server berkas** dan **server media**. Server berkas (Samba) memungkinkan aset diakses seolah-olah folder lokal dari Windows, macOS, dan Linux. Server media (NGINX dengan modul RTMP) menerima aliran dari *encoder* seperti OBS melalui **RTMP** — protokol berlatensi rendah untuk kontribusi — lalu mengemasnya ulang menjadi **HLS**, potongan-potongan berkas kecil yang dapat diputar oleh pemutar yang mendukung HLS. Pola ini memisahkan jalur kontribusi dan distribusi media."
+          }
+        ]
+      },
+      {
+        "title": "IV. Alat dan Bahan",
+        "text": "Raspberry Pi, laptop (OBS Studio, VLC, peramban), jaringan lab, penyimpanan USB (opsional).",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Raspberry Pi, laptop (OBS Studio, VLC, peramban), jaringan lab, penyimpanan USB (opsional)."
+          }
+        ]
+      },
+      {
+        "title": "V. Langkah Praktikum",
+        "text": "Station A — Server aset dengan Samba (55 menit)\nsudo apt install -y samba\nsudo mkdir -p /srv/aset && sudo chgrp praktikum /srv/aset && sudo chmod 2775 /srv/aset\nsudo tee -a /etc/samba/smb.conf >/dev/null <<'EOF'\n[aset]\n path = /srv/aset\n browseable = yes\n read only = no\n valid users = @praktikum\n create mask = 0664\n directory mask = 2775\nEOF\nsudo smbpasswd -a mhsNN\nsudo systemctl restart smbd && systemctl status smbd --no-pager\nDari Windows: buka \\\\192.168.10.1N\\aset, atau petakan sebagai drive Z:. Salin berkas 500 MB \ndan catat waktunya, lalu hitung throughput efektif.\nCheckpoint 1: share dapat diakses dan ditulisi dari minimal dua laptop; throughput transfer \ntercatat.\nStation B — Server RTMP/HLS (60 menit)\nsudo apt install -y nginx libnginx-mod-rtmp\nsudo tee /etc/nginx/modules-enabled/rtmp.conf >/dev/null <<'EOF'\nrtmp {\n server {\n listen 1935;\n chunk_size 4096;\n application live {\n live on;\n record off;\n hls on;\n hls_path /var/www/html/hls;\n hls_fragment 3s;\n hls_playlist_length 30s;\n }\n }\n}\nEOF\nsudo mkdir -p /var/www/html/hls && sudo chown www-data:www-data \n/var/www/html/hls\nsudo nginx -t && sudo systemctl restart nginx\nCheckpoint 2: nginx -t lolos dan port 1935 mendengarkan (sudo ss -tulpn | grep 1935).\nStation C — Menyiarkan dan menonton (55 menit)\nPada OBS Studio: Settings → Stream → Custom, Server rtmp://192.168.10.1N/live, Stream Key\nkelompokN. Mulai siaran.\nMenonton:\n# latensi rendah, langsung dari RTMP\nffplay rtmp://192.168.10.1N/live/kelompokN\nAtau melalui peramban: http://192.168.10.1N/hls/kelompokN.m3u8 (gunakan pemutar HLS \natau VLC).\nUkur latensi kedua jalur dengan menampilkan jam digital di sumber siaran, lalu foto layar \nsumber dan layar penonton secara bersamaan.\nCheckpoint 3: siaran dapat ditonton dari minimal dua laptop + angka latensi RTMP dan HLS \ntercatat.\nStation D — Pemantauan dan ketahanan layanan (40 menit)\nhtop # beban CPU Raspberry Pi saat melayani siaran\nsudo journalctl -u nginx -n 50\nsudo systemctl restart nginx # amati apa yang terjadi pada penonton\nTambahkan penonton satu per satu dan catat pertambahan beban CPU serta lalu lintas \njaringan.",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Station A — Server aset dengan Samba (55 menit)"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "text": "sudo apt install -y samba\nsudo mkdir -p /srv/aset && sudo chgrp praktikum /srv/aset && sudo chmod 2775 /srv/aset\nsudo tee -a /etc/samba/smb.conf >/dev/null <<'EOF'\n[aset]\n   path = /srv/aset\n   browseable = yes\n   read only = no\n   valid users = @praktikum\n   create mask = 0664\n   directory mask = 2775\nEOF\nsudo smbpasswd -a mhsNN\nsudo systemctl restart smbd && systemctl status smbd --no-pager"
+          },
+          {
+            "type": "paragraph",
+            "text": "Dari Windows: buka `\\\\192.168.10.1N\\aset`, atau petakan sebagai *drive* `Z:`. Salin berkas 500 MB dan catat waktunya, lalu hitung *throughput* efektif."
+          },
+          {
+            "type": "paragraph",
+            "text": "**Checkpoint 1:** *share* dapat diakses dan ditulisi dari minimal dua laptop; *throughput* transfer tercatat."
+          },
+          {
+            "type": "heading",
+            "text": "Station B — Server RTMP/HLS (60 menit)"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "text": "sudo apt install -y nginx libnginx-mod-rtmp\nsudo tee /etc/nginx/modules-enabled/rtmp.conf >/dev/null <<'EOF'\nrtmp {\n  server {\n    listen 1935;\n    chunk_size 4096;\n    application live {\n      live on;\n      record off;\n      hls on;\n      hls_path /var/www/html/hls;\n      hls_fragment 3s;\n      hls_playlist_length 30s;\n    }\n  }\n}\nEOF\nsudo mkdir -p /var/www/html/hls && sudo chown www-data:www-data /var/www/html/hls\nsudo nginx -t && sudo systemctl restart nginx"
+          },
+          {
+            "type": "paragraph",
+            "text": "**Checkpoint 2:** `nginx -t` lolos dan port 1935 mendengarkan (`sudo ss -tulpn | grep 1935`)."
+          },
+          {
+            "type": "heading",
+            "text": "Station C — Menyiarkan dan menonton (55 menit)"
+          },
+          {
+            "type": "paragraph",
+            "text": "Pada OBS Studio: *Settings → Stream → Custom*, Server `rtmp://192.168.10.1N/live`, *Stream Key* `kelompokN`. Mulai siaran."
+          },
+          {
+            "type": "paragraph",
+            "text": "Menonton:"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "text": "# latensi rendah, langsung dari RTMP\nffplay rtmp://192.168.10.1N/live/kelompokN"
+          },
+          {
+            "type": "paragraph",
+            "text": "Atau melalui peramban: `http://192.168.10.1N/hls/kelompokN.m3u8` (gunakan pemutar HLS atau VLC)."
+          },
+          {
+            "type": "paragraph",
+            "text": "Ukur latensi kedua jalur dengan menampilkan jam digital di sumber siaran, lalu foto layar sumber dan layar penonton secara bersamaan."
+          },
+          {
+            "type": "paragraph",
+            "text": "**Checkpoint 3:** siaran dapat ditonton dari minimal dua laptop + angka latensi RTMP dan HLS tercatat."
+          },
+          {
+            "type": "heading",
+            "text": "Station D — Pemantauan dan ketahanan layanan (40 menit)"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "text": "htop                                 # beban CPU Raspberry Pi saat melayani siaran\nsudo journalctl -u nginx -n 50\nsudo systemctl restart nginx         # amati apa yang terjadi pada penonton"
+          },
+          {
+            "type": "paragraph",
+            "text": "Tambahkan penonton satu per satu dan catat pertambahan beban CPU serta lalu lintas jaringan."
+          }
+        ]
+      },
+      {
+        "title": "VI. Tugas Praktikum dan Laporan",
+        "text": "1. Konfigurasi Samba dan NGINX-RTMP beserta penjelasannya.\n2. Tabel throughput transfer aset dan analisis perbandingannya dengan hasil iperf3\nModul 11.\n3. Tabel latensi RTMP vs HLS dan penjelasan penyebab perbedaannya.\n4. Grafik beban CPU terhadap jumlah penonton, disertai kesimpulan batas kemampuan \nRaspberry Pi.",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Konfigurasi Samba dan NGINX-RTMP beserta penjelasannya.",
+              "Tabel *throughput* transfer aset dan analisis perbandingannya dengan hasil `iperf3` Modul 11.",
+              "Tabel latensi RTMP vs HLS dan penjelasan penyebab perbedaannya.",
+              "Grafik beban CPU terhadap jumlah penonton, disertai kesimpulan batas kemampuan Raspberry Pi."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "VII. Pertanyaan Analisis",
+        "text": "1. Mengapa HLS berlatensi jauh lebih tinggi daripada RTMP, dan kapan hal itu justru \ndapat diterima?\n2. Layanan apa yang harus ditambahkan agar studio dapat melayani 200 penonton \nbersamaan?\n★ Tantangan: aktifkan HLS bertingkat (multi-bitrate) dengan exec FFmpeg dan uji \nperpindahan kualitas otomatis.",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Mengapa HLS berlatensi jauh lebih tinggi daripada RTMP, dan kapan hal itu justru dapat diterima?",
+              "Layanan apa yang harus ditambahkan agar studio dapat melayani 200 penonton bersamaan?"
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "★ **Tantangan:** aktifkan HLS bertingkat (*multi-bitrate*) dengan `exec` FFmpeg dan uji perpindahan kualitas otomatis."
+          }
+        ]
+      }
+    ],
+    "clo": "CLO 2",
+    "assessment": false
+  },
+  {
+    "id": 16,
+    "title": "Asesmen 3 · Mini Studio",
+    "fullTitle": "Asesmen 3 / Tugas Besar: Mini Studio Multimedia  Network",
+    "hook": "Integrasikan seluruh komponen menjadi Mini Studio Multimedia Network.",
+    "concepts": [
+      "Tamu dapat menonton stream, tetapi tidak boleh mengakses aset produksi.",
+      "Penguji berpindah ke segmen produksi untuk menguji transfer aset.",
+      "Klaim kapasitas studio harus didukung throughput, latensi, dan pengujian isolasi."
+    ],
+    "tools": "Seluruh perangkat kelompok",
+    "strategy": "Demo proyek & refleksi",
+    "explorer": "stream",
+    "checks": [
+      "Tamu memperoleh DHCP dan dapat menonton stream.",
+      "Tamu ditolak dari aset produksi; editor dapat mentransfer berkas.",
+      "Diagram, benchmark, laporan, dan demo dapat diverifikasi."
+    ],
+    "quiz": [
+      {
+        "q": "Dari segmen tamu, akses aset produksi harus…",
+        "options": [
+          "Diterima bebas",
+          "Ditolak sesuai kebijakan",
+          "Diberi akses tulis"
+        ],
+        "answer": 1,
+        "explanation": "Tamu boleh menonton stream melalui layanan yang diizinkan."
+      },
+      {
+        "q": "Transfer aset diuji dari…",
+        "options": [
+          "Segmen produksi yang berizin",
+          "Jaringan acak",
+          "GPIO"
+        ],
+        "answer": 0,
+        "explanation": "Pisahkan skenario akses tamu dan editor."
+      },
+      {
+        "q": "Hasil riset Adaptive–Standard ditafsirkan dengan…",
+        "options": [
+          "Semua event dianggap independen",
+          "Nilai demo saja",
+          "Mempertimbangkan pengulangan peserta, kelompok, dan tugas"
+        ],
+        "answer": 2,
+        "explanation": "Struktur data bersarang memerlukan analisis yang sesuai."
+      }
+    ],
+    "sections": [
+      {
+        "title": "I. Tujuan",
+        "text": "Mengintegrasikan seluruh kompetensi mata kuliah menjadi satu sistem yang berjalan: \nperangkat keras, penyimpanan, pengalamatan, segmentasi, dan layanan server multimedia.",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Mengintegrasikan seluruh kompetensi mata kuliah menjadi satu sistem yang berjalan: perangkat keras, penyimpanan, pengalamatan, segmentasi, dan layanan server multimedia."
+          }
+        ]
+      },
+      {
+        "title": "II. Spesifikasi Sistem yang Harus Dibangun",
+        "text": "No Persyaratan Bukti yang dinilai\n1 Topologi terdokumentasi dan\nsesuai implementasi\nDiagram + penelusuran fisik\n2 Minimal satu kabel UTP \nbuatan sendiri dipakai pada \njalur utama\nUji tester + iperf3\n3 Dua segmen beralamat \nberdasarkan rancangan \nVLSM\nTabel VLSM + ip a\nNo Persyaratan Bukti yang dinilai\n4 DHCP berjalan untuk segmen\ntamu, alamat tetap untuk \nserver\nLog DHCP + ipconfig /all\n5 Server aset (Samba) dapat \ndiakses seluruh workstation\nDemo transfer berkas\n6 Live streaming RTMP/HLS \nberjalan dan dapat ditonton\nDemo tayang\n7 Segmen tamu terisolasi dari \nsegmen produksi\nDemo ping gagal terkendali\n8 Analisis kinerja: throughput, \nlatensi, kapasitas \npenyimpanan\nTabel pengukuran",
+        "blocks": [
+          {
+            "type": "table",
+            "headers": [
+              "No",
+              "Persyaratan",
+              "Bukti yang dinilai"
+            ],
+            "rows": [
+              [
+                "1",
+                "Topologi terdokumentasi dan sesuai implementasi",
+                "Diagram + penelusuran fisik"
+              ],
+              [
+                "2",
+                "Minimal satu kabel UTP buatan sendiri dipakai pada jalur utama",
+                "Uji tester + `iperf3`"
+              ],
+              [
+                "3",
+                "Dua segmen beralamat berdasarkan rancangan VLSM",
+                "Tabel VLSM + `ip a`"
+              ],
+              [
+                "4",
+                "DHCP berjalan untuk segmen tamu, alamat tetap untuk server",
+                "Log DHCP + `ipconfig /all`"
+              ],
+              [
+                "5",
+                "Server aset (Samba) dapat diakses seluruh *workstation*",
+                "Demo transfer berkas"
+              ],
+              [
+                "6",
+                "*Live streaming* RTMP/HLS berjalan dan dapat ditonton",
+                "Demo tayang"
+              ],
+              [
+                "7",
+                "Segmen tamu terisolasi dari segmen produksi",
+                "Demo `ping` gagal terkendali"
+              ],
+              [
+                "8",
+                "Analisis kinerja: *throughput*, latensi, kapasitas penyimpanan",
+                "Tabel pengukuran"
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "title": "III. Susunan Sesi",
+        "text": "Menit Kegiatan\n0–20 Persiapan dan perakitan sistem\n20–120 Integrasi dan pengujian mandiri\n120–140 Istirahat + penyiapan demo\n140–220 Demo per kelompok (10 menit demo +\n5 menit tanya jawab)\n220–240 Penyerahan dokumentasi dan \npembongkaran",
+        "blocks": [
+          {
+            "type": "table",
+            "headers": [
+              "Menit",
+              "Kegiatan"
+            ],
+            "rows": [
+              [
+                "0–20",
+                "Persiapan dan perakitan sistem"
+              ],
+              [
+                "20–120",
+                "Integrasi dan pengujian mandiri"
+              ],
+              [
+                "120–140",
+                "Istirahat + penyiapan demo"
+              ],
+              [
+                "140–220",
+                "Demo per kelompok (10 menit demo + 5 menit tanya jawab)"
+              ],
+              [
+                "220–240",
+                "Penyerahan dokumentasi dan pembongkaran"
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "title": "IV. Skenario Uji oleh Penguji",
+        "text": "Dari sebuah laptop yang bertindak sebagai tamu, penguji akan:\n1. Meminta alamat IP otomatis dan memverifikasi bahwa alamat berasal dari segmen \ntamu.\n2. Membuka tayangan live streaming studio.\n3. Mencoba mengakses folder aset produksi — harus gagal.\n4. Berpindah ke segmen produksi, lalu menyalin berkas 500 MB ke server aset dan \nmencatat waktunya.\n5. Mencabut satu kabel secara acak dan meminta kelompok mendiagnosis dalam 5 menit.",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Dari sebuah laptop yang bertindak sebagai **tamu**, penguji akan:"
+          },
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Meminta alamat IP otomatis dan memverifikasi bahwa alamat berasal dari segmen tamu.",
+              "Membuka tayangan *live streaming* studio.",
+              "Mencoba mengakses folder aset produksi — **harus gagal**.",
+              "Berpindah ke segmen produksi, lalu menyalin berkas 500 MB ke server aset dan mencatat waktunya.",
+              "Mencabut satu kabel secara acak dan meminta kelompok mendiagnosis dalam 5 menit."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "V. Komponen Penilaian",
+        "text": "Aspek Bobot\nFungsionalitas sistem (persyaratan 1–\n7)\n30%\nKetepatan desain (topologi, VLSM, \nkebijakan isolasi)\n20%\nKualitas implementasi fisik (kabel, 10%\nAspek Bobot\nkerapian, pelabelan)\nAnalisis kinerja berbasis data \npengukuran\n15%\nDokumentasi dan laporan akhir 15%\nPresentasi dan tanya jawab individu 10%",
+        "blocks": [
+          {
+            "type": "table",
+            "headers": [
+              "Aspek",
+              "Bobot"
+            ],
+            "rows": [
+              [
+                "Fungsionalitas sistem (persyaratan 1–7)",
+                "30%"
+              ],
+              [
+                "Ketepatan desain (topologi, VLSM, kebijakan isolasi)",
+                "20%"
+              ],
+              [
+                "Kualitas implementasi fisik (kabel, kerapian, pelabelan)",
+                "10%"
+              ],
+              [
+                "Analisis kinerja berbasis data pengukuran",
+                "15%"
+              ],
+              [
+                "Dokumentasi dan laporan akhir",
+                "15%"
+              ],
+              [
+                "Presentasi dan tanya jawab individu",
+                "10%"
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "title": "VI. Isi Laporan Akhir (maksimal 15 halaman)",
+        "text": "1. Latar belakang dan kebutuhan studio\n2. Analisis perangkat keras dan kapasitas penyimpanan (Modul 1–6)\n3. Rancangan topologi dan pengalamatan VLSM (Modul 9, 14)\n4. Implementasi fisik dan hasil pengujian tautan (Modul 11)\n5. Konfigurasi layanan server (Modul 13, 15)\n6. Analisis kinerja dan keterbatasan sistem\n7. Kesimpulan dan rekomendasi peningkatan\n8. Lampiran: seluruh berkas konfigurasi dan bukti pengujian",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Latar belakang dan kebutuhan studio",
+              "Analisis perangkat keras dan kapasitas penyimpanan (Modul 1–6)",
+              "Rancangan topologi dan pengalamatan VLSM (Modul 9, 14)",
+              "Implementasi fisik dan hasil pengujian tautan (Modul 11)",
+              "Konfigurasi layanan server (Modul 13, 15)",
+              "Analisis kinerja dan keterbatasan sistem",
+              "Kesimpulan dan rekomendasi peningkatan",
+              "Lampiran: seluruh berkas konfigurasi dan bukti pengujian"
+            ]
+          }
+        ]
+      }
+    ],
+    "clo": "CLO 2",
+    "assessment": true
+  }
+]
