@@ -1,0 +1,38 @@
+
+=== uji-1080p.mp4 ===
+codec_name=h264
+width=1920
+height=1080
+pix_fmt=yuv420p
+r_frame_rate=30/1
+duration=60.000000
+size=56127184
+
+=== uji-4k.mp4 ===
+codec_name=h264
+width=3840
+height=2160
+pix_fmt=yuv420p
+r_frame_rate=30/1
+duration=30.000000
+size=140961530
+
+=== uji-audio.wav ===
+codec_name=pcm_s16le
+sample_rate=48000
+channels=2
+bits_per_sample=16
+duration=60.000000
+size=11520078
+
+=== uji-gambar.png ===
+codec_name=png
+width=1920
+height=1080
+pix_fmt=rgb24
+
+=== SHA-256 ===
+fdddaa2264c895370bd192fd7c3e1813b7a8cad87727cb57a5ec34bbee850ead  /mnt/data/SJK_TRM_Media_Uji_v1.0/uji-1080p.mp4
+08f3a771ee82e91d2367576f4af7c6d54402df327700642a887ae3e50954fc18  /mnt/data/SJK_TRM_Media_Uji_v1.0/uji-4k.mp4
+82ca63282c1f23ce3c1c6285c79e5e56d1a83c4b05ea0286f326df66d7ada944  /mnt/data/SJK_TRM_Media_Uji_v1.0/uji-audio.wav
+d50d74c56f51da995374c5c6a433b3f6d6e0019e70c60bcfac2a64cf56f37eea  /mnt/data/SJK_TRM_Media_Uji_v1.0/uji-gambar.png
