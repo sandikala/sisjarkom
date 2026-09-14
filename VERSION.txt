@@ -1,0 +1,7 @@
+SISJARKOM Web v2.1 Realistis
+Build: 2026-09-14
+Target: https://sandikala.github.io/sisjarkom/
+Assets: assets-v21/
+Course module 1: Komponen PC dan kesiapan belajar
+Research frontend: assets-v21/research-lite.js
+Database schema: backend/schema-lite.sql
