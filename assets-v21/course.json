@@ -1,0 +1,1425 @@
+[
+  {
+    "id": 1,
+    "title": "Komponen PC dan kesiapan belajar",
+    "fullTitle": "Komponen PC dan kesiapan belajar",
+    "clo": "Target kerja usulan",
+    "hook": "Bagian mana dari laptop Anda yang berperan saat mengolah video?",
+    "concepts": [
+      "CPU menjalankan instruksi; banyak aplikasi juga menggunakan GPU untuk bagian pekerjaan tertentu.",
+      "RAM menampung data kerja sementara; SSD/HDD menyimpan berkas. Kapasitas keduanya tidak saling menggantikan.",
+      "Gambar arsitektur northbridge/southbridge di modul lama adalah contoh generasi terdahulu. Identifikasi fungsi, lalu cocokkan dengan perangkat yang tersedia."
+    ],
+    "tools": "Laptop sendiri, informasi sistem bawaan, modul lama. Tidak membutuhkan Raspberry Pi, VM, atau paket video besar.",
+    "strategy": "Pola kelas yang sudah digunakan",
+    "assessment": false,
+    "explorer": "capacity",
+    "checks": [
+      "Mengidentifikasi CPU, RAM, penyimpanan, GPU, dan perangkat jaringan.",
+      "Catatan spesifikasi dan satu tangkapan layar yang telah dipotong untuk menghilangkan identitas pribadi.",
+      "Hasil dan jenis bantuan/observasi ditulis sesuai kegiatan nyata."
+    ],
+    "sections": [
+      {
+        "title": "I. Tujuan",
+        "text": "Mengidentifikasi CPU, RAM, penyimpanan, GPU, dan perangkat jaringan.\nMenjelaskan satu hubungan komponen dengan pekerjaan multimedia.\nMendokumentasikan spesifikasi tanpa membongkar laptop pribadi."
+      },
+      {
+        "title": "II. Persiapan",
+        "text": "Laptop sendiri, informasi sistem bawaan, modul lama. Tidak membutuhkan Raspberry Pi, VM, atau paket video besar.\nOrientasi, TP, demonstrasi, praktik, jurnal, dan tes akhir mengikuti kebiasaan kelas. Tidak ada pengambilan data riset pada minggu pertama."
+      },
+      {
+        "title": "III. Langkah praktikum inti",
+        "text": "1. Ikuti TP dan pengenalan komponen pada modul lama. Bawa laptop dan pengisi daya; belum perlu memasang aplikasi baru.\n2. Windows: buka Settings → System → About atau jalankan msinfo32. Ubuntu/macOS: buka informasi sistem. Catat model CPU, RAM, kapasitas penyimpanan, OS, dan versi tanpa serial number.\n3. Buka Task Manager dengan Ctrl+Shift+Esc atau monitor sistem bawaan. Jalankan satu media/aplikasi yang sudah tersedia; amati perubahan CPU dan memori secara kualitatif.\n4. Isi tabel komponen, fungsi, dan bukti pada laporan yang biasa digunakan. Pilih satu komponen yang mungkin membatasi pekerjaan video; jelaskan bukti dan batas dugaan Anda.\n5. Jika PC bongkar tersedia, amati demonstrasi asisten sesuai prosedur lab. Jika belum tersedia, gunakan gambar modul; jangan mengklaim telah melakukan perakitan fisik."
+      },
+      {
+        "title": "IV. Bukti pada jurnal yang sudah digunakan",
+        "text": "Catatan spesifikasi dan satu tangkapan layar yang telah dipotong untuk menghilangkan identitas pribadi."
+      },
+      {
+        "title": "V. Kaitan multimedia singkat",
+        "text": "Bagian mana dari laptop Anda yang berperan saat mengolah video? Tambahkan jawaban 2–3 kalimat pada bagian kesimpulan jurnal bila sesuai instruksi dosen; tidak perlu laporan tambahan."
+      },
+      {
+        "title": "VI. Sumber dan penyesuaian",
+        "text": "SK 1; materi awal dalam berkas Modul 1. Nomor SK/JK adalah bab internal dokumen sumber, bukan nomor minggu resmi. Orientasi, TP, demonstrasi, praktik, jurnal, dan tes akhir mengikuti kebiasaan kelas. Tidak ada pengambilan data riset pada minggu pertama."
+      }
+    ],
+    "source": "SK 1; materi awal dalam berkas Modul 1",
+    "note": "Orientasi, TP, demonstrasi, praktik, jurnal, dan tes akhir mengikuti kebiasaan kelas. Tidak ada pengambilan data riset pada minggu pertama.",
+    "steps": [
+      "Ikuti TP dan pengenalan komponen pada modul lama. Bawa laptop dan pengisi daya; belum perlu memasang aplikasi baru.",
+      "Windows: buka Settings → System → About atau jalankan msinfo32. Ubuntu/macOS: buka informasi sistem. Catat model CPU, RAM, kapasitas penyimpanan, OS, dan versi tanpa serial number.",
+      "Buka Task Manager dengan Ctrl+Shift+Esc atau monitor sistem bawaan. Jalankan satu media/aplikasi yang sudah tersedia; amati perubahan CPU dan memori secara kualitatif.",
+      "Isi tabel komponen, fungsi, dan bukti pada laporan yang biasa digunakan. Pilih satu komponen yang mungkin membatasi pekerjaan video; jelaskan bukti dan batas dugaan Anda.",
+      "Jika PC bongkar tersedia, amati demonstrasi asisten sesuai prosedur lab. Jika belum tersedia, gunakan gambar modul; jangan mengklaim telah melakukan perakitan fisik."
+    ],
+    "evidence": "Catatan spesifikasi dan satu tangkapan layar yang telah dipotong untuk menghilangkan identitas pribadi.",
+    "quiz": [
+      {
+        "q": "Penyimpanan sementara saat aplikasi berjalan adalah …",
+        "options": [
+          "RAM",
+          "SSD",
+          "Kabel LAN"
+        ],
+        "answer": 0,
+        "explanation": "RAM digunakan untuk data kerja sementara."
+      },
+      {
+        "q": "Tanpa PC latihan untuk dibongkar, bukti yang tepat adalah …",
+        "options": [
+          "Foto internet yang disebut hasil perakitan",
+          "Analisis gambar yang diberi label pengamatan",
+          "Menghapus perangkat di Device Manager"
+        ],
+        "answer": 1,
+        "explanation": "Jenis bukti harus sesuai aktivitas yang benar-benar dilakukan."
+      },
+      {
+        "q": "CPU tinggi sesaat berarti …",
+        "options": [
+          "Pasti harus membeli laptop",
+          "CPU sedang digunakan; penyebab perlu diperiksa",
+          "RAM rusak"
+        ],
+        "answer": 1,
+        "explanation": "Satu pengamatan tidak cukup untuk mendiagnosis kerusakan."
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Windows Computer Management",
+    "fullTitle": "Windows Computer Management",
+    "clo": "Target kerja usulan",
+    "hook": "Bagaimana membaca kondisi komputer sebelum menyimpulkan ada kerusakan?",
+    "concepts": [
+      "Task Manager memperlihatkan proses dan pemakaian sumber daya; persentase penggunaan bukan ukuran mutu hasil media.",
+      "Device Manager menunjukkan perangkat dan status driver. Pemeriksaan tidak memerlukan menonaktifkan perangkat.",
+      "Disk Management dapat mengubah partisi. Dalam sesi inti cukup amati; latihan perubahan partisi hanya pada disk virtual latihan."
+    ],
+    "tools": "PC Windows yang sudah tersedia; laptop non-Windows dapat memakai PC lab secara bergilir untuk kompetensi Windows.",
+    "strategy": "Pola kelas yang sudah digunakan",
+    "assessment": false,
+    "explorer": "frame",
+    "checks": [
+      "Membuka alat manajemen Windows yang relevan.",
+      "Dua tangkapan layar relevan dan penjelasan singkat; gunakan format jurnal lama.",
+      "Hasil dan jenis bantuan/observasi ditulis sesuai kegiatan nyata."
+    ],
+    "sections": [
+      {
+        "title": "I. Tujuan",
+        "text": "Membuka alat manajemen Windows yang relevan.\nMembedakan proses, perangkat, dan ruang penyimpanan.\nMenyusun penjelasan singkat dari pengamatan kinerja."
+      },
+      {
+        "title": "II. Persiapan",
+        "text": "PC Windows yang sudah tersedia; laptop non-Windows dapat memakai PC lab secara bergilir untuk kompetensi Windows.\nIIS, WMI, penjadwalan, dan administrasi layanan dapat menjadi demonstrasi/pengayaan. Tidak semuanya harus dikonfigurasi minggu ini."
+      },
+      {
+        "title": "III. Langkah praktikum inti",
+        "text": "1. Buka compmgmt.msc. Kenali System Tools, Storage, dan Services. Bila edisi Windows berbeda, cari alat yang sama melalui Start.\n2. Buka Device Manager. Pilih adapter jaringan atau perangkat audio; catat nama dan statusnya tanpa mengubah driver.\n3. Buka Task Manager/Resource Monitor. Bandingkan kondisi sebelum dan saat membuka berkas media milik sendiri. Catat dua pengamatan dan nama aplikasi.\n4. Amati ruang disk. Jangan melakukan format, shrink, atau delete pada disk laptop. Jika latihan partisi diwajibkan RPS, gunakan VM latihan terpisah sesuai asisten.\n5. Tambahkan satu kalimat pada jurnal lama: bukti apa yang mendukung dugaan bottleneck? Hindari menyalin log lengkap berisi identitas."
+      },
+      {
+        "title": "IV. Bukti pada jurnal yang sudah digunakan",
+        "text": "Dua tangkapan layar relevan dan penjelasan singkat; gunakan format jurnal lama."
+      },
+      {
+        "title": "V. Kaitan multimedia singkat",
+        "text": "Bagaimana membaca kondisi komputer sebelum menyimpulkan ada kerusakan? Tambahkan jawaban 2–3 kalimat pada bagian kesimpulan jurnal bila sesuai instruksi dosen; tidak perlu laporan tambahan."
+      },
+      {
+        "title": "VI. Sumber dan penyesuaian",
+        "text": "Berkas Modul 2, terutama Performance, Device Manager, dan Task Manager. Nomor SK/JK adalah bab internal dokumen sumber, bukan nomor minggu resmi. IIS, WMI, penjadwalan, dan administrasi layanan dapat menjadi demonstrasi/pengayaan. Tidak semuanya harus dikonfigurasi minggu ini."
+      }
+    ],
+    "source": "Berkas Modul 2, terutama Performance, Device Manager, dan Task Manager",
+    "note": "IIS, WMI, penjadwalan, dan administrasi layanan dapat menjadi demonstrasi/pengayaan. Tidak semuanya harus dikonfigurasi minggu ini.",
+    "steps": [
+      "Buka compmgmt.msc. Kenali System Tools, Storage, dan Services. Bila edisi Windows berbeda, cari alat yang sama melalui Start.",
+      "Buka Device Manager. Pilih adapter jaringan atau perangkat audio; catat nama dan statusnya tanpa mengubah driver.",
+      "Buka Task Manager/Resource Monitor. Bandingkan kondisi sebelum dan saat membuka berkas media milik sendiri. Catat dua pengamatan dan nama aplikasi.",
+      "Amati ruang disk. Jangan melakukan format, shrink, atau delete pada disk laptop. Jika latihan partisi diwajibkan RPS, gunakan VM latihan terpisah sesuai asisten.",
+      "Tambahkan satu kalimat pada jurnal lama: bukti apa yang mendukung dugaan bottleneck? Hindari menyalin log lengkap berisi identitas."
+    ],
+    "evidence": "Dua tangkapan layar relevan dan penjelasan singkat; gunakan format jurnal lama.",
+    "quiz": [
+      {
+        "q": "Alat untuk melihat proses aktif adalah …",
+        "options": [
+          "Task Manager",
+          "Paint",
+          "Kalkulator"
+        ],
+        "answer": 0,
+        "explanation": "Task Manager memperlihatkan proses dan sumber daya."
+      },
+      {
+        "q": "Latihan menghapus partisi sebaiknya dilakukan pada …",
+        "options": [
+          "Disk virtual latihan",
+          "Disk kerja dosen",
+          "Partisi sistem laptop pribadi"
+        ],
+        "answer": 0,
+        "explanation": "Gunakan media latihan yang dapat dipulihkan."
+      },
+      {
+        "q": "Status perangkat normal membuktikan …",
+        "options": [
+          "Seluruh jaringan pasti sehat",
+          "Driver tidak melaporkan masalah itu; layanan tetap perlu diuji",
+          "Internet tidak memerlukan router"
+        ],
+        "answer": 1,
+        "explanation": "Status perangkat hanya satu bagian diagnosis."
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Perintah dan shortcut Windows",
+    "fullTitle": "Perintah dan shortcut Windows",
+    "clo": "Target kerja usulan",
+    "hook": "Bagaimana menemukan alat yang dibutuhkan tanpa menghafal seluruh daftar?",
+    "concepts": [
+      "Perintah lama dalam lampiran tidak seluruhnya tersedia pada setiap edisi Windows. Ketiadaan aplikasi tidak otomatis berarti komputer rusak.",
+      "Shortcut membantu navigasi, sedangkan perintah seperti ipconfig menampilkan informasi konfigurasi.",
+      "Dokumentasi yang baik menunjukkan langkah penting dan hasil, bukan setiap klik."
+    ],
+    "tools": "Windows lab/PC yang telah tersedia dan berkas contoh kecil.",
+    "strategy": "Pola kelas yang sudah digunakan",
+    "assessment": false,
+    "explorer": "network",
+    "checks": [
+      "Memilih perintah untuk informasi sistem dan jaringan.",
+      "Tabel tiga perintah dan fungsinya, struktur folder, satu bukti hasil.",
+      "Hasil dan jenis bantuan/observasi ditulis sesuai kegiatan nyata."
+    ],
+    "sections": [
+      {
+        "title": "I. Tujuan",
+        "text": "Memilih perintah untuk informasi sistem dan jaringan.\nMengelola folder kerja dengan shortcut.\nMencatat perbedaan tampilan/perintah antarversi Windows."
+      },
+      {
+        "title": "II. Persiapan",
+        "text": "Windows lab/PC yang telah tersedia dan berkas contoh kecil.\nGunakan 8–10 perintah terpilih. Seluruh daftar shortcut merupakan referensi, bukan tuntutan hafalan."
+      },
+      {
+        "title": "III. Langkah praktikum inti",
+        "text": "1. Coba Win+E, Win+R, Alt+Tab, Ctrl+Shift+Esc, dan Win+Shift+S pada PC Windows. Jelaskan fungsi masing-masing.\n2. Melalui Run, buka msinfo32, compmgmt.msc, dan ncpa.cpl satu per satu. Gunakan pencarian Start bila nama menu berbeda.\n3. Buka cmd lalu jalankan ipconfig. Identifikasi adapter aktif dan alamat IPv4. Tidak perlu mengubah konfigurasi jaringan kampus.\n4. Buat folder kerja SJK dengan subfolder sumber, hasil, dan laporan. Salin berkas contoh, ubah namanya dengan F2, lalu ambil satu tangkapan layar hasil.\n5. Di jurnal lama tulis tiga pasangan kebutuhan → alat/perintah. Tandai perintah lama yang tidak tersedia sebagai perbedaan versi."
+      },
+      {
+        "title": "IV. Bukti pada jurnal yang sudah digunakan",
+        "text": "Tabel tiga perintah dan fungsinya, struktur folder, satu bukti hasil."
+      },
+      {
+        "title": "V. Kaitan multimedia singkat",
+        "text": "Bagaimana menemukan alat yang dibutuhkan tanpa menghafal seluruh daftar? Tambahkan jawaban 2–3 kalimat pada bagian kesimpulan jurnal bila sesuai instruksi dosen; tidak perlu laporan tambahan."
+      },
+      {
+        "title": "VI. Sumber dan penyesuaian",
+        "text": "Berkas Modul 3, 4, dan 5; dipilih perintah yang masih relevan. Nomor SK/JK adalah bab internal dokumen sumber, bukan nomor minggu resmi. Gunakan 8–10 perintah terpilih. Seluruh daftar shortcut merupakan referensi, bukan tuntutan hafalan."
+      }
+    ],
+    "source": "Berkas Modul 3, 4, dan 5; dipilih perintah yang masih relevan",
+    "note": "Gunakan 8–10 perintah terpilih. Seluruh daftar shortcut merupakan referensi, bukan tuntutan hafalan.",
+    "steps": [
+      "Coba Win+E, Win+R, Alt+Tab, Ctrl+Shift+Esc, dan Win+Shift+S pada PC Windows. Jelaskan fungsi masing-masing.",
+      "Melalui Run, buka msinfo32, compmgmt.msc, dan ncpa.cpl satu per satu. Gunakan pencarian Start bila nama menu berbeda.",
+      "Buka cmd lalu jalankan ipconfig. Identifikasi adapter aktif dan alamat IPv4. Tidak perlu mengubah konfigurasi jaringan kampus.",
+      "Buat folder kerja SJK dengan subfolder sumber, hasil, dan laporan. Salin berkas contoh, ubah namanya dengan F2, lalu ambil satu tangkapan layar hasil.",
+      "Di jurnal lama tulis tiga pasangan kebutuhan → alat/perintah. Tandai perintah lama yang tidak tersedia sebagai perbedaan versi."
+    ],
+    "evidence": "Tabel tiga perintah dan fungsinya, struktur folder, satu bukti hasil.",
+    "quiz": [
+      {
+        "q": "Perintah untuk membaca konfigurasi IP Windows adalah …",
+        "options": [
+          "ipconfig",
+          "format",
+          "shutdown"
+        ],
+        "answer": 0,
+        "explanation": "ipconfig menampilkan konfigurasi adapter."
+      },
+      {
+        "q": "Win+E membuka …",
+        "options": [
+          "Editor registry",
+          "File Explorer",
+          "BIOS"
+        ],
+        "answer": 1,
+        "explanation": "Win+E membuka File Explorer."
+      },
+      {
+        "q": "Perintah lama tidak ditemukan; langkah awal …",
+        "options": [
+          "Instal ulang OS",
+          "Periksa versi/edisi dan cari alat pengganti",
+          "Hapus driver"
+        ],
+        "answer": 1,
+        "explanation": "Daftar lama memuat aplikasi yang tidak selalu tersedia."
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "VirtualBox dan satu OS latihan",
+    "fullTitle": "VirtualBox dan satu OS latihan",
+    "clo": "Target kerja usulan",
+    "hook": "Bagaimana berlatih instalasi tanpa mengganggu sistem utama?",
+    "concepts": [
+      "Host adalah sistem utama; guest berjalan di mesin virtual. File disk virtual berbeda dari partisi fisik laptop.",
+      "Alokasi RAM/CPU untuk VM mengurangi sumber daya yang tersedia untuk host saat VM berjalan.",
+      "NAT memudahkan akses keluar VM; host-only menghubungkan host dan VM pada jaringan lokal virtual."
+    ],
+    "tools": "VirtualBox dan satu ISO yang sudah diuji; PC lab pengganti atau VM siap pakai disiapkan koordinator.",
+    "strategy": "Pola kelas yang sudah digunakan",
+    "assessment": false,
+    "explorer": "capacity",
+    "checks": [
+      "Membedakan host dan guest.",
+      "Konfigurasi VM dan bukti login guest. Instalasi ulang berulang tidak diperlukan.",
+      "Hasil dan jenis bantuan/observasi ditulis sesuai kegiatan nyata."
+    ],
+    "sections": [
+      {
+        "title": "I. Tujuan",
+        "text": "Membedakan host dan guest.\nMenyiapkan satu VM sesuai kapasitas perangkat.\nMenjalankan guest dan menyimpan konfigurasi latihan."
+      },
+      {
+        "title": "II. Persiapan",
+        "text": "VirtualBox dan satu ISO yang sudah diuji; PC lab pengganti atau VM siap pakai disiapkan koordinator.\nTidak wajib menginstal Windows, Ubuntu Desktop, Ubuntu Server, macOS, dan Android sekaligus. Pilih sesuai urutan kompetensi."
+      },
+      {
+        "title": "III. Langkah praktikum inti",
+        "text": "1. Gunakan versi VirtualBox dan ISO yang sudah diuji koordinator. Pertahankan OS host. Jangan mewajibkan semua mahasiswa mengunduh ulang pada jam lab.\n2. Jika kegiatan lama memakai Windows guest yang telah tersedia dan sah digunakan, lanjutkan sesuai jadwal. Untuk alur Ubuntu, buat satu VM Ubuntu dari ISO resmi yang disiapkan lab.\n3. Pilih New, nama VM, ISO, jenis OS, RAM/CPU, dan disk virtual. Sesuaikan dengan kapasitas PC; sisakan sumber daya bagi host. Catat alokasi yang dipilih.\n4. Mulai instalasi pada disk virtual. Buat akun latihan lokal, selesaikan instalasi, lepas ISO bila diperlukan, lalu uji login. Jangan menulis password pada laporan.\n5. Matikan VM dengan normal. Simpan keadaan awal yang dapat dipulihkan sesuai fitur lab. Jika VM gagal berjalan, gunakan PC/VM lab siap pakai dan catat bantuan yang diberikan."
+      },
+      {
+        "title": "IV. Bukti pada jurnal yang sudah digunakan",
+        "text": "Konfigurasi VM dan bukti login guest. Instalasi ulang berulang tidak diperlukan."
+      },
+      {
+        "title": "V. Kaitan multimedia singkat",
+        "text": "Bagaimana berlatih instalasi tanpa mengganggu sistem utama? Tambahkan jawaban 2–3 kalimat pada bagian kesimpulan jurnal bila sesuai instruksi dosen; tidak perlu laporan tambahan."
+      },
+      {
+        "title": "VI. Sumber dan penyesuaian",
+        "text": "SK 5–6 dalam berkas Modul 1; berkas Modul 6. Nomor SK/JK adalah bab internal dokumen sumber, bukan nomor minggu resmi. Tidak wajib menginstal Windows, Ubuntu Desktop, Ubuntu Server, macOS, dan Android sekaligus. Pilih sesuai urutan kompetensi."
+      }
+    ],
+    "source": "SK 5–6 dalam berkas Modul 1; berkas Modul 6",
+    "note": "Tidak wajib menginstal Windows, Ubuntu Desktop, Ubuntu Server, macOS, dan Android sekaligus. Pilih sesuai urutan kompetensi.",
+    "steps": [
+      "Gunakan versi VirtualBox dan ISO yang sudah diuji koordinator. Pertahankan OS host. Jangan mewajibkan semua mahasiswa mengunduh ulang pada jam lab.",
+      "Jika kegiatan lama memakai Windows guest yang telah tersedia dan sah digunakan, lanjutkan sesuai jadwal. Untuk alur Ubuntu, buat satu VM Ubuntu dari ISO resmi yang disiapkan lab.",
+      "Pilih New, nama VM, ISO, jenis OS, RAM/CPU, dan disk virtual. Sesuaikan dengan kapasitas PC; sisakan sumber daya bagi host. Catat alokasi yang dipilih.",
+      "Mulai instalasi pada disk virtual. Buat akun latihan lokal, selesaikan instalasi, lepas ISO bila diperlukan, lalu uji login. Jangan menulis password pada laporan.",
+      "Matikan VM dengan normal. Simpan keadaan awal yang dapat dipulihkan sesuai fitur lab. Jika VM gagal berjalan, gunakan PC/VM lab siap pakai dan catat bantuan yang diberikan."
+    ],
+    "evidence": "Konfigurasi VM dan bukti login guest. Instalasi ulang berulang tidak diperlukan.",
+    "quiz": [
+      {
+        "q": "Sistem utama laptop disebut …",
+        "options": [
+          "Guest",
+          "Host",
+          "Snapshot"
+        ],
+        "answer": 1,
+        "explanation": "Host menjalankan perangkat lunak virtualisasi."
+      },
+      {
+        "q": "Mengalokasikan seluruh RAM ke VM …",
+        "options": [
+          "Dapat menghambat host",
+          "Selalu membuat VM optimal",
+          "Tidak berpengaruh"
+        ],
+        "answer": 0,
+        "explanation": "Host juga membutuhkan memori."
+      },
+      {
+        "q": "Host-only secara bawaan menghubungkan …",
+        "options": [
+          "Semua komputer kampus",
+          "Host dan VM pada jaringan virtual terkait",
+          "Seluruh internet"
+        ],
+        "answer": 1,
+        "explanation": "Host-only adalah jaringan lokal virtual."
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Ubuntu dan berkas multimedia",
+    "fullTitle": "Ubuntu dan berkas multimedia",
+    "clo": "Target kerja usulan",
+    "hook": "Bagaimana mengelola aset yang sama pada sistem operasi berbeda?",
+    "concepts": [
+      "Letak launcher/menu berbeda antar desktop dan versi. Istilah Unity pada sumber lama tidak menjadi syarat versi kelas.",
+      "Ekstensi berkas membantu mengenali format, tetapi mengganti ekstensi tidak mengonversi isinya.",
+      "Aplikasi multimedia bisa dijalankan pada host apabila guest terlalu berat; laporkan lingkungan yang digunakan."
+    ],
+    "tools": "VM/PC Ubuntu dari sesi sebelumnya, media kecil, aplikasi bawaan. Editor yang sudah digunakan di kelas boleh dipertahankan.",
+    "strategy": "Pola kelas yang sudah digunakan",
+    "assessment": false,
+    "explorer": "audio",
+    "checks": [
+      "Menemukan aplikasi dan berkas melalui desktop Ubuntu.",
+      "Struktur folder, satu berkas hasil, dan tabel format/ukuran pada laporan lama.",
+      "Hasil dan jenis bantuan/observasi ditulis sesuai kegiatan nyata."
+    ],
+    "sections": [
+      {
+        "title": "I. Tujuan",
+        "text": "Menemukan aplikasi dan berkas melalui desktop Ubuntu.\nMembuat folder serta dokumen sederhana.\nMembandingkan ukuran berkas media dan formatnya."
+      },
+      {
+        "title": "II. Persiapan",
+        "text": "VM/PC Ubuntu dari sesi sebelumnya, media kecil, aplikasi bawaan. Editor yang sudah digunakan di kelas boleh dipertahankan.\nLatihan inti adalah pengelolaan berkas dan aplikasi. Instalasi editor serta video 30 detik dari sumber lama diteruskan hanya jika perangkat siap."
+      },
+      {
+        "title": "III. Langkah praktikum inti",
+        "text": "1. Masuk VM/PC Ubuntu yang telah disiapkan. Temukan Files, terminal, dan aplikasi dokumen melalui menu pencarian.\n2. Buat folder sumber, hasil, dan laporan. Salin satu gambar/audio/video kecil yang disediakan kelas.\n3. Buka Properties untuk memeriksa ukuran dan jenis berkas. Putar/buka media dengan aplikasi yang sudah tersedia.\n4. Buat dokumen pendek berisi tabel nama berkas, format, ukuran, dan kegunaannya. Jika editor telah siap, lakukan satu crop gambar atau potong video singkat.\n5. Simpan hasil dalam folder terpisah. Demonstrasikan bahwa hasil dapat dibuka kembali. Tidak perlu memasang editor berat hanya untuk melengkapi screenshot."
+      },
+      {
+        "title": "IV. Bukti pada jurnal yang sudah digunakan",
+        "text": "Struktur folder, satu berkas hasil, dan tabel format/ukuran pada laporan lama."
+      },
+      {
+        "title": "V. Kaitan multimedia singkat",
+        "text": "Bagaimana mengelola aset yang sama pada sistem operasi berbeda? Tambahkan jawaban 2–3 kalimat pada bagian kesimpulan jurnal bila sesuai instruksi dosen; tidak perlu laporan tambahan."
+      },
+      {
+        "title": "VI. Sumber dan penyesuaian",
+        "text": "Berkas Modul 7; SK 7 dalam berkas Modul 1. Nomor SK/JK adalah bab internal dokumen sumber, bukan nomor minggu resmi. Latihan inti adalah pengelolaan berkas dan aplikasi. Instalasi editor serta video 30 detik dari sumber lama diteruskan hanya jika perangkat siap."
+      }
+    ],
+    "source": "Berkas Modul 7; SK 7 dalam berkas Modul 1",
+    "note": "Latihan inti adalah pengelolaan berkas dan aplikasi. Instalasi editor serta video 30 detik dari sumber lama diteruskan hanya jika perangkat siap.",
+    "steps": [
+      "Masuk VM/PC Ubuntu yang telah disiapkan. Temukan Files, terminal, dan aplikasi dokumen melalui menu pencarian.",
+      "Buat folder sumber, hasil, dan laporan. Salin satu gambar/audio/video kecil yang disediakan kelas.",
+      "Buka Properties untuk memeriksa ukuran dan jenis berkas. Putar/buka media dengan aplikasi yang sudah tersedia.",
+      "Buat dokumen pendek berisi tabel nama berkas, format, ukuran, dan kegunaannya. Jika editor telah siap, lakukan satu crop gambar atau potong video singkat.",
+      "Simpan hasil dalam folder terpisah. Demonstrasikan bahwa hasil dapat dibuka kembali. Tidak perlu memasang editor berat hanya untuk melengkapi screenshot."
+    ],
+    "evidence": "Struktur folder, satu berkas hasil, dan tabel format/ukuran pada laporan lama.",
+    "quiz": [
+      {
+        "q": "Mengubah .jpg menjadi .png dengan rename …",
+        "options": [
+          "Mengonversi gambar",
+          "Hanya mengubah nama",
+          "Meningkatkan resolusi"
+        ],
+        "answer": 1,
+        "explanation": "Konversi memerlukan proses menyimpan dalam format tujuan."
+      },
+      {
+        "q": "GUI Ubuntu berbeda dari gambar Unity; yang dilakukan …",
+        "options": [
+          "Cari fungsi setara",
+          "Wajib instal Ubuntu lama",
+          "Hapus seluruh VM"
+        ],
+        "answer": 0,
+        "explanation": "Tujuannya menguasai fungsi, bukan posisi ikon tertentu."
+      },
+      {
+        "q": "Hasil edit sebaiknya …",
+        "options": [
+          "Menimpa semua sumber tanpa salinan",
+          "Disimpan terpisah dan diuji buka kembali",
+          "Hanya difoto"
+        ],
+        "answer": 1,
+        "explanation": "Berkas hasil harus bisa digunakan."
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Ubuntu Server di VM",
+    "fullTitle": "Ubuntu Server di VM",
+    "clo": "Target kerja usulan",
+    "hook": "Apa yang berbeda antara desktop dan server?",
+    "concepts": [
+      "Server dapat dikelola melalui terminal tanpa desktop grafis.",
+      "Paket instalasi dan tampilan installer dapat berbeda; gunakan satu versi yang diuji lab.",
+      "SSH memberi akses jarak jauh; mengaktifkannya tidak berarti layanan boleh dibuka ke jaringan publik."
+    ],
+    "tools": "VM server atau PC lab siap pakai, satu versi Ubuntu yang diuji. Tidak membutuhkan Raspberry Pi.",
+    "strategy": "Pola kelas yang sudah digunakan",
+    "assessment": false,
+    "explorer": "protocol",
+    "checks": [
+      "Menjelaskan peran server dan terminal.",
+      "Bukti login terminal, alokasi VM, dan identifikasi satu interface.",
+      "Hasil dan jenis bantuan/observasi ditulis sesuai kegiatan nyata."
+    ],
+    "sections": [
+      {
+        "title": "I. Tujuan",
+        "text": "Menjelaskan peran server dan terminal.\nMenyelesaikan instalasi/login server di VM latihan.\nMengenali informasi dasar perangkat dan jaringan."
+      },
+      {
+        "title": "II. Persiapan",
+        "text": "VM server atau PC lab siap pakai, satu versi Ubuntu yang diuji. Tidak membutuhkan Raspberry Pi.\nInstalasi bukan kegiatan riset. Gangguan instalasi tidak dihitung sebagai kegagalan peserta riset."
+      },
+      {
+        "title": "III. Langkah praktikum inti",
+        "text": "1. Gunakan ISO/VM Ubuntu Server yang telah disiapkan. Jika kompetensi instalasi sudah dinilai pada sesi sebelumnya, koordinator dapat menggunakan VM siap pakai untuk sesi ini.\n2. Buat disk virtual dan gunakan NAT selama instalasi paket. Jangan menghubungkan DHCP eksperimen ke jaringan kampus.\n3. Ikuti installer: bahasa, jaringan, disk virtual, akun latihan, dan paket yang diperlukan. OpenSSH dipilih hanya bila akan digunakan pada jaringan latihan.\n4. Reboot dan login. Jalankan hostnamectl, ip -br a, dan df -h. Simpan informasi yang relevan tanpa password.\n5. Bila paket htop tersedia/diizinkan, gunakan sudo apt update lalu sudo apt install htop. Catat versi dan hasil; gangguan unduhan ditangani dengan VM cadangan."
+      },
+      {
+        "title": "IV. Bukti pada jurnal yang sudah digunakan",
+        "text": "Bukti login terminal, alokasi VM, dan identifikasi satu interface."
+      },
+      {
+        "title": "V. Kaitan multimedia singkat",
+        "text": "Apa yang berbeda antara desktop dan server? Tambahkan jawaban 2–3 kalimat pada bagian kesimpulan jurnal bila sesuai instruksi dosen; tidak perlu laporan tambahan."
+      },
+      {
+        "title": "VI. Sumber dan penyesuaian",
+        "text": "Berkas Modul 8. Nomor SK/JK adalah bab internal dokumen sumber, bukan nomor minggu resmi. Instalasi bukan kegiatan riset. Gangguan instalasi tidak dihitung sebagai kegagalan peserta riset."
+      }
+    ],
+    "source": "Berkas Modul 8",
+    "note": "Instalasi bukan kegiatan riset. Gangguan instalasi tidak dihitung sebagai kegagalan peserta riset.",
+    "steps": [
+      "Gunakan ISO/VM Ubuntu Server yang telah disiapkan. Jika kompetensi instalasi sudah dinilai pada sesi sebelumnya, koordinator dapat menggunakan VM siap pakai untuk sesi ini.",
+      "Buat disk virtual dan gunakan NAT selama instalasi paket. Jangan menghubungkan DHCP eksperimen ke jaringan kampus.",
+      "Ikuti installer: bahasa, jaringan, disk virtual, akun latihan, dan paket yang diperlukan. OpenSSH dipilih hanya bila akan digunakan pada jaringan latihan.",
+      "Reboot dan login. Jalankan hostnamectl, ip -br a, dan df -h. Simpan informasi yang relevan tanpa password.",
+      "Bila paket htop tersedia/diizinkan, gunakan sudo apt update lalu sudo apt install htop. Catat versi dan hasil; gangguan unduhan ditangani dengan VM cadangan."
+    ],
+    "evidence": "Bukti login terminal, alokasi VM, dan identifikasi satu interface.",
+    "quiz": [
+      {
+        "q": "Server harus selalu memiliki desktop grafis …",
+        "options": [
+          "Benar",
+          "Tidak benar",
+          "Hanya jika memakai IP"
+        ],
+        "answer": 1,
+        "explanation": "Banyak server dikelola melalui terminal."
+      },
+      {
+        "q": "ip -br a digunakan untuk …",
+        "options": [
+          "Menghapus disk",
+          "Melihat ringkasan alamat interface",
+          "Mengedit video"
+        ],
+        "answer": 1,
+        "explanation": "Perintah tersebut membaca informasi interface."
+      },
+      {
+        "q": "Lokasi instalasi latihan adalah …",
+        "options": [
+          "Disk virtual yang disiapkan",
+          "Disk sistem host secara otomatis",
+          "Flashdisk pribadi tanpa pemeriksaan"
+        ],
+        "answer": 0,
+        "explanation": "Periksa disk tujuan sebelum melanjutkan."
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "title": "File dan izin akses Linux",
+    "fullTitle": "File dan izin akses Linux",
+    "clo": "Target kerja usulan",
+    "hook": "Mengapa sebuah berkas dapat dibaca tetapi tidak dapat diubah?",
+    "concepts": [
+      "Direktori kerja dan path menentukan berkas yang diproses.",
+      "Izin r, w, dan x memiliki arti berbeda pada berkas dan direktori.",
+      "Perintah administrasi tidak diperlukan untuk semua kegiatan; gunakan direktori latihan milik akun sendiri."
+    ],
+    "tools": "VM Ubuntu yang sama dan terminal. Gunakan berkas latihan, bukan berkas sistem.",
+    "strategy": "Pola kelas yang sudah digunakan",
+    "assessment": false,
+    "explorer": "frame",
+    "checks": [
+      "Menggunakan perintah direktori dan berkas dasar.",
+      "Tabel perintah dan bukti perubahan izin yang telah dipulihkan.",
+      "Hasil dan jenis bantuan/observasi ditulis sesuai kegiatan nyata."
+    ],
+    "sections": [
+      {
+        "title": "I. Tujuan",
+        "text": "Menggunakan perintah direktori dan berkas dasar.\nMembaca izin berkas sederhana.\nMemeriksa proses dan kapasitas disk."
+      },
+      {
+        "title": "II. Persiapan",
+        "text": "VM Ubuntu yang sama dan terminal. Gunakan berkas latihan, bukan berkas sistem.\nPaket nmap, fail2ban, profil terminal pihak ketiga, dan konfigurasi layanan tambahan merupakan pengayaan."
+      },
+      {
+        "title": "III. Langkah praktikum inti",
+        "text": "1. Di terminal akun latihan, jalankan mkdir -p ~/sjk-latihan lalu cd ~/sjk-latihan.\n2. Buat berkas dengan printf \"catatan latihan\\n\" > catatan.txt. Periksa pwd, ls -l, dan cat catatan.txt.\n3. Jalankan chmod 444 catatan.txt, amati izin, lalu coba menyimpan perubahan sebagai pengguna biasa. Pulihkan dengan chmod 644 catatan.txt.\n4. Jalankan df -h dan top; keluar top dengan q. Jelaskan perbedaan kapasitas disk dan penggunaan memori.\n5. Masukkan tiga pasangan perintah → hasil pada jurnal. Administrasi pengguna, cron, firewall, dan backup dapat mengikuti sesi lanjutan dosen; tidak harus diselesaikan semua di sini."
+      },
+      {
+        "title": "IV. Bukti pada jurnal yang sudah digunakan",
+        "text": "Tabel perintah dan bukti perubahan izin yang telah dipulihkan."
+      },
+      {
+        "title": "V. Kaitan multimedia singkat",
+        "text": "Mengapa sebuah berkas dapat dibaca tetapi tidak dapat diubah? Tambahkan jawaban 2–3 kalimat pada bagian kesimpulan jurnal bila sesuai instruksi dosen; tidak perlu laporan tambahan."
+      },
+      {
+        "title": "VI. Sumber dan penyesuaian",
+        "text": "Berkas Modul 9. Nomor SK/JK adalah bab internal dokumen sumber, bukan nomor minggu resmi. Paket nmap, fail2ban, profil terminal pihak ketiga, dan konfigurasi layanan tambahan merupakan pengayaan."
+      }
+    ],
+    "source": "Berkas Modul 9",
+    "note": "Paket nmap, fail2ban, profil terminal pihak ketiga, dan konfigurasi layanan tambahan merupakan pengayaan.",
+    "steps": [
+      "Di terminal akun latihan, jalankan mkdir -p ~/sjk-latihan lalu cd ~/sjk-latihan.",
+      "Buat berkas dengan printf \"catatan latihan\\n\" > catatan.txt. Periksa pwd, ls -l, dan cat catatan.txt.",
+      "Jalankan chmod 444 catatan.txt, amati izin, lalu coba menyimpan perubahan sebagai pengguna biasa. Pulihkan dengan chmod 644 catatan.txt.",
+      "Jalankan df -h dan top; keluar top dengan q. Jelaskan perbedaan kapasitas disk dan penggunaan memori.",
+      "Masukkan tiga pasangan perintah → hasil pada jurnal. Administrasi pengguna, cron, firewall, dan backup dapat mengikuti sesi lanjutan dosen; tidak harus diselesaikan semua di sini."
+    ],
+    "evidence": "Tabel perintah dan bukti perubahan izin yang telah dipulihkan.",
+    "quiz": [
+      {
+        "q": "Perintah melihat direktori kerja adalah …",
+        "options": [
+          "pwd",
+          "rm",
+          "reboot"
+        ],
+        "answer": 0,
+        "explanation": "pwd mencetak path direktori kerja."
+      },
+      {
+        "q": "chmod 444 pada berkas biasa memberi …",
+        "options": [
+          "Baca tanpa tulis kepada owner/group/other",
+          "Izin menulis semua pengguna",
+          "Izin menjalankan semua pengguna"
+        ],
+        "answer": 0,
+        "explanation": "Angka 4 berarti baca."
+      },
+      {
+        "q": "df -h memperlihatkan …",
+        "options": [
+          "Pemakaian disk",
+          "Bitrate audio",
+          "Daftar shortcut"
+        ],
+        "answer": 0,
+        "explanation": "df melaporkan ruang sistem berkas."
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Asesmen tengah dan pemulihan praktik",
+    "fullTitle": "Asesmen tengah dan pemulihan praktik",
+    "clo": "Target kerja usulan",
+    "hook": "Bukti apa yang menunjukkan keterampilan sistem komputer sudah dikuasai?",
+    "concepts": [
+      "Asesmen akademik mengikuti RPS yang berlaku, termasuk bentuk, bobot, dan jadwalnya.",
+      "Checklist belajar tidak menggantikan nilai resmi.",
+      "Kemampuan instalasi dan pengelolaan berkas harus dibedakan dari kendala perangkat."
+    ],
+    "tools": "Perangkat dan berkas dari sesi sebelumnya.",
+    "strategy": "Pola kelas yang sudah digunakan",
+    "assessment": true,
+    "explorer": "capacity",
+    "checks": [
+      "Mendemonstrasikan keterampilan inti yang telah diajarkan.",
+      "Bukti sesuai asesmen resmi; catatan perbaikan dapat memakai jurnal lama.",
+      "Hasil dan jenis bantuan/observasi ditulis sesuai kegiatan nyata."
+    ],
+    "sections": [
+      {
+        "title": "I. Tujuan",
+        "text": "Mendemonstrasikan keterampilan inti yang telah diajarkan.\nMengidentifikasi materi yang perlu diulang.\nMemulihkan lingkungan latihan sebelum topik jaringan."
+      },
+      {
+        "title": "II. Persiapan",
+        "text": "Perangkat dan berkas dari sesi sebelumnya.\nJika kalender tidak menempatkan asesmen di minggu 8, geser slot ini mengikuti jadwal resmi. Urutan pada web adalah usulan kerja."
+      },
+      {
+        "title": "III. Langkah praktikum inti",
+        "text": "1. Ikuti asesmen yang ditetapkan dosen. Web ini tidak menetapkan soal atau bobot pengganti.\n2. Siapkan bukti spesifikasi, pengelolaan folder, VM, dan perintah yang telah dipelajari.\n3. Setelah asesmen, perbaiki satu keterampilan yang belum tuntas dengan panduan asisten.\n4. Periksa bahwa PC/VM dapat digunakan untuk sesi jaringan. Peneliti tidak menyisipkan eksperimen pada jam ujian."
+      },
+      {
+        "title": "IV. Bukti pada jurnal yang sudah digunakan",
+        "text": "Bukti sesuai asesmen resmi; catatan perbaikan dapat memakai jurnal lama."
+      },
+      {
+        "title": "V. Kaitan multimedia singkat",
+        "text": "Bukti apa yang menunjukkan keterampilan sistem komputer sudah dikuasai? Tambahkan jawaban 2–3 kalimat pada bagian kesimpulan jurnal bila sesuai instruksi dosen; tidak perlu laporan tambahan."
+      },
+      {
+        "title": "VI. Sumber dan penyesuaian",
+        "text": "Asesmen sesuai RPS dan ketentuan kelas yang berlaku. Nomor SK/JK adalah bab internal dokumen sumber, bukan nomor minggu resmi. Jika kalender tidak menempatkan asesmen di minggu 8, geser slot ini mengikuti jadwal resmi. Urutan pada web adalah usulan kerja."
+      }
+    ],
+    "source": "Asesmen sesuai RPS dan ketentuan kelas yang berlaku",
+    "note": "Jika kalender tidak menempatkan asesmen di minggu 8, geser slot ini mengikuti jadwal resmi. Urutan pada web adalah usulan kerja.",
+    "steps": [
+      "Ikuti asesmen yang ditetapkan dosen. Web ini tidak menetapkan soal atau bobot pengganti.",
+      "Siapkan bukti spesifikasi, pengelolaan folder, VM, dan perintah yang telah dipelajari.",
+      "Setelah asesmen, perbaiki satu keterampilan yang belum tuntas dengan panduan asisten.",
+      "Periksa bahwa PC/VM dapat digunakan untuk sesi jaringan. Peneliti tidak menyisipkan eksperimen pada jam ujian."
+    ],
+    "evidence": "Bukti sesuai asesmen resmi; catatan perbaikan dapat memakai jurnal lama.",
+    "quiz": [
+      {
+        "q": "Bobot nilai pada semester berjalan mengikuti …",
+        "options": [
+          "Dashboard riset",
+          "RPS dan keputusan akademik resmi",
+          "Skor latihan web"
+        ],
+        "answer": 1,
+        "explanation": "Web ini tidak mengubah bobot penilaian."
+      },
+      {
+        "q": "VM gagal boot saat asesmen perlu …",
+        "options": [
+          "Dicatat sebagai kendala dan ditangani sesuai aturan kelas",
+          "Dihitung otomatis gagal riset",
+          "Dihapus tanpa catatan"
+        ],
+        "answer": 0,
+        "explanation": "Kendala teknis ditangani dalam prosedur akademik."
+      },
+      {
+        "q": "Latihan web menghasilkan …",
+        "options": [
+          "Nilai resmi otomatis",
+          "Umpan balik formatif",
+          "Persetujuan riset"
+        ],
+        "answer": 1,
+        "explanation": "Soal web hanya untuk latihan."
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "title": "Topologi dan perangkat jaringan",
+    "fullTitle": "Topologi dan perangkat jaringan",
+    "clo": "Target kerja usulan",
+    "hook": "Bagaimana menghubungkan komputer kerja dan penyimpanan bersama?",
+    "concepts": [
+      "Switch meneruskan frame pada LAN; router menghubungkan jaringan IP.",
+      "Access point menjembatani akses nirkabel ke jaringan; nama SSID bukan mekanisme autentikasi.",
+      "Denah perkantoran dari modul lama dapat digunakan apa adanya. Label studio merupakan konteks tambahan."
+    ],
+    "tools": "Laptop, alat gambar yang dikenal, perangkat lab/gambar modul. Ketersediaan switch/tester diperiksa, bukan diasumsikan.",
+    "strategy": "Pola kelas yang sudah digunakan",
+    "assessment": false,
+    "explorer": "topology",
+    "checks": [
+      "Menggambar topologi sederhana.",
+      "Satu skema jaringan dan tabel fungsi perangkat sesuai tugas lama.",
+      "Hasil dan jenis bantuan/observasi ditulis sesuai kegiatan nyata."
+    ],
+    "sections": [
+      {
+        "title": "I. Tujuan",
+        "text": "Menggambar topologi sederhana.\nMembedakan switch, router, dan access point.\nMengidentifikasi alat yang benar-benar tersedia."
+      },
+      {
+        "title": "II. Persiapan",
+        "text": "Laptop, alat gambar yang dikenal, perangkat lab/gambar modul. Ketersediaan switch/tester diperiksa, bukan diasumsikan.\nPeneliti dapat melakukan pilot di luar sesi dengan relawan yang memenuhi prosedur riset. Kelas BAU tetap menjalankan materi reguler."
+      },
+      {
+        "title": "III. Langkah praktikum inti",
+        "text": "1. Ikuti tugas denah pada JK 1. Pertahankan aplikasi menggambar yang biasa digunakan kelas.\n2. Identifikasi server, klien, switch, router, AP, kabel, dan NIC dari perangkat/gambar yang tersedia.\n3. Beri label satu komputer sebagai editor dan satu folder/server sebagai penyimpanan aset; tidak perlu membeli perangkat baru.\n4. Tandai jalur klien menuju layanan dan jelaskan akibat jika satu kabel putus.\n5. Asisten mencatat kebutuhan kabel, adapter Ethernet, switch, dan tester sebelum sesi crimping."
+      },
+      {
+        "title": "IV. Bukti pada jurnal yang sudah digunakan",
+        "text": "Satu skema jaringan dan tabel fungsi perangkat sesuai tugas lama."
+      },
+      {
+        "title": "V. Kaitan multimedia singkat",
+        "text": "Bagaimana menghubungkan komputer kerja dan penyimpanan bersama? Tambahkan jawaban 2–3 kalimat pada bagian kesimpulan jurnal bila sesuai instruksi dosen; tidak perlu laporan tambahan."
+      },
+      {
+        "title": "VI. Sumber dan penyesuaian",
+        "text": "JK 1–2 dalam berkas Modul 10–17. Nomor SK/JK adalah bab internal dokumen sumber, bukan nomor minggu resmi. Peneliti dapat melakukan pilot di luar sesi dengan relawan yang memenuhi prosedur riset. Kelas BAU tetap menjalankan materi reguler."
+      }
+    ],
+    "source": "JK 1–2 dalam berkas Modul 10–17",
+    "note": "Peneliti dapat melakukan pilot di luar sesi dengan relawan yang memenuhi prosedur riset. Kelas BAU tetap menjalankan materi reguler.",
+    "steps": [
+      "Ikuti tugas denah pada JK 1. Pertahankan aplikasi menggambar yang biasa digunakan kelas.",
+      "Identifikasi server, klien, switch, router, AP, kabel, dan NIC dari perangkat/gambar yang tersedia.",
+      "Beri label satu komputer sebagai editor dan satu folder/server sebagai penyimpanan aset; tidak perlu membeli perangkat baru.",
+      "Tandai jalur klien menuju layanan dan jelaskan akibat jika satu kabel putus.",
+      "Asisten mencatat kebutuhan kabel, adapter Ethernet, switch, dan tester sebelum sesi crimping."
+    ],
+    "evidence": "Satu skema jaringan dan tabel fungsi perangkat sesuai tugas lama.",
+    "quiz": [
+      {
+        "q": "Perangkat penghubung jaringan IP adalah …",
+        "options": [
+          "Router",
+          "Kabel HDMI",
+          "RAM"
+        ],
+        "answer": 0,
+        "explanation": "Router meneruskan paket antarjaringan IP."
+      },
+      {
+        "q": "SSID adalah …",
+        "options": [
+          "Nama jaringan Wi-Fi",
+          "Jaminan keamanan",
+          "Alamat disk"
+        ],
+        "answer": 0,
+        "explanation": "SSID mengidentifikasi jaringan nirkabel."
+      },
+      {
+        "q": "Gambar skema membuktikan …",
+        "options": [
+          "Semua perangkat sudah dikonfigurasi",
+          "Rancangan koneksi",
+          "Kabel fisik lolos uji"
+        ],
+        "answer": 1,
+        "explanation": "Rancangan perlu diuji terpisah dari implementasi."
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "title": "Kabel straight dan pengujian",
+    "fullTitle": "Kabel straight dan pengujian",
+    "clo": "Target kerja usulan",
+    "hook": "Bagaimana membuktikan kabel rakitan dapat dipakai?",
+    "concepts": [
+      "Straight memakai skema pin sama di kedua ujung; T568B adalah salah satu pilihan.",
+      "Crossover tetap perlu dipahami; kebutuhan kabel pada perangkat modern juga bergantung dukungan Auto MDI-X.",
+      "Indikator link dan ping tidak menggantikan seluruh pengujian mutu kabel."
+    ],
+    "tools": "UTP, RJ45, crimper; tester dan adapter Ethernet sesuai inventaris lab.",
+    "strategy": "Pola kelas yang sudah digunakan",
+    "assessment": false,
+    "explorer": "cable",
+    "checks": [
+      "Menyusun kabel straight dengan urutan pasangan yang benar.",
+      "Kabel latihan, foto relevan, dan hasil uji dengan jenis alat yang digunakan.",
+      "Hasil dan jenis bantuan/observasi ditulis sesuai kegiatan nyata."
+    ],
+    "sections": [
+      {
+        "title": "I. Tujuan",
+        "text": "Menyusun kabel straight dengan urutan pasangan yang benar.\nMenggunakan crimper dan tester sesuai prosedur lab.\nMembedakan uji virtual, kontinuitas, dan koneksi nyata."
+      },
+      {
+        "title": "II. Persiapan",
+        "text": "UTP, RJ45, crimper; tester dan adapter Ethernet sesuai inventaris lab.\nTidak ada pengukuran penelitian tambahan. K3 dan demonstrasi tetap menjadi tanggung jawab asisten praktik reguler."
+      },
+      {
+        "title": "III. Langkah praktikum inti",
+        "text": "1. Ikuti demonstrasi crimping yang sudah digunakan kelas. Periksa kabel UTP, RJ45, crimper, dan tester.\n2. Susun kedua ujung dengan skema sama. Untuk T568B pin 1–8: putih-oranye, oranye, putih-hijau, biru, putih-biru, hijau, putih-cokelat, cokelat. Cocokkan orientasi fisik dengan contoh asisten.\n3. Crimp pada kabel latihan, kemudian uji kontinuitas bila tester tersedia. Perbaiki ujung yang gagal.\n4. Uji link pada perangkat latihan. Bila tester belum tersedia, catat uji link saja dan jadwalkan uji kontinuitas; jangan menulis PASS tester.\n5. Simpan satu foto urutan/proses dan hasil uji pada jurnal lama. Simulator web dapat digunakan sebelum praktik fisik."
+      },
+      {
+        "title": "IV. Bukti pada jurnal yang sudah digunakan",
+        "text": "Kabel latihan, foto relevan, dan hasil uji dengan jenis alat yang digunakan."
+      },
+      {
+        "title": "V. Kaitan multimedia singkat",
+        "text": "Bagaimana membuktikan kabel rakitan dapat dipakai? Tambahkan jawaban 2–3 kalimat pada bagian kesimpulan jurnal bila sesuai instruksi dosen; tidak perlu laporan tambahan."
+      },
+      {
+        "title": "VI. Sumber dan penyesuaian",
+        "text": "JK 3 dalam berkas Modul 10–17. Nomor SK/JK adalah bab internal dokumen sumber, bukan nomor minggu resmi. Tidak ada pengukuran penelitian tambahan. K3 dan demonstrasi tetap menjadi tanggung jawab asisten praktik reguler."
+      }
+    ],
+    "source": "JK 3 dalam berkas Modul 10–17",
+    "note": "Tidak ada pengukuran penelitian tambahan. K3 dan demonstrasi tetap menjadi tanggung jawab asisten praktik reguler.",
+    "steps": [
+      "Ikuti demonstrasi crimping yang sudah digunakan kelas. Periksa kabel UTP, RJ45, crimper, dan tester.",
+      "Susun kedua ujung dengan skema sama. Untuk T568B pin 1–8: putih-oranye, oranye, putih-hijau, biru, putih-biru, hijau, putih-cokelat, cokelat. Cocokkan orientasi fisik dengan contoh asisten.",
+      "Crimp pada kabel latihan, kemudian uji kontinuitas bila tester tersedia. Perbaiki ujung yang gagal.",
+      "Uji link pada perangkat latihan. Bila tester belum tersedia, catat uji link saja dan jadwalkan uji kontinuitas; jangan menulis PASS tester.",
+      "Simpan satu foto urutan/proses dan hasil uji pada jurnal lama. Simulator web dapat digunakan sebelum praktik fisik."
+    ],
+    "evidence": "Kabel latihan, foto relevan, dan hasil uji dengan jenis alat yang digunakan.",
+    "quiz": [
+      {
+        "q": "Straight menggunakan …",
+        "options": [
+          "Skema pin sama pada kedua ujung",
+          "Satu ujung acak",
+          "Hanya dua pin"
+        ],
+        "answer": 0,
+        "explanation": "Skema kedua ujung harus sama."
+      },
+      {
+        "q": "Tester belum tersedia, laporan yang tepat …",
+        "options": [
+          "Lolos tester",
+          "Uji link dilakukan; kontinuitas belum diuji",
+          "Semua parameter sempurna"
+        ],
+        "answer": 1,
+        "explanation": "Laporkan jenis pengujian yang benar-benar dilakukan."
+      },
+      {
+        "q": "Simulator warna pin membuktikan …",
+        "options": [
+          "Kabel fisik bagus",
+          "Pemahaman susunan pin",
+          "Throughput 1 Gbps"
+        ],
+        "answer": 1,
+        "explanation": "Simulator tidak mengukur kabel fisik."
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "title": "IP statis dan ping",
+    "fullTitle": "IP statis dan ping",
+    "clo": "Target kerja usulan",
+    "hook": "Mengapa dua komputer yang terhubung kabel belum tentu dapat berkomunikasi?",
+    "concepts": [
+      "Alamat dan subnet mask bersama-sama menentukan subnet; label kelas A/B/C bukan pengganti prefix.",
+      "Untuk latihan dua host satu subnet terisolasi, gateway dan DNS tidak dibutuhkan untuk ping langsung menggunakan IP.",
+      "Balasan ping menguji ICMP, bukan membuktikan seluruh aplikasi atau file sharing berjalan."
+    ],
+    "tools": "Dua endpoint latihan, jaringan terisolasi, adapter yang telah diperiksa. Blok contoh harus bebas konflik pada lab.",
+    "strategy": "Pola kelas yang sudah digunakan",
+    "assessment": false,
+    "explorer": "subnet",
+    "checks": [
+      "Mengatur IPv4 pada adapter latihan.",
+      "Tabel IP/mask dua host dan hasil ping, dengan penjelasan singkat.",
+      "Hasil dan jenis bantuan/observasi ditulis sesuai kegiatan nyata."
+    ],
+    "sections": [
+      {
+        "title": "I. Tujuan",
+        "text": "Mengatur IPv4 pada adapter latihan.\nMenguji komunikasi satu subnet.\nMenjelaskan IP, mask, dan alamat tujuan."
+      },
+      {
+        "title": "II. Persiapan",
+        "text": "Dua endpoint latihan, jaringan terisolasi, adapter yang telah diperiksa. Blok contoh harus bebas konflik pada lab.\nK1 baru boleh dijadwalkan peneliti setelah kompetensi ini tuntas dan pilot lolos. Tidak otomatis dilaksanakan minggu 11."
+      },
+      {
+        "title": "III. Langkah praktikum inti",
+        "text": "1. Gunakan dua PC latihan atau host dan VM pada jaringan host-only yang telah disiapkan. Jangan ubah adapter Wi-Fi kampus.\n2. Catat konfigurasi awal adapter latihan. Pakai blok lab yang diberikan asisten. Contoh terisolasi: host A 192.168.56.10/24 dan B 192.168.56.20/24, alamat unik; DHCP virtual dimatikan pada segmen contoh statis.\n3. Windows: buka ncpa.cpl → adapter latihan → Properties → IPv4. Masukkan IP dan mask 255.255.255.0. Gateway/DNS kosong untuk latihan lokal ini.\n4. Jalankan ipconfig dan ping alamat lawan. Jika gagal, periksa link, adapter, IP/mask, dan aturan ICMP yang telah disiapkan asisten. Jangan mematikan seluruh firewall.\n5. Simpan konfigurasi dan hasil uji. Pulihkan adapter sesuai kondisi awal setelah selesai."
+      },
+      {
+        "title": "IV. Bukti pada jurnal yang sudah digunakan",
+        "text": "Tabel IP/mask dua host dan hasil ping, dengan penjelasan singkat."
+      },
+      {
+        "title": "V. Kaitan multimedia singkat",
+        "text": "Mengapa dua komputer yang terhubung kabel belum tentu dapat berkomunikasi? Tambahkan jawaban 2–3 kalimat pada bagian kesimpulan jurnal bila sesuai instruksi dosen; tidak perlu laporan tambahan."
+      },
+      {
+        "title": "VI. Sumber dan penyesuaian",
+        "text": "JK 4 dalam berkas Modul 10–17. Nomor SK/JK adalah bab internal dokumen sumber, bukan nomor minggu resmi. K1 baru boleh dijadwalkan peneliti setelah kompetensi ini tuntas dan pilot lolos. Tidak otomatis dilaksanakan minggu 11."
+      }
+    ],
+    "source": "JK 4 dalam berkas Modul 10–17",
+    "note": "K1 baru boleh dijadwalkan peneliti setelah kompetensi ini tuntas dan pilot lolos. Tidak otomatis dilaksanakan minggu 11.",
+    "steps": [
+      "Gunakan dua PC latihan atau host dan VM pada jaringan host-only yang telah disiapkan. Jangan ubah adapter Wi-Fi kampus.",
+      "Catat konfigurasi awal adapter latihan. Pakai blok lab yang diberikan asisten. Contoh terisolasi: host A 192.168.56.10/24 dan B 192.168.56.20/24, alamat unik; DHCP virtual dimatikan pada segmen contoh statis.",
+      "Windows: buka ncpa.cpl → adapter latihan → Properties → IPv4. Masukkan IP dan mask 255.255.255.0. Gateway/DNS kosong untuk latihan lokal ini.",
+      "Jalankan ipconfig dan ping alamat lawan. Jika gagal, periksa link, adapter, IP/mask, dan aturan ICMP yang telah disiapkan asisten. Jangan mematikan seluruh firewall.",
+      "Simpan konfigurasi dan hasil uji. Pulihkan adapter sesuai kondisi awal setelah selesai."
+    ],
+    "evidence": "Tabel IP/mask dua host dan hasil ping, dengan penjelasan singkat.",
+    "quiz": [
+      {
+        "q": "172.32.1.1 termasuk blok privat 172.16/12 …",
+        "options": [
+          "Ya",
+          "Tidak",
+          "Tergantung merek router"
+        ],
+        "answer": 1,
+        "explanation": "Blok privat tersebut berakhir di 172.31.255.255."
+      },
+      {
+        "q": "A .10/24 dan B .20/24 dalam 192.168.56.0 dapat ping lokal tanpa …",
+        "options": [
+          "NIC",
+          "Gateway internet",
+          "Koneksi link"
+        ],
+        "answer": 1,
+        "explanation": "Komunikasi satu subnet tidak memerlukan gateway internet."
+      },
+      {
+        "q": "Ping berhasil membuktikan …",
+        "options": [
+          "ICMP mendapat respons pada saat uji",
+          "Izin folder pasti benar",
+          "Seluruh aplikasi sehat"
+        ],
+        "answer": 0,
+        "explanation": "Layanan aplikasi dan izin diuji terpisah."
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "title": "Berbagi folder pada LAN",
+    "fullTitle": "Berbagi folder pada LAN",
+    "clo": "Target kerja usulan",
+    "hook": "Bagaimana berbagi aset tanpa membuka semua berkas pribadi?",
+    "concepts": [
+      "Konektivitas IP dan izin folder adalah dua lapisan pemeriksaan berbeda.",
+      "Izin share dan izin sistem berkas sama-sama memengaruhi akses efektif.",
+      "Gunakan akun latihan dan folder khusus; password tidak dicantumkan pada screenshot/jurnal."
+    ],
+    "tools": "PC Windows latihan, jaringan lokal, satu akun dan folder latihan yang disiapkan lab.",
+    "strategy": "Pola kelas yang sudah digunakan",
+    "assessment": false,
+    "explorer": "network",
+    "checks": [
+      "Membagikan satu folder latihan.",
+      "Bukti klien berhasil membaca berkas dan tabel hak akses.",
+      "Hasil dan jenis bantuan/observasi ditulis sesuai kegiatan nyata."
+    ],
+    "sections": [
+      {
+        "title": "I. Tujuan",
+        "text": "Membagikan satu folder latihan.\nMenggunakan akun dan izin yang sesuai.\nMenguji akses dari komputer lain."
+      },
+      {
+        "title": "II. Persiapan",
+        "text": "PC Windows latihan, jaringan lokal, satu akun dan folder latihan yang disiapkan lab.\nKonteks multimedia cukup memakai satu gambar/audio milik kelas. Tidak membutuhkan Samba/RTMP baru atau video 4K."
+      },
+      {
+        "title": "III. Langkah praktikum inti",
+        "text": "1. Pastikan IP dan koneksi latihan sudah berfungsi. Gunakan profil jaringan privat pada segmen lab yang disetujui.\n2. Buat folder SJK-Share berisi berkas contoh kecil. Dengan akun latihan yang disiapkan lab, atur akses baca yang diperlukan.\n3. Tetap gunakan password-protected sharing. Ikuti menu Sharing/Advanced Sharing dan izin yang telah diuji asisten. Jangan memberi Everyone akses tulis ke folder pribadi.\n4. Dari klien, buka \\\\alamat-IP-server\\SJK-Share. Masuk dengan akun latihan bila diminta dan buka berkas contoh.\n5. Uji tindakan yang diizinkan dan ditolak. Catat hasil tanpa menyimpan password. Hapus share latihan jika sesi telah selesai."
+      },
+      {
+        "title": "IV. Bukti pada jurnal yang sudah digunakan",
+        "text": "Bukti klien berhasil membaca berkas dan tabel hak akses."
+      },
+      {
+        "title": "V. Kaitan multimedia singkat",
+        "text": "Bagaimana berbagi aset tanpa membuka semua berkas pribadi? Tambahkan jawaban 2–3 kalimat pada bagian kesimpulan jurnal bila sesuai instruksi dosen; tidak perlu laporan tambahan."
+      },
+      {
+        "title": "VI. Sumber dan penyesuaian",
+        "text": "JK 5 dalam berkas Modul 10–17. Nomor SK/JK adalah bab internal dokumen sumber, bukan nomor minggu resmi. Konteks multimedia cukup memakai satu gambar/audio milik kelas. Tidak membutuhkan Samba/RTMP baru atau video 4K."
+      }
+    ],
+    "source": "JK 5 dalam berkas Modul 10–17",
+    "note": "Konteks multimedia cukup memakai satu gambar/audio milik kelas. Tidak membutuhkan Samba/RTMP baru atau video 4K.",
+    "steps": [
+      "Pastikan IP dan koneksi latihan sudah berfungsi. Gunakan profil jaringan privat pada segmen lab yang disetujui.",
+      "Buat folder SJK-Share berisi berkas contoh kecil. Dengan akun latihan yang disiapkan lab, atur akses baca yang diperlukan.",
+      "Tetap gunakan password-protected sharing. Ikuti menu Sharing/Advanced Sharing dan izin yang telah diuji asisten. Jangan memberi Everyone akses tulis ke folder pribadi.",
+      "Dari klien, buka \\\\alamat-IP-server\\SJK-Share. Masuk dengan akun latihan bila diminta dan buka berkas contoh.",
+      "Uji tindakan yang diizinkan dan ditolak. Catat hasil tanpa menyimpan password. Hapus share latihan jika sesi telah selesai."
+    ],
+    "evidence": "Bukti klien berhasil membaca berkas dan tabel hak akses.",
+    "quiz": [
+      {
+        "q": "Ping sukses tetapi folder gagal dibuka; periksa …",
+        "options": [
+          "Nama share dan izin/akun",
+          "Warna wallpaper",
+          "Kecepatan keyboard"
+        ],
+        "answer": 0,
+        "explanation": "Layanan share memiliki konfigurasi dan autentikasi tersendiri."
+      },
+      {
+        "q": "Folder latihan sebaiknya …",
+        "options": [
+          "Seluruh Documents pribadi",
+          "Folder khusus dengan akun latihan",
+          "Root semua disk"
+        ],
+        "answer": 1,
+        "explanation": "Batasi materi yang dibagikan sesuai tujuan praktik."
+      },
+      {
+        "q": "Password pada laporan …",
+        "options": [
+          "Harus ditulis lengkap",
+          "Tidak dicantumkan",
+          "Boleh dipublikasikan agar mudah"
+        ],
+        "answer": 1,
+        "explanation": "Bukti akses tidak memerlukan pengungkapan password."
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "title": "Mapping drive dan verifikasi",
+    "fullTitle": "Mapping drive dan verifikasi",
+    "clo": "Target kerja usulan",
+    "hook": "Apakah drive jaringan menyimpan salinan lokal secara otomatis?",
+    "concepts": [
+      "Mapping memberi jalur akses yang mudah diingat ke share; tidak otomatis menjadi cadangan lokal.",
+      "Jalur UNC berbentuk dua backslash, alamat server, satu backslash, lalu nama share.",
+      "Kegagalan akses dapat berasal dari jaringan, layanan, kredensial, atau izin."
+    ],
+    "tools": "Share latihan yang sudah berfungsi dari sesi 12.",
+    "strategy": "Pola kelas yang sudah digunakan",
+    "assessment": false,
+    "explorer": "subnet",
+    "checks": [
+      "Memetakan share sebagai drive jaringan.",
+      "Bukti pemetaan, akses berkas, dan pelepasan koneksi.",
+      "Hasil dan jenis bantuan/observasi ditulis sesuai kegiatan nyata."
+    ],
+    "sections": [
+      {
+        "title": "I. Tujuan",
+        "text": "Memetakan share sebagai drive jaringan.\nMemeriksa koneksi dan hak akses.\nMelepas pemetaan setelah latihan."
+      },
+      {
+        "title": "II. Persiapan",
+        "text": "Share latihan yang sudah berfungsi dari sesi 12.\nK2 transfer opsional dijadwalkan terpisah sesudah K1, memakai kasus baru dan tanpa bantuan untuk kedua kelompok riset."
+      },
+      {
+        "title": "III. Langkah praktikum inti",
+        "text": "1. Pastikan share sesi sebelumnya masih tersedia atau dibuat ulang oleh asisten.\n2. Buka File Explorer → This PC → Map network drive. Pilih huruf kosong dan masukkan \\\\alamat-IP-server\\SJK-Share.\n3. Untuk PC lab bersama, jangan menyimpan kredensial atau menyambung otomatis saat sign-in kecuali prosedur lab mengaturnya.\n4. Buka berkas dari drive tersebut. Bandingkan jalur UNC dan huruf drive. Uji hanya tindakan yang diberi izin.\n5. Lepas pemetaan drive setelah selesai. Tuliskan urutan pemeriksaan jika drive terputus."
+      },
+      {
+        "title": "IV. Bukti pada jurnal yang sudah digunakan",
+        "text": "Bukti pemetaan, akses berkas, dan pelepasan koneksi."
+      },
+      {
+        "title": "V. Kaitan multimedia singkat",
+        "text": "Apakah drive jaringan menyimpan salinan lokal secara otomatis? Tambahkan jawaban 2–3 kalimat pada bagian kesimpulan jurnal bila sesuai instruksi dosen; tidak perlu laporan tambahan."
+      },
+      {
+        "title": "VI. Sumber dan penyesuaian",
+        "text": "JK 6 dalam berkas Modul 10–17. Nomor SK/JK adalah bab internal dokumen sumber, bukan nomor minggu resmi. K2 transfer opsional dijadwalkan terpisah sesudah K1, memakai kasus baru dan tanpa bantuan untuk kedua kelompok riset."
+      }
+    ],
+    "source": "JK 6 dalam berkas Modul 10–17",
+    "note": "K2 transfer opsional dijadwalkan terpisah sesudah K1, memakai kasus baru dan tanpa bantuan untuk kedua kelompok riset.",
+    "steps": [
+      "Pastikan share sesi sebelumnya masih tersedia atau dibuat ulang oleh asisten.",
+      "Buka File Explorer → This PC → Map network drive. Pilih huruf kosong dan masukkan \\\\alamat-IP-server\\SJK-Share.",
+      "Untuk PC lab bersama, jangan menyimpan kredensial atau menyambung otomatis saat sign-in kecuali prosedur lab mengaturnya.",
+      "Buka berkas dari drive tersebut. Bandingkan jalur UNC dan huruf drive. Uji hanya tindakan yang diberi izin.",
+      "Lepas pemetaan drive setelah selesai. Tuliskan urutan pemeriksaan jika drive terputus."
+    ],
+    "evidence": "Bukti pemetaan, akses berkas, dan pelepasan koneksi.",
+    "quiz": [
+      {
+        "q": "Mapping drive adalah …",
+        "options": [
+          "Jalur akses ke share",
+          "Cadangan otomatis semua file",
+          "Pengganti jaringan"
+        ],
+        "answer": 0,
+        "explanation": "Data tetap berada pada lokasi share kecuali disalin."
+      },
+      {
+        "q": "Jalur UNC diawali …",
+        "options": [
+          "Dua backslash",
+          "Huruf C saja",
+          "Tanda @"
+        ],
+        "answer": 0,
+        "explanation": "Contoh: \\\\server\\share."
+      },
+      {
+        "q": "PC lab bersama selesai digunakan; sebaiknya …",
+        "options": [
+          "Simpan password di desktop",
+          "Lepas koneksi latihan sesuai prosedur",
+          "Matikan keamanan"
+        ],
+        "answer": 1,
+        "explanation": "Bersihkan koneksi latihan agar akun tidak dipakai pengguna berikutnya."
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "title": "Access point dan keamanan dasar",
+    "fullTitle": "Access point dan keamanan dasar",
+    "clo": "Target kerja usulan",
+    "hook": "Apa yang perlu diperiksa sebelum menghubungkan perangkat ke Wi-Fi lab?",
+    "concepts": [
+      "SSID adalah nama; keamanan memerlukan mekanisme autentikasi/enkripsi dan pengelolaan akun.",
+      "Gunakan WPA2-AES atau WPA3 bila didukung dan sudah diuji lab. WEP/WPA lama dipelajari sebagai riwayat, bukan konfigurasi wajib.",
+      "MAC filtering bukan pengganti autentikasi yang kuat. Antarmuka AP berbeda menurut model dan firmware."
+    ],
+    "tools": "AP lab jika tersedia dan akun latihan; alternatif demonstrasi bila alat belum siap.",
+    "strategy": "Pola kelas yang sudah digunakan",
+    "assessment": false,
+    "explorer": "topology",
+    "checks": [
+      "Mengenali fungsi AP dan SSID.",
+      "Tabel SSID latihan, jenis keamanan, dan hasil koneksi tanpa rahasia akun.",
+      "Hasil dan jenis bantuan/observasi ditulis sesuai kegiatan nyata."
+    ],
+    "sections": [
+      {
+        "title": "I. Tujuan",
+        "text": "Mengenali fungsi AP dan SSID.\nMemeriksa pengaturan akses yang sesuai perangkat.\nMenguji koneksi klien pada AP latihan."
+      },
+      {
+        "title": "II. Persiapan",
+        "text": "AP lab jika tersedia dan akun latihan; alternatif demonstrasi bila alat belum siap.\nRaspberry Pi tidak perlu dijadikan access point pengganti minggu ini. Tujuan inti adalah memahami pengaturan AP yang dikenal."
+      },
+      {
+        "title": "III. Langkah praktikum inti",
+        "text": "1. Gunakan AP latihan milik lab. Catat model dan konfigurasi awal dari asisten, bukan dari tabel password default modul lama.\n2. Masuk menggunakan akun pengelola yang diberikan khusus latihan. Ubah SSID hanya pada perangkat latihan.\n3. Periksa keamanan sesuai kemampuan perangkat. Terapkan profil yang telah diuji koordinator tanpa mengubah jaringan operasional kampus.\n4. Hubungkan klien dan uji komunikasi ke layanan lokal. Catat hasil tanpa password/daftar MAC pribadi.\n5. Pulihkan konfigurasi. Jika AP fisik tidak tersedia, ikuti demonstrasi/screenshot terkurasi dan catat sebagai observasi, bukan praktik konfigurasi nyata."
+      },
+      {
+        "title": "IV. Bukti pada jurnal yang sudah digunakan",
+        "text": "Tabel SSID latihan, jenis keamanan, dan hasil koneksi tanpa rahasia akun."
+      },
+      {
+        "title": "V. Kaitan multimedia singkat",
+        "text": "Apa yang perlu diperiksa sebelum menghubungkan perangkat ke Wi-Fi lab? Tambahkan jawaban 2–3 kalimat pada bagian kesimpulan jurnal bila sesuai instruksi dosen; tidak perlu laporan tambahan."
+      },
+      {
+        "title": "VI. Sumber dan penyesuaian",
+        "text": "JK 7–8 dalam berkas Modul 10–17. Nomor SK/JK adalah bab internal dokumen sumber, bukan nomor minggu resmi. Raspberry Pi tidak perlu dijadikan access point pengganti minggu ini. Tujuan inti adalah memahami pengaturan AP yang dikenal."
+      }
+    ],
+    "source": "JK 7–8 dalam berkas Modul 10–17",
+    "note": "Raspberry Pi tidak perlu dijadikan access point pengganti minggu ini. Tujuan inti adalah memahami pengaturan AP yang dikenal.",
+    "steps": [
+      "Gunakan AP latihan milik lab. Catat model dan konfigurasi awal dari asisten, bukan dari tabel password default modul lama.",
+      "Masuk menggunakan akun pengelola yang diberikan khusus latihan. Ubah SSID hanya pada perangkat latihan.",
+      "Periksa keamanan sesuai kemampuan perangkat. Terapkan profil yang telah diuji koordinator tanpa mengubah jaringan operasional kampus.",
+      "Hubungkan klien dan uji komunikasi ke layanan lokal. Catat hasil tanpa password/daftar MAC pribadi.",
+      "Pulihkan konfigurasi. Jika AP fisik tidak tersedia, ikuti demonstrasi/screenshot terkurasi dan catat sebagai observasi, bukan praktik konfigurasi nyata."
+    ],
+    "evidence": "Tabel SSID latihan, jenis keamanan, dan hasil koneksi tanpa rahasia akun.",
+    "quiz": [
+      {
+        "q": "Mengganti SSID saja …",
+        "options": [
+          "Sudah menjamin keamanan",
+          "Belum menyediakan autentikasi yang memadai",
+          "Menambah RAM"
+        ],
+        "answer": 1,
+        "explanation": "Nama jaringan bukan pengamanan."
+      },
+      {
+        "q": "Pengaturan AP kampus operasional …",
+        "options": [
+          "Boleh direset untuk latihan",
+          "Tidak diubah; gunakan AP latihan",
+          "Wajib diganti tiap kelompok"
+        ],
+        "answer": 1,
+        "explanation": "Praktikum menggunakan perangkat yang ditetapkan lab."
+      },
+      {
+        "q": "Tanpa AP fisik, bukti yang tepat …",
+        "options": [
+          "Konfigurasi berhasil",
+          "Observasi demonstrasi",
+          "Uji jangkauan nyata"
+        ],
+        "answer": 1,
+        "explanation": "Bukti harus menggambarkan modus aktivitas."
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "title": "MikroTik dasar sesuai kesiapan",
+    "fullTitle": "MikroTik dasar sesuai kesiapan",
+    "clo": "Target kerja usulan",
+    "hook": "Bagaimana membedakan koneksi lokal, routing, dan layanan DHCP?",
+    "concepts": [
+      "RouterOS adalah perangkat lunak; RouterBOARD adalah keluarga perangkat keras.",
+      "Gateway harus merupakan router pada subnet klien yang sesuai. Menyalin alamat dari screenshot dapat membuat topologi tidak konsisten.",
+      "VM router menyediakan interface virtual Ethernet; praktik radio Wi-Fi memerlukan perangkat yang benar-benar mendukungnya."
+    ],
+    "tools": "RouterOS/RouterBOARD dan WinBox yang sudah dikenal; bukan instalasi layanan baru sebagai syarat penelitian.",
+    "strategy": "Pola kelas yang sudah digunakan",
+    "assessment": false,
+    "explorer": "protocol",
+    "checks": [
+      "Mengenali RouterOS dan perangkat RouterBOARD.",
+      "Skema interface, IP LAN, dan hasil uji klien-router.",
+      "Hasil dan jenis bantuan/observasi ditulis sesuai kegiatan nyata."
+    ],
+    "sections": [
+      {
+        "title": "I. Tujuan",
+        "text": "Mengenali RouterOS dan perangkat RouterBOARD.\nMengakses router latihan yang telah disiapkan.\nMenguji koneksi LAN dasar sebelum layanan lanjutan."
+      },
+      {
+        "title": "II. Persiapan",
+        "text": "RouterOS/RouterBOARD dan WinBox yang sudah dikenal; bukan instalasi layanan baru sebagai syarat penelitian.\nJika NAT/DHCP wajib dalam RPS, pakai slot resmi atau geser pengayaan/riset. Tidak menjejalkan empat modul penuh dalam satu sesi."
+      },
+      {
+        "title": "III. Langkah praktikum inti",
+        "text": "1. Gunakan image/RouterBOARD yang sudah diuji asisten. Instalasi dari awal hanya dilakukan bila bagian itu memang sasaran sesi.\n2. Gambar dua sisi jaringan dan beri label interface sebelum konfigurasi. Untuk inti, hubungkan satu klien dan interface LAN router pada segmen latihan.\n3. Tetapkan IP LAN sesuai rencana lab, buka WinBox/konsol, lalu uji ping antara klien dan router. Jangan memakai contoh alamat modul lama tanpa menyesuaikan subnet.\n4. Jika inti tuntas dan tersedia waktu, ikuti JK 11–12 untuk NAT/DHCP pada jaringan terisolasi dengan panduan konfigurasi yang telah diuji lab. Hindari mengaktifkan DHCP pada LAN kampus.\n5. Simpan konfigurasi/bukti inti dan pulihkan perangkat. Bila RouterOS belum siap, gunakan demonstrasi dan alihkan waktu untuk remedial IP/sharing; praktik konfigurasi dijadwalkan kembali bila diwajibkan RPS."
+      },
+      {
+        "title": "IV. Bukti pada jurnal yang sudah digunakan",
+        "text": "Skema interface, IP LAN, dan hasil uji klien-router."
+      },
+      {
+        "title": "V. Kaitan multimedia singkat",
+        "text": "Bagaimana membedakan koneksi lokal, routing, dan layanan DHCP? Tambahkan jawaban 2–3 kalimat pada bagian kesimpulan jurnal bila sesuai instruksi dosen; tidak perlu laporan tambahan."
+      },
+      {
+        "title": "VI. Sumber dan penyesuaian",
+        "text": "JK 9–10; JK 11–12 sebagai lanjutan sesuai RPS. Nomor SK/JK adalah bab internal dokumen sumber, bukan nomor minggu resmi. Jika NAT/DHCP wajib dalam RPS, pakai slot resmi atau geser pengayaan/riset. Tidak menjejalkan empat modul penuh dalam satu sesi."
+      }
+    ],
+    "source": "JK 9–10; JK 11–12 sebagai lanjutan sesuai RPS",
+    "note": "Jika NAT/DHCP wajib dalam RPS, pakai slot resmi atau geser pengayaan/riset. Tidak menjejalkan empat modul penuh dalam satu sesi.",
+    "steps": [
+      "Gunakan image/RouterBOARD yang sudah diuji asisten. Instalasi dari awal hanya dilakukan bila bagian itu memang sasaran sesi.",
+      "Gambar dua sisi jaringan dan beri label interface sebelum konfigurasi. Untuk inti, hubungkan satu klien dan interface LAN router pada segmen latihan.",
+      "Tetapkan IP LAN sesuai rencana lab, buka WinBox/konsol, lalu uji ping antara klien dan router. Jangan memakai contoh alamat modul lama tanpa menyesuaikan subnet.",
+      "Jika inti tuntas dan tersedia waktu, ikuti JK 11–12 untuk NAT/DHCP pada jaringan terisolasi dengan panduan konfigurasi yang telah diuji lab. Hindari mengaktifkan DHCP pada LAN kampus.",
+      "Simpan konfigurasi/bukti inti dan pulihkan perangkat. Bila RouterOS belum siap, gunakan demonstrasi dan alihkan waktu untuk remedial IP/sharing; praktik konfigurasi dijadwalkan kembali bila diwajibkan RPS."
+    ],
+    "evidence": "Skema interface, IP LAN, dan hasil uji klien-router.",
+    "quiz": [
+      {
+        "q": "RouterBOARD adalah …",
+        "options": [
+          "Perangkat keras MikroTik",
+          "Nama folder Windows",
+          "Protokol audio"
+        ],
+        "answer": 0,
+        "explanation": "RouterOS adalah perangkat lunaknya."
+      },
+      {
+        "q": "VM router otomatis memiliki radio Wi-Fi …",
+        "options": [
+          "Ya",
+          "Tidak",
+          "Jika RAM 8 GB"
+        ],
+        "answer": 1,
+        "explanation": "Interface virtual tidak menyediakan radio fisik."
+      },
+      {
+        "q": "DHCP eksperimen dijalankan pada …",
+        "options": [
+          "Jaringan latihan terisolasi",
+          "Seluruh kampus",
+          "Hotspot tetangga"
+        ],
+        "answer": 0,
+        "explanation": "Batasi DHCP pada segmen latihan."
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "title": "Asesmen akhir dan portofolio praktik",
+    "fullTitle": "Asesmen akhir dan portofolio praktik",
+    "clo": "Target kerja usulan",
+    "hook": "Dapatkah Anda menjelaskan hubungan perangkat, OS, dan jaringan dari praktik yang sudah dilakukan?",
+    "concepts": [
+      "Portofolio memakai hasil pekerjaan yang sudah dibuat, tanpa kewajiban proyek streaming baru.",
+      "MacOS/Android di VM adalah pengayaan bila sarana, sumber installer, dan dukungan lab telah siap.",
+      "Hasil riset tidak menentukan nilai atau kelulusan mata kuliah."
+    ],
+    "tools": "Perangkat dan bukti yang telah digunakan selama semester.",
+    "strategy": "Pola kelas yang sudah digunakan",
+    "assessment": true,
+    "explorer": "stream",
+    "checks": [
+      "Mendemonstrasikan capaian yang ditetapkan RPS.",
+      "Portofolio dan demonstrasi sesuai RPS; format pengumpulan tetap melalui kanal kelas.",
+      "Hasil dan jenis bantuan/observasi ditulis sesuai kegiatan nyata."
+    ],
+    "sections": [
+      {
+        "title": "I. Tujuan",
+        "text": "Mendemonstrasikan capaian yang ditetapkan RPS.\nMenyusun bukti dari praktik yang telah selesai.\nMenjelaskan satu diagnosis dengan bukti dan verifikasi."
+      },
+      {
+        "title": "II. Persiapan",
+        "text": "Perangkat dan bukti yang telah digunakan selama semester.\nJika sesi 16 dipakai ujian penuh, pengayaan lintas OS menjadi bacaan mandiri. Tuntaskan capaian resmi sebelum menambah kegiatan riset."
+      },
+      {
+        "title": "III. Langkah praktikum inti",
+        "text": "1. Ikuti bentuk dan jadwal asesmen akhir resmi. Pilih bukti PC/OS, pengelolaan berkas, serta konektivitas/sharing yang sudah dikerjakan.\n2. Peragakan akses berkas lokal/jaringan sesuai kompetensi yang diuji dosen. Tidak diwajibkan membangun RTMP/HLS baru.\n3. Jelaskan gejala, bukti, tindakan, dan verifikasi dari satu masalah yang pernah ditangani.\n4. Bila ada waktu pengayaan, bandingkan fungsi aplikasi/pengelolaan berkas lintas OS melalui perangkat/demo yang tersedia. Instalasi macOS/Android tidak menjadi prasyarat akhir semester.\n5. Cadangkan hasil kerja dan bersihkan akun/share/VM latihan sesuai aturan lab."
+      },
+      {
+        "title": "IV. Bukti pada jurnal yang sudah digunakan",
+        "text": "Portofolio dan demonstrasi sesuai RPS; format pengumpulan tetap melalui kanal kelas."
+      },
+      {
+        "title": "V. Kaitan multimedia singkat",
+        "text": "Dapatkah Anda menjelaskan hubungan perangkat, OS, dan jaringan dari praktik yang sudah dilakukan? Tambahkan jawaban 2–3 kalimat pada bagian kesimpulan jurnal bila sesuai instruksi dosen; tidak perlu laporan tambahan."
+      },
+      {
+        "title": "VI. Sumber dan penyesuaian",
+        "text": "Asesmen sesuai RPS; Modul 18 sebagai pengayaan lintas OS. Nomor SK/JK adalah bab internal dokumen sumber, bukan nomor minggu resmi. Jika sesi 16 dipakai ujian penuh, pengayaan lintas OS menjadi bacaan mandiri. Tuntaskan capaian resmi sebelum menambah kegiatan riset."
+      }
+    ],
+    "source": "Asesmen sesuai RPS; Modul 18 sebagai pengayaan lintas OS",
+    "note": "Jika sesi 16 dipakai ujian penuh, pengayaan lintas OS menjadi bacaan mandiri. Tuntaskan capaian resmi sebelum menambah kegiatan riset.",
+    "steps": [
+      "Ikuti bentuk dan jadwal asesmen akhir resmi. Pilih bukti PC/OS, pengelolaan berkas, serta konektivitas/sharing yang sudah dikerjakan.",
+      "Peragakan akses berkas lokal/jaringan sesuai kompetensi yang diuji dosen. Tidak diwajibkan membangun RTMP/HLS baru.",
+      "Jelaskan gejala, bukti, tindakan, dan verifikasi dari satu masalah yang pernah ditangani.",
+      "Bila ada waktu pengayaan, bandingkan fungsi aplikasi/pengelolaan berkas lintas OS melalui perangkat/demo yang tersedia. Instalasi macOS/Android tidak menjadi prasyarat akhir semester.",
+      "Cadangkan hasil kerja dan bersihkan akun/share/VM latihan sesuai aturan lab."
+    ],
+    "evidence": "Portofolio dan demonstrasi sesuai RPS; format pengumpulan tetap melalui kanal kelas.",
+    "quiz": [
+      {
+        "q": "Nilai akhir ditentukan oleh …",
+        "options": [
+          "Prosedur akademik resmi",
+          "Kesediaan ikut riset",
+          "Jumlah klik dashboard"
+        ],
+        "answer": 0,
+        "explanation": "Partisipasi riset terpisah dari penilaian akademik."
+      },
+      {
+        "q": "Bukti diagnosis yang kuat memuat …",
+        "options": [
+          "Dugaan saja",
+          "Gejala, bukti, tindakan, dan verifikasi",
+          "Foto desktop saja"
+        ],
+        "answer": 1,
+        "explanation": "Verifikasi menunjukkan apakah tindakan menyelesaikan masalah."
+      },
+      {
+        "q": "Pengayaan lintas OS perlu …",
+        "options": [
+          "Menggantikan ujian",
+          "Menyesuaikan kesiapan sarana",
+          "Wajib lima OS tiap laptop"
+        ],
+        "answer": 1,
+        "explanation": "Pilih kegiatan yang realistis untuk perangkat dan waktu."
+      }
+    ]
+  }
+]
