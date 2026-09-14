@@ -6,5 +6,5 @@ window.SJK_CONFIG = Object.freeze({
   courseTitle: "Sistem dan Jaringan Komputer",
   protocolVersion: "v1.0",
   mediaDownloadUrl: "",
-  siteBase: "https://sandikala.github.io/sjktrm/"
+  siteBase: "https://sandikala.github.io/sisjarkom/"
 });
